@@ -1,0 +1,6 @@
+1 - Hacer el html
+2 - poner las imagenes con las que voy a hacer la pagina
+3 - chequear los alts de los tag img de la pagnia dsp de subir las fotos que necesito para darle una mejor descripcion
+4 - poner los links a donde van las etiquetas <a>
+4 - Hacer el css
+5 - hacer el login modal
