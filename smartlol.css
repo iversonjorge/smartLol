@@ -5,3 +5,36 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+header{
+	background-color: #000;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.mageIcon{
+	display: block;
+	width: 10%;
+	float: left;
+}
+
+h1{
+	color: yellow;
+	width: 20%;
+	float: left;
+}
+
+header li{
+	display: block;
+	width: 10%;
+	float: left;
+}
+
+.btnlogin{
+	width: 20%;
+	float: right;
+}
+
+main{
+	clear: both;
+}
