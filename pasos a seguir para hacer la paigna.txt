@@ -1,6 +1,10 @@
-1 - Hacer el html
-2 - poner las imagenes con las que voy a hacer la pagina
-3 - chequear los alts de los tag img de la pagnia dsp de subir las fotos que necesito para darle una mejor descripcion
-4 - poner los links a donde van las etiquetas <a>
-4 - Hacer el css
-5 - hacer el login modal
+1 - Hacer el css
+2 - hacer el login modal
+3 - cuando haga las otras paginas, tengo que actualizar las imagenes preview del main.
+4 - poner los links a donde van las etiquetas <a> a medida que vaya teniendo las paginas.
+
+
+
+Cosas que voy descubriendo dsp de romperme la cabeza haciendo la página:
+
+1 - Cuando quiero flotar un elemento de linea, pasarlo a bloque (display: block) o voy a tener muchos problemas.

@@ -6,35 +6,89 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Logo Font";
+    src: url(Pacifico-Regular.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: "Nav Bar Font";
+    src: url(NotoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Log in Font";
+    src: url(RobotoCondensed-Regular.ttf) format("truetype");
+}
+
 header{
-	background-color: #000;
+	/*background-color: #000;*/
 	overflow: hidden;
 	max-width: 100%;
+
+	background-color:black;
 }
 
 .mageIcon{
 	display: block;
-	width: 10%;
+	width: 7%;
 	float: left;
+	padding-left: 35px;
+	padding-top: 25px;
+}
+
+h1 span{
+	color: #73a915;
 }
 
 h1{
-	color: yellow;
+	color: #ffe555;
 	width: 20%;
 	float: left;
+    font-family: "Logo Font", Verdana, Tahoma;
+    font-size: 40pt;
+    font-weight: normal;
 }
 
 header li{
-	display: block;
 	width: 10%;
 	float: left;
+	list-style-type: none;
+}
+
+header a{
+	text-decoration: none;
+	display: block;
+	color: #73a915;
+	font-size: 16pt;
+	font-family: "Nav Bar Font", Verdana, Tahoma;
+	text-align: center;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+header a:hover{ 
+	background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #ffe555;
+	transform: scale(1.1);
 }
 
 .btnlogin{
-	width: 20%;
+	width: 23%;
 	float: right;
+	background: red;
+	font-family: "Log in Font", Verdana, Tahoma;
+    border: 1px solid #FFF;
+    color: #c8daea
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+
 }
 
 main{
 	clear: both;
 }
+
