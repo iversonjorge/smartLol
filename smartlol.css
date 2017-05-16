@@ -70,25 +70,166 @@ header a{
 }
 
 header a:hover{ 
-	background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right, #56B4D3, #348F50);
 	color: #ffe555;
 	transform: scale(1.1);
 }
 
+.loginNav{
+		width: 23%;
+		padding-top: 30px;
+		padding-right: 90px;
+}
+
 .btnlogin{
-	width: 23%;
+	display: block;
 	float: right;
-	background: red;
+	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	font-family: "Log in Font", Verdana, Tahoma;
-    border: 1px solid #FFF;
-    color: #c8daea
+	font-size: 18pt;
+    color: #c8daea;
+    border: none;
     line-height: normal;
     overflow: visible;
     padding: 0;
+    padding: 10px 25px;
+}
 
+.btnlogin:hover{
+	transform: scale(1.1);
+	background: linear-gradient(to right, #56ccf2, #2f80ed);
+	cursor: pointer;
 }
 
 main{
 	clear: both;
+	background: #C2C2C2;
+	text-align: center;
 }
 
+.searchlinks{
+	background-image: url('images/main-image.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+}
+
+.searchlinks input{
+	position: absolute;
+	font-family: "Nav Bar Font", Verdana, Tahoma;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.searchlinks input[type=text]{
+	border-radius: 10px;
+	top: 250px;
+	font-size: 20pt;
+	border: 1px solid #000;
+	width: 40%;
+	left: 30%;
+	opacity: 0.8;
+	background-image: url(images/ic_search_black_24px.svg);
+	background-position: left;
+	background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 4%;
+    color: #222C96;
+}
+
+.searchlinks input[type=submit]{
+	top: 325px;
+	width: 15%;
+	border-radius: 5px;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #67b26f, #4ca2cd);
+	font-size: 12pt;
+	border: 1px solid #0d3d68;
+	color: #c8daea;
+}
+
+.searchlinks input[type=submit]:hover{
+	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
+	border: 1px solid #0d3d68;
+	color: #c8daea;
+	transform: scale(1.1);
+}
+
+.btnSearchData{
+	left: 32%;
+}
+
+.btnSearchLive{
+	left: 52%;
+}
+
+.links{
+	position: absolute;
+	width: 67%;
+	margin-left: 16.5%;
+	top: 400px;
+}
+
+.liveGames, .summonerData{
+	width: 33%;
+	float:left;
+}
+
+.championSelection{
+	width: 33%;
+	float: right;
+}
+
+.links img{
+
+	border: 7px solid #3286ED;
+	border-radius: 50%
+}
+
+.links a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.links p, .links h3{
+
+	font-family: "Nav Bar Font", Verdana, Tahoma;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.5);
+	display: block;
+	font-weight: bold;
+	color: #0C081E;
+}
+
+.links h3{
+	font-size: 15pt;
+	border-radius: 10px;
+}
+
+.liveGames h3{
+	margin-left: 33%;
+	width: 150px;
+}
+
+.summonerData h3{
+	margin-left: 27%;
+	width: 200px;
+}
+
+.championSelection h3{
+	margin-left: 23%;
+	width: 220px;
+}
+
+.links p{
+	font-size: 10pt;
+}
+
+.smartLolCool{
+	clear: both;
+}

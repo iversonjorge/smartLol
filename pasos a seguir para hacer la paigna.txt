@@ -2,7 +2,7 @@
 2 - hacer el login modal
 3 - cuando haga las otras paginas, tengo que actualizar las imagenes preview del main.
 4 - poner los links a donde van las etiquetas <a> a medida que vaya teniendo las paginas.
-
+5 - cuadno termine la pagina chequear todos los archivos que tengo al pedo y volarlos a la mierda
 
 
 Cosas que voy descubriendo dsp de romperme la cabeza haciendo la página:
