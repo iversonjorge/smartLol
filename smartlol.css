@@ -183,6 +183,10 @@ main{
 	float: right;
 }
 
+.links ul{
+	list-style:none;
+}
+
 .links img{
 
 	border: 7px solid #3286ED;
@@ -220,28 +224,29 @@ main{
 	width: 189px;
 	height: 189px;
 	background-repeat: no-repeat;
-    background-size: 150%;
     background-position: center;
-    transition: transform 1s, background-size 1s;
+    transition: padding 2s, margin 2s;
+    transition-delay: 0s, 0.5s;
+    transition-timing-function: linear;
 }
 
 .links img:hover{
-	transform: scale(2);
-	background-size: 100%;
+	margin-top: -50px;
+	padding: 40%;
 }
 
 .liveGames img{
-	background-image: url(images/ziggs.jpg);
+	background-image: url(images/prueba2.jpg);
 
 }
 
 .summonerData img{
-	background-image: url(images/ahri.jpg);
+	background-image: url(images/prueba2.jpg);
 
 }
 
 .championSelection img{
-	background-image: url(images/ezreal.jpg);
+	background-image: url(images/prueba2.jpg);
 
 }
 
@@ -256,10 +261,14 @@ main{
 }
 
 .links p{
+	position: absolute;
 	font-size: 10pt;
-	width: 60%;
-	padding-left: 10%;
-	z-index: 9999;
+	top: -10%;
+	width: 20%;
+	margin-left: 7%;
+	border-radius: 10px;
+	/*opacity: 0;*/
+	/*display: none;*/
 }
 
 .smartLolCool{
