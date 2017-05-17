@@ -39,11 +39,11 @@ header{
 }
 
 h1 span{
-	color: #73a915;
+	color: #8124b7;
 }
 
 h1{
-	color: #ffe555;
+	color: #2782FB;
 	width: 20%;
 	float: left;
     font-family: "Logo Font", Verdana, Tahoma;
@@ -60,7 +60,7 @@ header li{
 header a{
 	text-decoration: none;
 	display: block;
-	color: #73a915;
+	color: #2782FB;
 	font-size: 16pt;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
 	text-align: center;
@@ -108,15 +108,13 @@ main{
 }
 
 .searchlinks{
-	background-image: url('images/main-image.jpg');
+	background-image: url('images/bg-howling-abyss.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
     position: relative;
     height: 720px;
-    overflow: hidden;
 }
 
 .searchlinks input{
@@ -210,12 +208,41 @@ main{
 .links h3{
 	font-size: 15pt;
 	border-radius: 10px;
-	margin-top: 10%;
+	margin-top: 15%;
 }
 
 .liveGames h3{
 	margin-left: 33%;
 	width: 150px;
+}
+
+.links img{
+	width: 189px;
+	height: 189px;
+	background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+    transition: transform 1s, background-size 1s;
+}
+
+.links img:hover{
+	transform: scale(2);
+	background-size: 100%;
+}
+
+.liveGames img{
+	background-image: url(images/ziggs.jpg);
+
+}
+
+.summonerData img{
+	background-image: url(images/ahri.jpg);
+
+}
+
+.championSelection img{
+	background-image: url(images/ezreal.jpg);
+
 }
 
 .summonerData h3{
