@@ -1,9 +1,8 @@
-1 - Hacer el css
-2 - hacer el login modal
-3 - cuando haga las otras paginas, tengo que actualizar las imagenes preview del main.
-4 - poner los links a donde van las etiquetas <a> a medida que vaya teniendo las paginas.
-5 - buena idea de animar los circulos del main con lo que uno va viendo en la pagina.
-6 - cuadno termine la pagina chequear todos los archivos que tengo al pedo y volarlos a la mierda
+1 - hacer el login modal
+2 - Ver bien que voy a hacer con la explicacion 
+2 - cuando haga las otras paginas, tengo que actualizar las imagenes preview del main.
+3 - poner los links a donde van las etiquetas <a> a medida que vaya teniendo las paginas. (inclusive las del footer y social)
+4 - cuadno termine la pagina chequear todos los archivos que tengo al pedo y volarlos a la mierda
 
 
 Cosas que voy descubriendo dsp de romperme la cabeza haciendo la página:
