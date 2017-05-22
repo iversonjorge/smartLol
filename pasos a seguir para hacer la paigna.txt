@@ -1,4 +1,5 @@
--1 - Preguntar el tema del script para cambiar el focus de los tabs del main.
+- Preguntar el tema del script para cambiar el focus de los tabs del main.
+- Chequear el tema del Summoner Name que debe ser facil.
 
 		<meta name="keywords" content="league of legends, lol, league, analysis, videogames, smartlol, esports, league analysis">
 		<meta name="author" content="Jorch">
