@@ -9,7 +9,10 @@
 	<body>
 		<header>
 			<div class="mageIcon">
-				<img src="images/mageicon.jpg" alt="A book with a small blue fire over it">
+				
+				<a href="index.html" class="logo">
+					<img src="images/mageicon.jpg" alt="A book with a small blue fire over it">
+				</a>
 			</div>
 			<h1>
 				<span>S</span>mart <span>L</span>ol
@@ -40,36 +43,23 @@
 			</nav>
 		</header>
 		<main>
-			<div class="searchlinks">
-				<form action="" method="" target="">
-					<input type="text" name="txtSearchBar" value="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-					<input type="submit" value="Search Summoner Data" class="btnSearchData">
-					<input type="submit" value="Search Summoner Live Games" class="btnSearchLive">
-				</form>
-				<div class="links">
-					<ul>
-						<li class="liveGames">
-							<a href="#">
-								<h3>Live Games!</h3>
-								<img src="">
-								<p class="summonerData">Click the "Summoner Live Game" button during a game to see stats and other information for summoners in the match</p>
-							</a>
-						</li>
-						<li class="summonerData">
-							<a href="#">
-								<h3>Summoner Data</h3>
-								<img src="">
-								<p>Click the "Summoner Data" button to see stats, ranking, prefered champions and other information of the summoner</p>
-							</a>
-						</li>
-						<li class="championSelection">
-							<a href="#">
-								<h3>Champion Selection</h3>
-								<img src="">
-								<p>Discover an unique tool in the world which will help you to pick the best champion of your pool for each situation of the champion select phase</p>
-							</a>
-						</li>
-					</ul>
+			<div class="tabs">
+				<ul class="tabs_nav">
+    				<li><a href="#pregame" >Pre Game</a></li>
+    				<li class="active"><a href="#onlive">On Live</a></li>
+    				<li><a href="#offline">Offline</a></li>
+				</ul>
+			</div>
+			<div class="cube">
+				<div class="pregame" id="pregame">
+				</div>
+				<div class="onlive" id="onlive">
+					<form action="" method="" target="">
+						<input type="text" name="txtSearchBar" value="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
+						<input type="submit" value="Search Summoner Data" class="btnSearchData">
+					</form>
+				</div>
+				<div class="offline" id="offline">
 				</div>
 			</div>
 			<div class="smartLolCool">
@@ -79,28 +69,28 @@
 					<p class="pCenter">Yeah! We have covered everything! Pre game, ingame and post game analysis! You have statistics of all kinds, guides, streamers and even a forum!</p>
 				</section>
 				<section class="coolSectionLeft">
-					<h3 class="h3Left">Wait, Whaaaaat?! I have pre game analysis?</h3>
+					<h3 class="h3Left">Wait, Whaaaaat?! I have tool that helps me to pick in the champion selection phase?</h3>
 					<div class="imgContainer"><img src="images/prueba2.jpg" class="imgCoolOne" alt=""></div>
-					<p class="pLeft">Of course buddy! We have created an unique tool (you will never ever ever gonna find something like this) which analyze the champions in the current champion select (real time baby!) and using a very complicated algorithm picks the best champion for the current situation based on your champion pool. Not only that, don't forget that you will have tips for the current match and much more!</p>
+					<p class="pLeft">Yes! We have created an unique tool (you will never ever ever gonna find something like this) which analyze the champions in the current champion selection (real time baby!) and using a very complicated algorithm picks the best champion for the current situation based on your champion pool. Not only that, don't forget that you will have tips for the current match up and much more!</p>
 				</section>
 				<section class="coolSectionRight">
-					<h3 class="h3Left">Are you for real?! So... let's see. I have ingame analysis, right?</h3>
+					<h3 class="h3Left">Are you for real?! So... let's see. I have on live game analysis tool, right?</h3>
 					<div class="imgContainer"><img src="images/prueba2.jpg" class="imgCoolTwo" alt=""></div>
-					<p class="pLeft">Yeah! The main feature! When the game has started to load. you can search the game using your summoner nickname and find the current game with all the information you need. Aaaaand, yeah!!! You will have a ranking depending on how you play with each champion on ranked. Cool, ha?</p>
+					<p class="pLeft">Yeah! The main feature! When the game has started to load, you can search the current game using your summoner nickname and find it with all the information you need. You will find a recommended item buy path for the current game and some tips for the match up. Cool, ha?</p>
 				</section>
 				<section class="coolSectionLeft">
-					<h3 class="h3Left">Ok, we are going great! But, what about post-game analysis?</h3>
+					<h3 class="h3Left">Ok, we are going great! But, what about off line summoner analysis?</h3>
 					<div class="imgContainer"><img src="images/prueba2.jpg" class="imgCoolThree" alt=""></div>
-					<p class="pLeft">Are you kidding me kiddo? That's pretty much normal stuff! You got all the information of the summoner: Champions, league, ranking, games, bla, bla, bla, and we can be talking for hours...</p>
+					<p class="pLeft">Are you kidding me kiddo? That's pretty much normal stuff! In the same tool you will able to search all the information of the summoner: Champions, league, ranking, games, bla, bla, bla, and we can be talking for hours...</p>
 				</section>
 				<section class="coolSectionRight">
-					<h3 class="h3Left">Wow, that's amazing! But I want statistics...</h3>
+					<h3 class="h3Left">Wow, that's amazing! But what if I want server statistics...</h3>
 					<div class="imgContainer"><img src="images/prueba2.jpg" class="imgCoolThree" alt=""></div>
-					<p class="pLeft">Bleh! You put this too easy for me! You will have tons of statistics and all kind of stuff, but wait! You will have the recommended items, builds, counters and, as usual, a crapload (can I say that?) of information available for you.</p>
+					<p class="pLeft">Bleh! You put this too easy for me! You will have tons of statistics and all kind of stuff! You will have a crapload (can I say that?) of information available for you.</p>
 				</section>
 				<section class="coolSectionCenter">
 					<h3>Aww man! I think I don’t need anything else! You got everything!!!</h3>
-					<p class="lastParagraph">Wait for it... Don’t get ahead of yourself! You will also need to watch your favourites players in stream! And read guides... and write them if you want! And of course don’t forget the forum where you can talk with the comunity in your favourite language! Told ya! We got everything covered!</p>
+					<p class="lastParagraph">Wait for it... Don’t get ahead of yourself! You will also need to watch your favourites players in stream! And read guides, comment them, upvote them, downvote them or write them if you want! And of course don’t forget the forum where you can talk with the comunity in your favourite language! Told ya! We got everything covered!</p>
 				</section>
 			</div>
 		</main>
@@ -125,6 +115,17 @@
 			<a href="#" class="social"><img src="images/instagram.png" alt="logo instagram"></a>
 			<a href="#" class="social"><img src="images/g+.png" alt="logo g+"></a>
 			<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="una foto de arcade ezreal"></div>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function() {
+    jQuery('.tabs_nav a').on('click', function(e)  {
+        var targetTab = jQuery(this).attr('href');
+        jQuery(targetTab).show().siblings().hide();
+         jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+         e.preventDefault();
+    });
+});
+</script> 
 		</footer>
 	</body>
 </html>

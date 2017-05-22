@@ -47,6 +47,10 @@ header{
 	padding-top: 25px;
 }
 
+.logo{
+	display: inline;
+}
+
 span{
 	color: #8124b7;
 }
@@ -116,24 +120,60 @@ main{
 	text-align: center;
 }
 
-.searchlinks{
+.tabs{
+	width: 100%;
+    font-size:25px;
+    font-family: "Cool Section Font", Verdana, Tahoma;
+    margin: auto;
+}
+
+.tabs_nav{
+    list-style-type: none;
+	background-color: #101010;
+}
+
+.tabs_nav li{
+	display: inline;
+}
+
+.tabs_nav a{
+    display:inline-block;
+    width: 33%;
+    height:50px;
+    background-image: linear-gradient(to bottom, #6C87B2, #3C3F5E);
+    color:#34b9a2;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:8px 8px 0 0;
+    margin: 1px;
+    padding:0 50px;
+    padding-top: 10px;
+}
+
+.tabs_nav a:hover, .active a{
+  background-image: linear-gradient(to bottom, #e9d362, #333333);
+  color: #C8DAEA;
+}
+
+.cube{
 	background-image: url('images/bg-howling-abyss.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
     max-width: 100%;
+    margin: auto;
     text-align: center;
     position: relative;
     height: 720px;
 }
 
-.searchlinks input{
+.onlive input{
 	position: absolute;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
 	padding: 5px;
 	font-weight: bold;
 }
 
-.searchlinks input[type=text]{
+.onlive input[type=text]{
 	border-radius: 10px;
 	top: 250px;
 	font-size: 20pt;
@@ -149,7 +189,7 @@ main{
     color: #222C96;
 }
 
-.searchlinks input[type=submit]{
+.onlive input[type=submit]{
 	top: 325px;
 	width: 15%;
 	border-radius: 5px;
@@ -158,9 +198,10 @@ main{
 	font-size: 12pt;
 	border: 1px solid #0d3d68;
 	color: #c8daea;
+	left: 42%;
 }
 
-.searchlinks input[type=submit]:hover{
+.onlive input[type=submit]:hover{
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	border: 1px solid #0d3d68;
 	color: #c8daea;
@@ -173,111 +214,6 @@ main{
 
 .btnSearchLive{
 	left: 52%;
-}
-
-.links{
-	position: absolute;
-	width: 67%;
-	margin-left: 16.5%;
-	top: 400px;
-}
-
-.liveGames, .summonerData{
-	width: 33%;
-	float:left;
-}
-
-.championSelection{
-	width: 33%;
-	float: right;
-}
-
-.links ul{
-	list-style:none;
-}
-
-.links img{
-
-	border: 7px solid #3286ED;
-	border-radius: 50%;
-	margin-top: 3%;
-}
-
-.links a{
-	text-decoration: none;
-	color: inherit;
-}
-
-.links p, .links h3{
-
-	font-family: "Nav Bar Font", Verdana, Tahoma;
-	padding: 5px;
-	background-color: rgba(255,255,255,0.5);
-	display: block;
-	font-weight: bold;
-	color: #0C081E;
-}
-
-.links h3{
-	font-size: 15pt;
-	border-radius: 10px;
-	margin-top: 15%;
-}
-
-.liveGames h3{
-	margin-left: 33%;
-	width: 150px;
-}
-
-.links img{
-	width: 189px;
-	height: 189px;
-	background-repeat: no-repeat;
-    background-position: center;
-    transition: padding 2s, margin 2s;
-    transition-delay: 0s, 0.5s;
-    transition-timing-function: linear;
-}
-
-.links img:hover{
-	margin-top: -50px;
-	padding: 40%;
-}
-
-.liveGames img{
-	background-image: url(images/prueba3.jpg);
-
-}
-
-.summonerData img{
-	background-image: url(images/prueba3.jpg);
-
-}
-
-.championSelection img{
-	background-image: url(images/prueba3.jpg);
-
-}
-
-.summonerData h3{
-	margin-left: 27%;
-	width: 200px;
-}
-
-.championSelection h3{
-	margin-left: 23%;
-	width: 220px;
-}
-
-.links p{
-	position: absolute;
-	font-size: 10pt;
-	top: -10%;
-	width: 20%;
-	margin-left: 7%;
-	border-radius: 10px;
-	/*opacity: 0;*/
-	display: none;
 }
 
 .smartLolCool{
