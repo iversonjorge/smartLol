@@ -45,9 +45,9 @@
 		<main>
 			<div class="tabs">
 				<ul class="tabs_nav">
-    				<li><a href="#pregame" >Pre Game</a></li>
-    				<li class="active"><a href="#onlive">On Live</a></li>
-    				<li><a href="#offline">Offline</a></li>
+    				<li><a href="" >Pre Game</a></li>
+    				<li class="active"><a href="">On Live</a></li>
+    				<li><a href="">Offline</a></li>
 				</ul>
 			</div>
 			<div class="cube">
@@ -116,16 +116,6 @@
 			<a href="#" class="social"><img src="images/g+.png" alt="logo g+"></a>
 			<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="una foto de arcade ezreal"></div>
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-jQuery(document).ready(function() {
-    jQuery('.tabs_nav a').on('click', function(e)  {
-        var targetTab = jQuery(this).attr('href');
-        jQuery(targetTab).show().siblings().hide();
-         jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-         e.preventDefault();
-    });
-});
-</script> 
 		</footer>
 	</body>
 </html>
