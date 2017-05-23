@@ -32,6 +32,11 @@
     src: url(RobotoSlab-Bold.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: "Main Text Font";
+    src: url(BalooBhaina-Regular.ttf) format("truetype");
+}
+
 header{
 	/*background-color: #000;*/
 	overflow: hidden;
@@ -164,6 +169,24 @@ main{
     text-align: center;
     position: relative;
     height: 720px;
+    transition: all linear 2s;
+}
+
+.onlive h2, .onlive p{
+	color: #DDD5D5;
+	width: 30%;
+	margin: auto;
+}
+
+.onlive h2{
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	font-size: 40px;
+	padding-top: 15vh;
+}
+
+.onlive p{
+	font-family: "Cool Section Font", Verdana, Tahoma;
+	font-size: 20px;
 }
 
 .onlive input{
@@ -175,7 +198,7 @@ main{
 
 .onlive input[type=text]{
 	border-radius: 10px;
-	top: 250px;
+	top: 35vh;
 	font-size: 20pt;
 	border: 1px solid #000;
 	width: 40%;
@@ -190,7 +213,7 @@ main{
 }
 
 .onlive input[type=submit]{
-	top: 325px;
+	top: 45vh;
 	width: 15%;
 	border-radius: 5px;
 	cursor: pointer;
@@ -208,13 +231,18 @@ main{
 	transform: scale(1.1);
 }
 
-.btnSearchData{
+.btnSearchLiveGame{
 	left: 32%;
 }
 
-.btnSearchLive{
-	left: 52%;
+.onlive form{
+	display: none;
 }
+
+/*.btnSearchLiveGame:active:after  .cube{
+	-webkit-filter: blur(50px) opacity(0.5);
+	filter: blur(50px) opacity(0.5);
+}*/
 
 .smartLolCool{
 	clear: both;
