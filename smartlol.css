@@ -32,11 +32,6 @@
     src: url(RobotoSlab-Bold.ttf) format("truetype");
 }
 
-@font-face {
-    font-family: "Main Text Font";
-    src: url(BalooBhaina-Regular.ttf) format("truetype");
-}
-
 header{
 	/*background-color: #000;*/
 	overflow: hidden;
@@ -235,9 +230,9 @@ main{
 	left: 32%;
 }
 
-.onlive form{
+/*.onlive form{
 	display: none;
-}
+}*/
 
 /*.btnSearchLiveGame:active:after  .cube{
 	-webkit-filter: blur(50px) opacity(0.5);
