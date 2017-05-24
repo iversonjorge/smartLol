@@ -61,12 +61,10 @@
 			<div class="cube" id="cube">
 				<div class="pregame" id="pregame"></div>
 				<div class="onlive" id="onlive">
-					<form action="" method="" target="">
-						<h2>On Live Tools</h2>
-						<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
-						<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-						<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
-					</form>
+					<h2>On Live Tools</h2>
+					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
+					<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
+					<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
 				</div>
 				<div class="offline" id="offline"></div>
 			</div>
@@ -125,7 +123,7 @@
 			<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="una foto de arcade ezreal"></div>
 		</footer>
 		<script>
-			 
+			 /* This is the functionality of the button that searches the data on live*/
 			 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
 				if(document.getElementById("txtSearchBar").value != ""){
 					document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
@@ -133,8 +131,16 @@
 				} else {
 					alert("You must fill the Summoner Name text field")
 				}
-					
 			 })
+			document.getElementById("txtSearchBar").addEventListener("keypress", function (e) {
+    			var key = e.which || e.keyCode;
+    			if (key === 13 && document.getElementById("txtSearchBar").value != ""){
+    				document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
+					document.getElementById("cube").style.webkitFilter = "blur(8px) opacity(0.9)";
+    			}
+			})
+
+			/* Here I change the color between the tabs of the cube */
 			document.getElementById("preGame").addEventListener("click", function(){
 				document.getElementsByClassName("active")[0].classList.remove("active");
 				document.getElementById("preGame").classList.add("active");
