@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>smartLol</title>
+		<title>SmartLol</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="smartlol.css">
 		<link href="images/favico.png" rel="shortcut icon">
@@ -127,11 +127,11 @@
 		<script>
 			 
 			 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
-				if(document.getElementById("txtSearchBar").value <> ""){
+				if(document.getElementById("txtSearchBar").value != ""){
 					document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
 					document.getElementById("cube").style.webkitFilter = "blur(8px) opacity(0.9)";
 				} else {
-					alert("You must fill the Summoner Name field")
+					alert("You must fill the Summoner Name text field")
 				}
 					
 			 })

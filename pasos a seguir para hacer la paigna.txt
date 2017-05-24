@@ -1,4 +1,4 @@
-- Agregar evento on click y on enter para iniciar animacion de busqueda.
+- Agregar evento on enter para iniciar animacion de busqueda.
 
 		<meta name="description" content="">
 		<meta name="og:title" content="">
@@ -7,6 +7,7 @@
 
 
 0 - actualizar los meta tags
+2 - cambiar el loading y poner un zhonya's
 1 - poner los open graph de facebook
 2 - crear el sitemap.xml y el robots.txt
 3 - hacer el login modal
