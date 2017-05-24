@@ -1,10 +1,5 @@
-- como hacer para hacer funcionar el blur
-- Chequear el tema del Summoner Name que debe ser facil.
-- Preguntar el tema del script para cambiar el focus de los tabs del main.
 - Agregar evento on click y on enter para iniciar animacion de busqueda.
 
-		<meta name="keywords" content="league of legends, lol, league, analysis, videogames, smartlol, esports, league analysis">
-		<meta name="author" content="Jorch">
 		<meta name="description" content="">
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
@@ -21,9 +16,10 @@
 8 - ponerle google analytics
 9 - ponerle google adsense
 10 - comprimir css con minify and compress css
-
+11 - replantear los links de la pagina
 
 
 Cosas que voy descubriendo dsp de romperme la cabeza haciendo la página:
 
 1 - Cuando quiero flotar un elemento de linea, pasarlo a bloque (display: block) o voy a tener muchos problemas.
+2 - poner todo en %... SIEMPRE! Y las fuentes en em.
