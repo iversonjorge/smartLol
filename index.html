@@ -5,19 +5,23 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="smartlol.css">
 		<link href="images/favico.png" rel="shortcut icon">
+		<meta name="keywords" content="league of legends, lol, league, tools, analysis, videogames, smartlol, esports, ranking">
+		<meta name="author" content="Jorch">
 	</head>
 	<body>
 		<header>
 			<div class="mageIcon">
-				
-				<a href="index.html" class="logo">
+				<a href="index.html">
 					<img src="images/mageicon.jpg" alt="A book with a small blue fire over it">
 				</a>
 			</div>
-			<h1>
-				<span>S</span>mart <span>L</span>ol
-			</h1>
-			<nav>
+			<a href="index.html" class="logo">
+				<h1>
+					<span>S</span>mart <span>L</span>ol
+				</h1>
+			</a>
+			<input type="button" value="Menu" class="btnMenu">
+			<nav class="loginNav">
 				<ul>
 					<li>
 						<a href="#">Statistics</a>
@@ -32,38 +36,39 @@
 						<a href="#">Streamers</a>
 					</li>
 					<li>
-						<a href="#" class="pepe">Forum</a>
+						<a href="#">Forum</a>
 					</li>
-					<li class="loginNav">
-						<input type="button" value="Log in" class="btnlogin">
-						<div class="loginmodal">To do...
-						</div>
+					<li>
+						<a href="#">Login</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 		<main>
 			<div class="tabs">
-				<ul class="tabs_nav">
-    				<li><a href="" >Pre Game</a></li>
-    				<li class="active"><a href="">On Live</a></li>
-    				<li><a href="">Offline</a></li>
+				<ul class="tabs_nav" id="tabs_nav">
+    				<li id="preGame">
+						<a>Pre Game</a>
+					</li>
+    				<li id="onLive" class="active">
+						<a>On Live</a>
+					</li>
+    				<li id="offline">
+						<a>Offline</a>
+					</li>
 				</ul>
 			</div>
-			<div class="cube">
-				<div class="pregame" id="pregame">
-				</div>
+			<div class="cube" id="cube">
+				<div class="pregame" id="pregame"></div>
 				<div class="onlive" id="onlive">
 					<form action="" method="" target="">
 						<h2>On Live Tools</h2>
 						<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
-						<input type="text" name="txtSearchBar" value="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-						<input type="submit" value="Search Summoner Live Game" class="btnSearchLiveGame">
+						<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
+						<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
 					</form>
-					
 				</div>
-				<div class="offline" id="offline">
-				</div>
+				<div class="offline" id="offline"></div>
 			</div>
 			<div class="smartLolCool">
 				<h2>Why <strong><span>S</span>mart <span>L</span>ol</strong> is so COOL?</h2>
@@ -118,7 +123,30 @@
 			<a href="#" class="social"><img src="images/instagram.png" alt="logo instagram"></a>
 			<a href="#" class="social"><img src="images/g+.png" alt="logo g+"></a>
 			<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="una foto de arcade ezreal"></div>
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		</footer>
+		<script>
+			 
+			 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
+				if(document.getElementById("txtSearchBar").value <> ""){
+					document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
+					document.getElementById("cube").style.webkitFilter = "blur(8px) opacity(0.9)";
+				} else {
+					alert("You must fill the Summoner Name field")
+				}
+					
+			 })
+			document.getElementById("preGame").addEventListener("click", function(){
+				document.getElementsByClassName("active")[0].classList.remove("active");
+				document.getElementById("preGame").classList.add("active");
+			 })
+			 document.getElementById("onLive").addEventListener("click", function(){
+				document.getElementsByClassName("active")[0].classList.remove("active");
+				document.getElementById("onLive").classList.add("active");
+			 })
+			 document.getElementById("offline").addEventListener("click", function(){
+				document.getElementsByClassName("active")[0].classList.remove("active");
+				document.getElementById("offline").classList.add("active");
+			 })
+		</script>
 	</body>
 </html>

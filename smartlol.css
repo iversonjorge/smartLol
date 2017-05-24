@@ -41,14 +41,17 @@ header{
 
 .mageIcon{
 	display: block;
-	width: 7%;
+	width: 30%;
 	float: left;
-	padding-left: 35px;
-	padding-top: 25px;
+	padding-left: 2%;
+	padding-top: 1.5%;
 }
 
 .logo{
-	display: inline;
+	display: block;
+	width: 30%;
+	float: left;
+	text-align: center;
 }
 
 span{
@@ -57,44 +60,14 @@ span{
 
 h1{
 	color: #2782FB;
-	width: 20%;
 	float: left;
     font-family: "Logo Font", Verdana, Tahoma;
-    font-size: 40pt;
+    font-size: 3.3em;
+	padding-left: 30%;
     font-weight: normal;
 }
 
-header li{
-	width: 10%;
-	float: left;
-	list-style-type: none;
-}
-
-header a{
-	text-decoration: none;
-	display: block;
-	color: #2782FB;
-	font-size: 16pt;
-	font-family: "Nav Bar Font", Verdana, Tahoma;
-	text-align: center;
-	margin-top: 30px;
-	padding: 10px;
-	border-radius: 20px;
-}
-
-header a:hover{ 
-	background: linear-gradient(to right, #56B4D3, #348F50);
-	color: #ffe555;
-	transform: scale(1.1);
-}
-
-.loginNav{
-		width: 23%;
-		padding-top: 30px;
-		padding-right: 90px;
-}
-
-.btnlogin{
+.btnMenu{
 	display: block;
 	float: right;
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
@@ -104,11 +77,16 @@ header a:hover{
     border: none;
     line-height: normal;
     overflow: visible;
-    padding: 0;
-    padding: 10px 25px;
+	padding: 0.5% 1%;
+	margin-top: 1.5%;
+    margin-right: 4.5%;
 }
 
-.btnlogin:hover{
+.loginNav{
+		display: none;
+}
+
+.btnMenu:hover{
 	transform: scale(1.1);
 	background: linear-gradient(to right, #56ccf2, #2f80ed);
 	cursor: pointer;
@@ -129,7 +107,7 @@ main{
 
 .tabs_nav{
     list-style-type: none;
-	background-color: #101010;
+	background-color: #000;
 }
 
 .tabs_nav li{
@@ -138,7 +116,7 @@ main{
 
 .tabs_nav a{
     display:inline-block;
-    width: 33%;
+    width: 30%;
     height:50px;
     background-image: linear-gradient(to bottom, #6C87B2, #3C3F5E);
     color:#34b9a2;
@@ -153,6 +131,7 @@ main{
 .tabs_nav a:hover, .active a{
   background-image: linear-gradient(to bottom, #e9d362, #333333);
   color: #C8DAEA;
+  cursor: pointer;
 }
 
 .cube{
@@ -193,7 +172,7 @@ main{
 
 .onlive input[type=text]{
 	border-radius: 10px;
-	top: 35vh;
+	top: 40vh;
 	font-size: 20pt;
 	border: 1px solid #000;
 	width: 40%;
@@ -207,19 +186,19 @@ main{
     color: #222C96;
 }
 
-.onlive input[type=submit]{
-	top: 45vh;
-	width: 15%;
+.onlive input[type=button]{
+	top: 48vh;
 	border-radius: 5px;
+	padding: 1vh;
 	cursor: pointer;
 	background: linear-gradient(to bottom, #67b26f, #4ca2cd);
-	font-size: 12pt;
+	font-size: 1em;
 	border: 1px solid #0d3d68;
 	color: #c8daea;
 	left: 42%;
 }
 
-.onlive input[type=submit]:hover{
+.onlive input[type=button]:hover{
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	border: 1px solid #0d3d68;
 	color: #c8daea;
@@ -232,11 +211,6 @@ main{
 
 /*.onlive form{
 	display: none;
-}*/
-
-/*.btnSearchLiveGame:active:after  .cube{
-	-webkit-filter: blur(50px) opacity(0.5);
-	filter: blur(50px) opacity(0.5);
 }*/
 
 .smartLolCool{
