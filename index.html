@@ -46,27 +46,30 @@
 		</header>
 		<main>
 			<div class="tabs">
+				<div id="loader"></div>
 				<ul class="tabs_nav" id="tabs_nav">
-    				<li id="preGame">
+				<div id="modal"></div>
+    				<li id="tabPreGame">
 						<a>Pre Game</a>
 					</li>
-    				<li id="onLive" class="active">
+    				<li id="tabOnLive" class="active">
 						<a>On Live</a>
 					</li>
-    				<li id="offline">
+    				<li id="tabOffline">
 						<a>Offline</a>
 					</li>
 				</ul>
 			</div>
 			<div class="cube" id="cube">
-				<div class="pregame" id="pregame"></div>
-				<div class="onlive" id="onlive">
-					<h2>On Live Tools</h2>
-					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
-					<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-					<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
-				</div>
-				<div class="offline" id="offline"></div>
+					<div class="cubeDataLive, cubeInactive" id="cubeDataLive"></div>
+					<div class="cubePreGame" id="cubePreGame"></div>
+					<div class="cubeOnLive" id="cubeOnLive">
+						<h2>On Live Tools</h2>
+						<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
+						<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
+						<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
+					</div>
+					<div class="cubeOffline" id="cubeOffline"></div>
 			</div>
 			<div class="smartLolCool">
 				<h2>Why <strong><span>S</span>mart <span>L</span>ol</strong> is so COOL?</h2>
@@ -126,8 +129,10 @@
 			 /* This is the functionality of the button that searches the data on live*/
 			 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
 				if(document.getElementById("txtSearchBar").value != ""){
-					document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
-					document.getElementById("cube").style.webkitFilter = "blur(8px) opacity(0.9)";
+					document.getElementById("cubeOnLive").style.filter = "blur(10px) opacity(0.9)";
+					document.getElementById("modal").classList.add("modal");
+					document.getElementById("loader").classList.add("loader");
+					setTimeout ('loadLiveData()', 1000); /*calls the loadLiveData after waiting a hardcoded amount of seconds */
 				} else {
 					alert("You must fill the Summoner Name text field")
 				}
@@ -135,23 +140,37 @@
 			document.getElementById("txtSearchBar").addEventListener("keypress", function (e) {
     			var key = e.which || e.keyCode;
     			if (key === 13 && document.getElementById("txtSearchBar").value != ""){
-    				document.getElementById("cube").style.filter = "blur(50px) opacity(0.5)";
-					document.getElementById("cube").style.webkitFilter = "blur(8px) opacity(0.9)";
+    				document.getElementById("txtSearchBar").blur();
+    				document.getElementById("cubeOnLive").style.filter = "blur(10px) opacity(0.9)";
+					document.getElementById("modal").classList.add("modal");
+					document.getElementById("loader").classList.add("loader");
+					setTimeout ('loadLiveData()', 1000); /*calls the loadLiveData after waiting a hardcoded amount of seconds*/
     			}
 			})
 
+			/*This is the function that is called after 5 seconds of delay on loading. It simulates that the data loading has been finished*/
+			function loadLiveData(){
+				document.getElementById("cubeOnLive").style.filter = "blur(40px) opacity(0.1)";
+				document.getElementById("cubeOnLive").style.display ="none";
+				document.getElementById("cubeDataLive").style.display ="block";
+				setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
+				setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
+
+
+			}
+
 			/* Here I change the color between the tabs of the cube */
-			document.getElementById("preGame").addEventListener("click", function(){
+			document.getElementById("tabPreGame").addEventListener("click", function(){
 				document.getElementsByClassName("active")[0].classList.remove("active");
-				document.getElementById("preGame").classList.add("active");
+				document.getElementById("tabPreGame").classList.add("active");
 			 })
-			 document.getElementById("onLive").addEventListener("click", function(){
+			 document.getElementById("tabOnLive").addEventListener("click", function(){
 				document.getElementsByClassName("active")[0].classList.remove("active");
-				document.getElementById("onLive").classList.add("active");
+				document.getElementById("tabOnLive").classList.add("active");
 			 })
-			 document.getElementById("offline").addEventListener("click", function(){
+			 document.getElementById("tabOffline").addEventListener("click", function(){
 				document.getElementsByClassName("active")[0].classList.remove("active");
-				document.getElementById("offline").classList.add("active");
+				document.getElementById("tabOffline").classList.add("active");
 			 })
 		</script>
 	</body>
