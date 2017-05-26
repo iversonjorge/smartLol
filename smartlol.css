@@ -5,6 +5,11 @@
     100% { transform: rotate(360deg); }
 }
 
+@keyframes unblur {
+    0% { filter: blur(10px) opacity(0.5); }
+    100% { filter: blur(0) opacity(1); }
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -147,13 +152,18 @@ main{
     position: relative;
 }
 
-.cubeOnLive, .cubeDataLive{
+.cubeOnLive{
 	width: 100%;
 	height: 100%;
 	background-image: url('images/bg-howling-abyss.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
-    transition: all linear 1s;
+    transition: filter linear 1s;
+}
+
+.cubeActivate{
+	display: block !important;
+	animation: unblur 1s linear;
 }
 
 .cubeInactive{
@@ -242,10 +252,6 @@ main{
     height: 80px;
     animation: spin 2s linear infinite;
     z-index: 2;
-}
-
-.finishloading{
-	filter: opacity (0) blur(40px);
 }
 
 .smartLolCool{
