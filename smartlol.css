@@ -50,7 +50,7 @@ header{
 
 .mageIcon{
 	display: block;
-	width: 30%;
+	width: 25%;
 	float: left;
 	padding-left: 5%;
 	padding-top: 1.5%;
@@ -58,10 +58,8 @@ header{
 
 .logo{
 	display: block;
-	width: 30%;
+	width: 50%;
 	float: left;
-	padding-left: 3%;
-	text-align: center;
 }
 
 span{
@@ -135,7 +133,8 @@ main{
     border-radius:8px 8px 0 0;
     margin: 1px;
     padding:0 50px;
-    padding-top: 10px;
+    padding-top: 0.25%;
+	
 }
 
 .tabs_nav a:hover, .active a{
@@ -148,7 +147,7 @@ main{
 	max-width: 100%;
     margin: auto;
     text-align: center;
-    height: 80vh;
+    height: 90vh;
     position: relative;
 }
 
@@ -178,13 +177,17 @@ main{
 
 .cubeOnLive h2{
 	font-family: "Cool Section Font Bold", Verdana, Tahoma;
-	font-size: 2.5em;
+	font-size: 2.5vw;
 	padding-top: 15vh;
 }
 
 .cubeOnLive p{
 	font-family: "Cool Section Font", Verdana, Tahoma;
-	font-size: 1.25em;
+	font-size: 1.3vw;
+	display: block;
+	width: 100%;
+	width: 50%;
+	margin-top: 0.5%;
 }
 
 .cubeOnLive input{
@@ -208,6 +211,13 @@ main{
     background-size: contain;
     padding-left: 4%;
     color: #222C96;
+}
+
+.a{
+	position: relative;
+	height: 100%;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .cubeOnLive input[type=button]{
@@ -234,14 +244,14 @@ main{
 }
 
 .summonerLiveName{
-	padding-top: 1vh !important;
+	padding-top: 0.5vh !important;
 }
 
 .modal{
 	position: absolute;
 	background-color: rgba(0,0,0,0.4);
 	width: 100%;
-	height: 80vh;
+	height: 95vh;
 	z-index: 1;
 }
 
@@ -266,12 +276,14 @@ main{
 }
 
 .summonerLiveDataYellow, .summonerLiveDataBlue, .summonerLiveDataRed{
-	width: 9.2%;
-	height: 32.8vh;
-	background-color: black;
-	border: 3px ;
+	height: 37vh;
+	background-color: #000;
+	border: 3px none;
 	position: absolute;
 	color: #DDD5D5;
+	width: 17%;
+	max-width: 160px;
+	max-height: 280px;
 }
 
 .summonerLiveDataYellow{
@@ -287,53 +299,53 @@ main{
 }
 
 .summonerLiveData1{
-	left: 25%;
-	top: 13%;
+	left: 10%;
+	top: 2%;
 }
 
 .summonerLiveData2{
-	left: 35%;
-	top: 13%;
+	left: 27%;
+	top: 2%;
 }
 
 .summonerLiveData3{
-	left: 45%;
-	top: 13%;
+	left: 44%;
+	top: 2%;
 }
 
 .summonerLiveData4{
-	left: 55%;
-	top: 13%;
+	left: 61%;
+	top: 2%;
 }
 
 .summonerLiveData5{
-	left: 65%;
-	top: 13%;
+	left: 78%;
+	top: 2%;
 }
 
 .summonerLiveData6{
-	left: 25%;
-	top: 56%;
+	left: 10%;
+	top: 46%;
 }
 
 .summonerLiveData7{
-	left: 35%;
-	top: 56%;
+	left: 27%;
+	top: 46%;
 }
 
 .summonerLiveData8{
-	left: 45%;
-	top: 56%;
+	left: 44%;
+	top: 46%;
 }
 
 .summonerLiveData9{
-	left: 55%;
-	top: 56%;
+	left: 61%;
+	top: 46%;
 }
 
 .summonerLiveData10{
-	left: 65%;
-	top: 56%;
+	left: 78%;
+	top: 46%;
 }
 
 .summonerLiveDataYellow img:first-child, .summonerLiveDataBlue img:first-child, .summonerLiveDataRed img:first-child{
