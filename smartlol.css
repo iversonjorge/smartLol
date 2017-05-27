@@ -262,6 +262,7 @@ main{
 	width: 60%;
 	margin: auto;
 	border-bottom: 1px solid #C8DAEA;
+	position: relative;
 }
 
 .summonerLiveDataYellow, .summonerLiveDataBlue, .summonerLiveDataRed{
@@ -269,11 +270,11 @@ main{
 	height: 32.8vh;
 	background-color: black;
 	border: 3px ;
-	position: relative;
+	position: absolute;
+	color: #DDD5D5;
 }
 
 .summonerLiveDataYellow{
-	color: #DDD5D5;
 	box-shadow: 0 0 5px 3px rgba(203,203,0,0.75);
 }
 
@@ -286,11 +287,54 @@ main{
 }
 
 .summonerLiveData1{
-	left: 20%;
-	top: 3%;
+	left: 25%;
+	top: 13%;
 }
 
+.summonerLiveData2{
+	left: 35%;
+	top: 13%;
+}
 
+.summonerLiveData3{
+	left: 45%;
+	top: 13%;
+}
+
+.summonerLiveData4{
+	left: 55%;
+	top: 13%;
+}
+
+.summonerLiveData5{
+	left: 65%;
+	top: 13%;
+}
+
+.summonerLiveData6{
+	left: 25%;
+	top: 56%;
+}
+
+.summonerLiveData7{
+	left: 35%;
+	top: 56%;
+}
+
+.summonerLiveData8{
+	left: 45%;
+	top: 56%;
+}
+
+.summonerLiveData9{
+	left: 55%;
+	top: 56%;
+}
+
+.summonerLiveData10{
+	left: 65%;
+	top: 56%;
+}
 
 .summonerLiveDataYellow img:first-child, .summonerLiveDataBlue img:first-child, .summonerLiveDataRed img:first-child{
 	max-width:100%;
@@ -350,9 +394,24 @@ main{
 	width: 24px;
 	height: 24px;
 	background-image: url("images/masteries.png");
-	background-position: -192px -48px;
 	background-size: auto;
 	z-index: 1;
+}
+
+.thunderlord{
+	background-position: -192px -48px;
+}
+
+.fervor{
+	background-position: -72px -24px;
+}
+
+.deathfire{
+	background-position: -96px -24px;
+}
+
+.colossus{
+	background-position: -72px -96px;
 }
 
 .gamesPlayed , .ranking{
