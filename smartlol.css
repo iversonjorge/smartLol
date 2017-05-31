@@ -51,9 +51,13 @@ header{
 .mageIcon{
 	display: block;
 	width: 25%;
+	height: 6vh;
+	margin: 1% 0% 0% 5%;
 	float: left;
-	padding-left: 5%;
-	padding-top: 1.5%;
+	background-image: url(images/mageicon.jpg);
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .logo{
@@ -70,8 +74,8 @@ h1{
 	color: #2782FB;
 	float: left;
     font-family: "Logo Font", Verdana, Tahoma;
-    font-size: 3.3em;
-	padding-left: 30%;
+    font-size: 3vw;
+	padding-left: 25%;
     font-weight: normal;
 }
 
@@ -80,7 +84,7 @@ h1{
 	float: right;
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	font-family: "Log in Font", Verdana, Tahoma;
-	font-size: 18pt;
+	font-size: 1.25vw;
     color: #c8daea;
     border: none;
     line-height: normal;
@@ -193,7 +197,6 @@ main{
 .cubeOnLive input{
 	position: absolute;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
-	padding: 5px;
 	font-weight: bold;
 }
 
@@ -205,11 +208,11 @@ main{
 	width: 40%;
 	left: 30%;
 	opacity: 0.8;
+	padding: 0.5% 0.5% 0.5% 4%;
 	background-image: url(images/ic_search_black_24px.svg);
 	background-position: left;
 	background-repeat: no-repeat;
     background-size: contain;
-    padding-left: 4%;
     color: #222C96;
 }
 
@@ -223,10 +226,10 @@ main{
 .cubeOnLive input[type=button]{
 	top: 48vh;
 	border-radius: 5px;
-	padding: 1vh;
+	padding: 0.8vw;
 	cursor: pointer;
 	background: linear-gradient(to bottom, #67b26f, #4ca2cd);
-	font-size: 1em;
+	font-size: 1vw;
 	border: 1px solid #0d3d68;
 	color: #c8daea;
 	left: 42%;
@@ -258,7 +261,7 @@ main{
 .loader{
 	position: absolute;
 	left: 47%;
-	top: 40%;
+	top: 50%;
     border: 16px solid #f3f3f3; 
     border-top: 16px solid #3498db;
     border-radius: 50%;
