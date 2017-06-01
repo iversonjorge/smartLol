@@ -20,29 +20,22 @@
 					<span>S</span>mart <span>L</span>ol
 				</h1>
 			</a>
-			<input type="button" value="Menu" class="btnMenu">
-			<nav class="loginNav">
-				<ul>
-					<li>
-						<a href="#">Statistics</a>
-					</li>
-					<li>
-						<a href="#">Smart Ranking</a>
-					</li>
-					<li>
-						<a href="#">Guides</a>
-					</li>
-					<li>
-						<a href="#">Streamers</a>
-					</li>
-					<li>
-						<a href="#">Forum</a>
-					</li>
-					<li>
-						<a href="#">Login</a>
-					</li>
-				</ul>
-			</nav>
+			<input type="button" value="Login / Register" class="btnMenu" onclick="document.getElementById('loginModal').style.display='block'">
+			<div class="loginModal" id="loginModal">
+				<form class="loginContent" action="#">
+					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<h3>Log In</h3>
+					<input type="text" placeholder="Username or email">
+					<input type="password" placeholder="Password">
+					<input type="submit" value="Log In" class="btnLogIn">
+					<a href="#" class="lnkRegister">Register</a>
+					<a href="#" class="lnkForgot">Forgot your password?</a>
+					<Label>Or Log in with social media</label>
+					<input type="button" class="btnFacebooklogin" value="Facebook">
+					<input type="button" class="btnTwitterlogin" value="Twitter">
+					<input type="button" class="btnGooglelogin" value="Google">
+				</form>
+			</div>
 		</header>
 		<main>
 			<div class="tabs">

@@ -10,6 +10,11 @@
     100% { filter: blur(0) opacity(1); }
 }
 
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -92,16 +97,143 @@ h1{
 	padding: 0.5% 1%;
 	margin-top: 1.5%;
     margin-right: 4.5%;
-}
+    top: 50%;
 
-.loginNav{
-		display: none;
 }
 
 .btnMenu:hover{
 	transform: scale(1.1);
 	background: linear-gradient(to right, #56ccf2, #2f80ed);
 	cursor: pointer;
+}
+
+.loginModal{
+ 	display: none;
+    position: fixed;
+    z-index: 3233;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.loginContent{
+	background-color: #24323D;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+    animation: animatezoom 0.6s;
+	font-family: "Open Sans", Verdana, Tahoma;
+	color: #FFF;
+	text-align: center;
+	overflow: hidden;
+}
+
+.close{
+	display: block;
+	float: right;
+    margin: 0% 3% 0% 0%;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    color: #19AD85;
+}
+
+.close:hover{
+	color: #d46060;
+}
+
+.loginContent h3{
+	font-size: 1.8vw;
+	text-align: center;
+	margin: 3% 0%;
+	color: #19AD85;
+}
+
+.loginContent input{
+    width: 50%;
+    margin: 2% 25% 2% 25%;
+    font-size: 1vw;
+    border: none;
+    padding: 2%;
+	border-radius: 4px;
+	color: #000;
+	font-weight: bold;
+}
+
+.loginContent [type=submit], .btnFacebooklogin, .btnTwitterlogin, .btnGooglelogin{
+	color: #FFF !important;
+	cursor: pointer;
+}
+
+.btnLogIn{
+	background-color: #18A57F;
+}
+
+.loginContent a{
+	text-decoration: none;
+	color: #1ab188;
+	display: inline-block;
+	font-size: 0.85vw;
+}
+
+.loginContent a:hover{
+	text-decoration: underline;
+	color: #1D7556;
+}
+
+.lnkForgot{
+	margin-left: 5%;
+}
+
+.loginContent label{
+	display: block;
+	font-size: 0.85vw;
+	margin: 7% 0%;
+	position: relative;
+}
+
+.loginContent label:before, .loginContent label:after{
+		content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 20%;
+        border-top: 1px solid #FFF;
+}
+
+.loginContent label:before{
+	left: 75%;
+}
+
+.loginContent label:after{
+	right: 75%;
+}
+
+.btnFacebooklogin, .btnTwitterlogin, .btnGooglelogin{
+	display: block;
+	width: 25% !important;
+	margin: 0% 0% 5% 5% !important;
+}
+
+.btnFacebooklogin{
+	background-color: #4464B2;
+	float: left;
+}
+
+.btnTwitterlogin{
+	background-color: #28A9E0;
+	float: left;
+	margin-left: 7.5% !important;
+}
+
+.btnGooglelogin{
+	background-color: #DA4735;
+	float: right;
+	margin-right: 5% !important;
 }
 
 main{
@@ -153,6 +285,7 @@ main{
     text-align: center;
     height: 90vh;
     position: relative;
+    perspective: 
 }
 
 .cubeOnLive{
