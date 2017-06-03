@@ -732,52 +732,46 @@ footer{
 	max-width: 100%;
 	background-color: #000;
 	overflow: hidden;
-	padding: 1%;
+
+	display:flex;
 }
 
-.imgFooterAhri, footer li{
-	float: left;
+.footer{
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
 }
 
-.imgFooterEzreal{
-	float: right;
+.footerLinks{
+	flex-grow: 3;
 }
 
-.imgFooterAhri, .imgFooterEzreal{
-	width: 20%;
-}
-
-.imgFooterAhri img, .imgFooterEzreal img{
-	width: 20%;
-}
-
-.imgFooterAhri{
-	text-align: right;
-	padding-right: 2%;
-}
-
-footer li{
-	width: 8%;
+.footer li{
+	flex-grow: 1;
 	list-style-type: none;
 }
 
-footer a:first-child{
+footer a{
 	text-decoration: none;
 	display: block;
 	color: #2782FB;
-	font-size: 16pt;
+	font-size: 2vh;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
 	text-align: center;
 }
 
-.social{
-	padding-left: 2%;
+footer a:hover{
+	color: #78C674;
 }
 
-footer a:first-child:hover{
-	color: #78C674;
+.footer img{
+	width: 4vw;
 }
 
 .social:hover{
 	opacity: 0.5;
+}
+
+.ezreal{
+	text-align: right;
 }
