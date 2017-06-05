@@ -254,7 +254,7 @@ main{
 }
 
 .tabs_nav{
-    list-style-type: none;
+	list-style-type: none;
 	background-color: #000;
 }
 
@@ -289,7 +289,7 @@ main{
     text-align: center;
     height: 90vh;
     position: relative;
-    perspective: 
+    /*perspective: */
 }
 
 .cubeOnLive{
