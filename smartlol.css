@@ -47,6 +47,10 @@
     src: url(RobotoSlab-Bold.ttf) format("truetype");
 }
 
+body{
+	overflow-x: hidden;
+}
+
 header{
 	overflow: hidden;
 	max-width: 100%;
