@@ -759,7 +759,7 @@ footer a{
 	text-decoration: none;
 	display: block;
 	color: #2782FB;
-	font-size: 2vh;
+	font-size: 1.25vw;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
 	text-align: center;
 }
@@ -769,7 +769,8 @@ footer a:hover{
 }
 
 .footer img{
-	width: 4vw;
+	max-width: 50px;
+	width: 3vw;
 }
 
 .social:hover{
