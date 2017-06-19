@@ -246,42 +246,38 @@ main{
 	text-align: center;
 }
 
+/* ---------------- Nav Bar Tabs -------------------- */
+
 .tabs{
-	width: 100%;
-    font-size:1.5em;
-    font-family: "Cool Section Font", Verdana, Tahoma;
+    font-size:1.3em;
+    font-family: "Cool Section Font Bold", Verdana, Tahoma;
     margin: auto;
+    position: absolute;
+    z-index: 1;
+    color: #c9aa71;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 }
+
 
 .tabs_nav{
 	list-style-type: none;
-	background-color: #000;
-}
-
-.tabs_nav li{
-	display: inline;
+	display: flex;
 }
 
 .tabs_nav a{
-    display:inline-block;
-    width: 30%;
-    height:5vh;
-    background-image: linear-gradient(to bottom, #6C87B2, #3C3F5E);
-    color:#34b9a2;
+    display:block;
     text-decoration:none;
-    font-weight:700;
-    border-radius:8px 8px 0 0;
-    margin: 1px;
-    padding:0 50px;
-    padding-top: 0.25%;
-	
+    padding:5% 20% 0% 20%;
 }
 
+
+
 .tabs_nav a:hover, .active a{
-  background-image: linear-gradient(to bottom, #e9d362, #333333);
-  color: #C8DAEA;
-  cursor: pointer;
+	cursor: pointer;
+	color: #e1ddd7;
 }
+/*--------------------- /Nav Bar Tabs -------------------------- */
+
 
 .cube{
 	max-width: 100%;
@@ -391,8 +387,8 @@ main{
 	position: absolute;
 	background-color: rgba(0,0,0,0.4);
 	width: 100%;
-	height: 95vh;
-	z-index: 1;
+	height: 90vh;
+	z-index: 2;
 }
 
 .loader{
@@ -405,7 +401,7 @@ main{
     width: 80px;
     height: 80px;
     animation: spin 2s linear infinite;
-    z-index: 2;
+    z-index: 3;
 }
 
 .line{
@@ -667,69 +663,6 @@ main{
 
 .mains{
 	top: 94%;
-}
-
-.smartLolCool{
-	clear: both;
-	font-family: "Cool Section Font", Verdana, Tahoma;
-	font-weight: bold;
-	color: #857880;
-	padding: 20px;
-}
-
-.smartLolCool h2{
-	font-size: 45pt;
-}
-
-.smartLolCool h2 strong{
-	font-family: "Logo Font", Verdana, Tahoma;
-    font-size: 40pt;
-    font-weight: normal;
-    color: #2782FB;
-}
-
-.coolSectionCenter{
-	text-align: left;
-}
-
-.smartLolCool h3{
-	font-size: 23pt;
-	font-family: "Cool Section Font";
-	margin-top: 20px;
-	color: #483748;
-}
-
-.smartLolCool p{
-	display: block;
-	font-size: 17pt;
-	margin-top: 20px;
-	padding-bottom: 35px;
-}
-
-.coolSectionLeft h3, .coolSectionLeft p, .coolSectionRight .imgContainer{
-	float: left;
-}
-
-.coolSectionLeft .imgContainer, .coolSectionRight h3, .coolSectionRight p{
-	float: right;
-}
-
-.coolSectionLeft h3, .coolSectionLeft p, .coolSectionRight h3, .coolSectionRight p{
-	display: block;
-	width: 50%;
-	margin-top: 40px;
-}
-
-.coolSectionLeft .imgContainer, .coolSectionRight .imgContainer{
-	width: 50%;
-}
-
-.imgContainer{
-	margin-top: 2%; 
-}
-.coolSectionLeft, .coolSectionRight{
-	height: 35vh;
-	clear: both;
 }
 
 footer{
