@@ -264,6 +264,10 @@ main{
 	display: flex;
 }
 
+.tabs_nav li{
+	flex-basis: 100%;
+}
+
 .tabs_nav a{
     display:block;
     text-decoration:none;
@@ -288,6 +292,66 @@ main{
     /*perspective: */
 }
 
+.cubeHome{
+	width: 100%;
+	height: 100%;
+	background-image: url('images/bg/splash-v7.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+.btnGetStarted{
+	background: url('images/sprites.png') 0 -343px;
+	height: 45px;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+	border: 0;
+	color: #b2d9db;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	background-size: cover;
+}
+
+.btnGetStarted:hover{
+	background: url('images/sprites.png') 0 -278px;
+	background-size: cover;
+}
+
+.btnGetStarted:active{
+	background: url('images/sprites.png') 0 -213px;
+	background-size: cover;
+	color: rgb(0, 90, 130);
+}
+
+.mainBottom{
+	position: absolute;
+	display: flex;
+	align-items: stretch;
+	top:65%;
+	left: 0%;
+}
+
+.mainBottom div{
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+	flex-basis: 100%;
+	color: #ece2d1;
+	padding-left: 3%;
+}
+
+.mainBottom p{
+	font-family: "Cool Section Font", Verdana, Tahoma;
+	color: #d4c9ba;
+	padding-right: 9%; 
+	border-right: 1px solid #d4c9ba;
+}
+
 .cubeOnLive{
 	width: 100%;
 	height: 100%;
@@ -295,6 +359,7 @@ main{
 	background-position: center;
 	background-repeat: no-repeat;
     transition: filter linear 1s;
+    display: none;
 }
 
 .cubeActivate{
