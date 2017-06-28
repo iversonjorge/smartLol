@@ -20,7 +20,7 @@
 					<span>S</span>mart <span>L</span>ol
 				</h1>
 			</a>
-			<input type="button" value="Login / Register" class="btnMenu" onclick="document.getElementById('loginModal').style.display='block'">
+			<input type="button" value="Join the Battle" class="btnMenu" onclick="document.getElementById('loginModal').style.display='block'">
 			<div class="loginModal" id="loginModal">
 				<form class="loginContent" action="#">
 					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -42,22 +42,22 @@
 			<div id="modal"></div>
 			<div class="tabs">
 				<ul class="tabs_nav" id="tabs_nav">
-					<li id="tabHome" class="active">
+					<li id="home" class="active">
 						<a>Home</a>
 					</li>
-    				<li id="tabOnLive">
+    				<li id="onLive">
 						<a>On Live</a>
 					</li>
-					<li id="tabOffline">
+					<li id="offline">
 						<a>Offline</a>
 					</li>
-					<li id="tabChampionSelect">
+					<li id="championSelect">
 						<a>Champion Select</a>
 					</li>
-					<li id="tabStatistics">
+					<li id="statistics">
 						<a>Statistics</a>
 					</li>
-					<li id="tabForum">
+					<li id="forum">
 						<a>Forum</a>
 					</li>
 				</ul>
@@ -401,36 +401,42 @@
 					</div>
 					</div>
 				</div>
-				<div class="cubeHome" id="cubeHome">
+				<div class="cubeHome" id="cubehome" class="cubeActive">
 					<input type="button" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
 					<div class="mainBottom">
 						<div class="mainBottomOnLive">
-							<img src="images/onlive.png" alt="A picture of Braum with his shield" width="35%">
+							<img src="images/live.png" alt="A picture of a Camera indicting that is recording" width="15%">
 							<h3>On live tool</h3>
 							<p>Search your summoner to get all the information you need of your current game</p>
 						</div>
 						<div class="mainBottomOffline">
-							<img src="images/offline.png" alt="A picture of Braum with his shield" width="35%">
+							<img src="images/offline.png" alt="A picture of an offline signal" width="20%">
 							<h3>Offline tool</h3>
 							<p>Search your summoner to find all the information about your account and ranking history</p>
 						</div>
 						<div class="mainBottomChampionSelect">
-							<img src="images/championselect.png" alt="A picture of Braum with his shield" width="40%">
+							<img src="images/championselect.png" alt="A picture of the champpion select feature" width="20%">
 							<h3>Champion Select tool</h3>
 							<p>Use the Champion Select tool to pick the perfect champion for each situation</p>
 						</div>
 						<div class="mainBottomStatistics">
-							<img src="images/statistics.png" alt="A picture of Braum with his shield" width="70%">
+							<img src="images/statistics.png" alt="A chart with statistics" width="20%">
 							<h3>Statistics</h3>
 							<p>Do your own analisys using this giant tool based on the server statistics.</p>
 						</div>
 					</div>
 				</div>
-				<div class="cubeOnLive" id="cubeOnLive">
+				<div class="cubeOnLive" id="cubeonLive">
 					<h2>On Live Tool</h2>
 					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
 					<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
 					<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
+				</div>
+				<div class="cubeOffline" id="cubeoffline">
+				</div>
+				<div class="cubeChampionSelect" id="cubechampionSelect">
+				</div>
+				<div class="cubeStatistics" id="cubestatistics">
 				</div>
 			</div>
 		</main>
@@ -471,46 +477,60 @@
 			</ul>
 		</footer>
 		<script>
-			 /* This is the functionality of the button that searches the data on live*/
-			 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
+
+			//-----------------------HOME FUNCTIONS----------------------------
+			function changeTabs(tab){
+				if (tab != "forum") {
+					document.getElementById("cube"+(document.getElementsByClassName("active")[0].id)).style.display="none"; //quita
+					document.getElementsByClassName("active")[0].classList.remove("active");
+					document.getElementById(tab).classList.add("active");
+					document.getElementById("cube"+tab).style.display="block";
+				} else { alert("The forum is not finished yet!!! We'll let you know when it's done! =)");
+				}
+			}
+
+			//Here I define the click functions of all the tabs
+			document.getElementById("home").addEventListener("click", function(){changeTabs("home")});
+			document.getElementById("onLive").addEventListener("click", function(){changeTabs("onLive")});
+			document.getElementById("offline").addEventListener("click", function(){changeTabs("offline")});
+			document.getElementById("championSelect").addEventListener("click", function(){changeTabs("championSelect")});
+			document.getElementById("statistics").addEventListener("click", function(){changeTabs("statistics")});
+			document.getElementById("forum").addEventListener("click", function(){changeTabs("forum")});
+
+			//-----------------------/HOME FUNCTIONS----------------------------
+			//-----------------------ON LIVE FUNCTIONS----------------------------
+			// This is the functionality of the button that searches the data on live clicking the button
+			document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
 				if(document.getElementById("txtSearchBar").value != ""){
-					document.getElementById("cubeOnLive").style.filter = "blur(10px) opacity(0.9)";
+					document.getElementById("cubeonLive").style.filter = "blur(10px) opacity(0.9)";
 					document.getElementById("modal").classList.add("modal");
 					document.getElementById("loader").classList.add("loader");
-					setTimeout ('loadLiveData()', 5000); /*calls the loadLiveData after waiting a hardcoded amount of seconds */
+					setTimeout ('loadLiveData()', 5000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 				} else {
 					alert("You must fill the Summoner Name text field")
 				}
-			 })
+			})
+			// This is the functionality of the button that searches the data on live pressing enter
 			document.getElementById("txtSearchBar").addEventListener("keypress", function (e) {
     			var key = e.which || e.keyCode;
     			if (key === 13 && document.getElementById("txtSearchBar").value != ""){
     				document.getElementById("txtSearchBar").blur();
-    				document.getElementById("cubeOnLive").style.filter = "blur(10px) opacity(0.5)";
+    				document.getElementById("cubeonLive").style.filter = "blur(10px) opacity(0.5)";
 					document.getElementById("modal").classList.add("modal");
 					document.getElementById("loader").classList.add("loader");
-					setTimeout ('loadLiveData()', 5000); /*calls the loadLiveData after waiting a hardcoded amount of seconds*/
+					setTimeout ('loadLiveData()', 5000); //calls the loadLiveData after waiting a hardcoded amount of seconds
     			}
 			})
 
-			/*This is the function that is called after 5 seconds of delay on loading. It simulates that the data loading has been finished*/
+			//This is the function that is called after 5 seconds of delay on loading. It simulates that the data loading has been finished
 			function loadLiveData(){
-				document.getElementById("cubeOnLive").classList.add("cubeInactive");
+				document.getElementById("cubeonLive").style.display="none";
 				document.getElementById("cubeLiveData").classList.add("cubeOnLive");
 				document.getElementById("cubeLiveData").classList.add("cubeActivate");
 				setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 				setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
 			}
-
-			/* Here I change the color between the tabs of the cube */
-			document.getElementById("tabHome").addEventListener("click", function(){
-				document.getElementsByClassName("active")[0].classList.remove("active");
-				document.getElementById("tabHome").classList.add("active");
-			 })
-			 document.getElementById("tabOnLive").addEventListener("click", function(){
-				document.getElementsByClassName("active")[0].classList.remove("active");
-				document.getElementById("tabOnLive").classList.add("active");
-			 })
+			//-----------------------/ON LIVE FUNCTIONS----------------------------
 		</script>
 	</body>
 </html>

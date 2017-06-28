@@ -274,11 +274,17 @@ main{
     padding:5% 20% 0% 20%;
 }
 
-
-
 .tabs_nav a:hover, .active a{
 	cursor: pointer;
 	color: #e1ddd7;
+}
+
+.cubeActive{
+	display: block;
+}
+
+.cubeInactive{
+	display: none;
 }
 /*--------------------- /Nav Bar Tabs -------------------------- */
 
@@ -289,9 +295,8 @@ main{
     text-align: center;
     height: 90vh;
     position: relative;
-    /*perspective: */
 }
-
+/* ------------------- Home --------------------------*/
 .cubeHome{
 	width: 100%;
 	height: 100%;
@@ -352,6 +357,19 @@ main{
 	border-right: 1px solid #d4c9ba;
 }
 
+.mainBottom img{
+	margin-top: 15%;
+}
+
+.scroll img{
+	position: absolute;
+	bottom: 1%;
+	left: 48.5%;
+}
+
+/* ------------------- /Home --------------------------*/
+
+/* ------------------- OnLive --------------------------*/
 .cubeOnLive{
 	width: 100%;
 	height: 100%;
@@ -365,10 +383,6 @@ main{
 .cubeActivate{
 	display: block !important;
 	animation: unblur 1s linear;
-}
-
-.cubeInactive{
-	display: none;
 }
 
 .cubeOnLive h2, .cubeOnLive p{
@@ -729,6 +743,8 @@ main{
 .mains{
 	top: 94%;
 }
+
+/* ------------------- /OnLive --------------------------*/
 
 footer{
 	max-width: 100%;
