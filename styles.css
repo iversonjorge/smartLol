@@ -1,0 +1,788 @@
+/* smartlol.css */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes unblur {
+    0% { filter: blur(10px) opacity(0.5); }
+    100% { filter: blur(0) opacity(1); }
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Logo Font";
+    src: url(Pacifico-Regular.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: "Nav Bar Font";
+    src: url(NotoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Log in Font";
+    src: url(RobotoCondensed-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Cool Section Font";
+    src: url(RobotoSlab-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Cool Section Font Bold";
+    src: url(RobotoSlab-Bold.ttf) format("truetype");
+}
+
+body{
+	overflow-x: hidden;
+}
+
+header{
+	overflow: hidden;
+	max-width: 100%;
+	background-color: #000;
+}
+
+.mageIcon{
+	display: block;
+	width: 25%;
+	height: 6vh;
+	margin: 1% 0% 0% 5%;
+	float: left;
+	background-image: url(images/mageicon.jpg);
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.logo{
+	display: block;
+	float: left;
+	margin-left: 
+}
+
+.btnMenu{
+	display: block;
+	float: right;
+	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
+	font-family: "Log in Font", Verdana, Tahoma;
+	font-size: 1.25vw;
+    color: #c8daea;
+    border: none;
+    line-height: normal;
+    overflow: visible;
+	padding: 0.5% 1%;
+	margin-top: 1.5%;
+    margin-right: 4.5%;
+    top: 50%;
+
+}
+
+.btnMenu:hover{
+	transform: scale(1.1);
+	background: linear-gradient(to right, #56ccf2, #2f80ed);
+	cursor: pointer;
+}
+
+.loginModal{
+ 	display: none;
+    position: fixed;
+    z-index: 3233;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.loginContent{
+	background-color: #24323D;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+    animation: animatezoom 0.6s;
+	font-family: "Open Sans", Verdana, Tahoma;
+	color: #FFF;
+	text-align: center;
+	overflow: hidden;
+}
+
+.close{
+	display: block;
+	float: right;
+    margin: 0% 3% 0% 0%;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    color: #19AD85;
+}
+
+.close:hover{
+	color: #d46060;
+}
+
+.loginContent h3{
+	font-size: 1.8vw;
+	text-align: center;
+	margin: 3% 0% 0% 8%;
+	color: #19AD85;
+}
+
+.loginContent input{
+    width: 50%;
+    margin: 2% 25% 2% 25%;
+    font-size: 1vw;
+    border: none;
+    padding: 2%;
+	border-radius: 4px;
+	color: #000;
+	font-weight: bold;
+}
+
+.loginContent [type=submit], .btnFacebooklogin, .btnTwitterlogin, .btnGooglelogin{
+	color: #FFF !important;
+	cursor: pointer;
+}
+
+.btnLogIn{
+	background-color: #18A57F;
+}
+
+.loginContent a{
+	text-decoration: none;
+	color: #1ab188;
+	display: inline-block;
+	font-size: 0.85vw;
+}
+
+.loginContent a:hover{
+	text-decoration: underline;
+	color: #1D7556;
+}
+
+.lnkForgot{
+	margin-left: 5%;
+}
+
+.loginContent label{
+	display: block;
+	font-size: 0.85vw;
+	margin: 7% 0%;
+	position: relative;
+}
+
+.loginContent label:before, .loginContent label:after{
+		content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 20%;
+        border-top: 1px solid #FFF;
+}
+
+.loginContent label:before{
+	left: 75%;
+}
+
+.loginContent label:after{
+	right: 75%;
+}
+
+.btnFacebooklogin, .btnTwitterlogin, .btnGooglelogin{
+	display: block;
+	width: 25% !important;
+	margin: 0% 0% 5% 5% !important;
+}
+
+.btnFacebooklogin{
+	background-color: #4464B2;
+	float: left;
+}
+
+.btnTwitterlogin{
+	background-color: #28A9E0;
+	float: left;
+	margin-left: 7.5% !important;
+}
+
+.btnGooglelogin{
+	background-color: #DA4735;
+	float: right;
+	margin-right: 5% !important;
+}
+
+main{
+	clear: both;
+	background: #C2C2C2;
+	text-align: center;
+}
+
+/* ---------------- Nav Bar Tabs -------------------- */
+
+.tabs{
+    font-size:1.3em;
+    font-family: "Cool Section Font Bold", Verdana, Tahoma;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    color: #ffce74;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+    left: 25%;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+
+.tabs_nav{
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+
+.tabs_nav li{
+	flex-basis: 100%;
+	flex-grow: 1;
+}
+
+.tabs_nav a{
+    display:block;
+    text-decoration:none;
+    padding:0% 20% 0% 20%;
+}
+
+.tabs_nav a:hover, .active a{
+	cursor: pointer;
+	color: #e1ddd7;
+}
+
+.cubeActive{
+	display: block;
+}
+
+.cubeInactive{
+	display: none;
+}
+/*--------------------- /Nav Bar Tabs -------------------------- */
+
+
+.cube{
+	max-width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 90vh;
+    position: relative;
+}
+/* ------------------- Home --------------------------*/
+.cubeHome{
+	width: 100%;
+	height: 100%;
+	background-image: url('images/bg/splash-v7.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+.btnGetStarted{
+	background: url('images/sprites.png') 0 -343px;
+	height: 45px;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+	border: 0;
+	color: #b2d9db;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	background-size: cover;
+}
+
+.btnGetStarted:hover{
+	background: url('images/sprites.png') 0 -278px;
+	background-size: cover;
+}
+
+.btnGetStarted:active{
+	background: url('images/sprites.png') 0 -213px;
+	background-size: cover;
+	color: rgb(0, 90, 130);
+}
+
+.mainBottom{
+	position: absolute;
+	display: flex;
+	align-items: stretch;
+	top:65%;
+	left: 0%;
+}
+
+.mainBottom div{
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+	flex-basis: 100%;
+	color: #ece2d1;
+	padding-left: 3%;
+}
+
+.mainBottom p{
+	font-family: "Cool Section Font", Verdana, Tahoma;
+	color: #d4c9ba;
+	padding-right: 9%; 
+	border-right: 1px solid #d4c9ba;
+}
+
+.mainBottom img{
+	margin-top: 15%;
+}
+
+.scroll img{
+	position: absolute;
+	bottom: 1%;
+	left: 48.5%;
+}
+
+/* ------------------- /Home --------------------------*/
+
+/* ------------------- OnLive --------------------------*/
+.cubeOnLive{
+	width: 100%;
+	height: 100%;
+	background-image: url('images/bg-howling-abyss.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+    transition: filter linear 1s;
+    display: none;
+}
+
+.cubeActivate{
+	display: block !important;
+	animation: unblur 1s linear;
+}
+
+.cubeOnLive h2, .cubeOnLive p{
+	color: #DDD5D5;
+	width: 30%;
+	margin: auto;
+}
+
+.cubeOnLive h2{
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	font-size: 2.5vw;
+	padding-top: 15vh;
+}
+
+.cubeOnLive p{
+	font-family: "Cool Section Font", Verdana, Tahoma;
+	font-size: 1.3vw;
+	display: block;
+	width: 100%;
+	width: 50%;
+	margin-top: 0.5%;
+}
+
+.cubeOnLive input{
+	position: absolute;
+	font-family: "Nav Bar Font", Verdana, Tahoma;
+	font-weight: bold;
+}
+
+.cubeOnLive input[type=text]{
+	border-radius: 10px;
+	top: 40vh;
+	font-size: 20pt;
+	border: 1px solid #000;
+	width: 40%;
+	left: 30%;
+	opacity: 0.8;
+	padding: 0.5% 0.5% 0.5% 4%;
+	background-image: url(images/ic_search_black_24px.svg);
+	background-position: left;
+	background-repeat: no-repeat;
+    background-size: contain;
+    color: #222C96;
+}
+
+.a{
+	position: relative;
+	height: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.cubeOnLive input[type=button]{
+	top: 48vh;
+	border-radius: 5px;
+	padding: 0.8vw;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #67b26f, #4ca2cd);
+	font-size: 1vw;
+	border: 1px solid #0d3d68;
+	color: #c8daea;
+	left: 42%;
+}
+
+.cubeOnLive input[type=button]:hover{
+	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
+	border: 1px solid #0d3d68;
+	color: #c8daea;
+	transform: scale(1.1);
+}
+
+.btnSearchLiveGame{
+	left: 32%;
+}
+
+.summonerLiveName{
+	padding-top: 0.5vh !important;
+}
+
+.modal{
+	position: absolute;
+	background-color: rgba(0,0,0,0.4);
+	width: 100%;
+	height: 90vh;
+	z-index: 2;
+}
+
+.loader{
+	position: absolute;
+	left: 47%;
+	top: 50%;
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    z-index: 3;
+}
+
+.line{
+	width: 60%;
+	margin: auto;
+	border-bottom: 1px solid #C8DAEA;
+	position: relative;
+}
+
+.summonerLiveDataYellow, .summonerLiveDataBlue, .summonerLiveDataRed{
+	height: 37vh;
+	background-color: #000;
+	border: 3px none;
+	position: absolute;
+	color: #DDD5D5;
+	width: 17%;
+	max-width: 160px;
+	max-height: 280px;
+}
+
+.summonerLiveDataYellow{
+	box-shadow: 0 0 5px 3px rgba(203,203,0,0.75);
+}
+
+.summonerLiveDataBlue{
+	box-shadow: 0 0 10px 3px rgba(39,71,232,0.75);
+}
+
+.summonerLiveDataRed{
+	box-shadow: 0 0 5px 3px rgba(203,33,36,0.75);
+}
+
+.summonerLiveData1{
+	left: 10%;
+	top: 2%;
+}
+
+.summonerLiveData2{
+	left: 27%;
+	top: 2%;
+}
+
+.summonerLiveData3{
+	left: 44%;
+	top: 2%;
+}
+
+.summonerLiveData4{
+	left: 61%;
+	top: 2%;
+}
+
+.summonerLiveData5{
+	left: 78%;
+	top: 2%;
+}
+
+.summonerLiveData6{
+	left: 10%;
+	top: 46%;
+}
+
+.summonerLiveData7{
+	left: 27%;
+	top: 46%;
+}
+
+.summonerLiveData8{
+	left: 44%;
+	top: 46%;
+}
+
+.summonerLiveData9{
+	left: 61%;
+	top: 46%;
+}
+
+.summonerLiveData10{
+	left: 78%;
+	top: 46%;
+}
+
+.summonerLiveDataYellow img:first-child, .summonerLiveDataBlue img:first-child, .summonerLiveDataRed img:first-child{
+	max-width:100%;
+	max-height:100%;
+}
+
+.summonerHeader{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 8%;
+
+	background-color: black;
+}
+
+.summonerHeader h4{
+	font-family: "Cool Section Font", Verdana, Tahoma;
+	font-size: 1em;
+	display: block;
+	padding: 1%;
+	margin-left: 5%; 
+	float: left;
+	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+}
+
+.summonerHeader img{
+	float: right;
+	width: 16px;
+	height: 16px;
+	margin: 3%;
+}
+
+.summonerUpperHalf{
+	clear:both;
+	width: 100%;
+	height: 100%;
+}
+
+.spells{
+	border: 1px solid #000;
+	border-radius: 50%;
+	position: absolute;
+	right: 2%;
+}
+
+.spell1{
+	top: 8%;
+}
+
+.spell2{
+	top: 17%;
+}
+
+.spell3{
+	top: 26%;
+	width: 24px;
+	height: 24px;
+	background-image: url("images/masteries.png");
+	background-size: auto;
+	z-index: 1;
+}
+
+.thunderlord{
+	background-position: -192px -48px;
+}
+
+.fervor{
+	background-position: -72px -24px;
+}
+
+.deathfire{
+	background-position: -96px -24px;
+}
+
+.colossus{
+	background-position: -72px -96px;
+}
+
+.gamesPlayed , .ranking{
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	font-size: 0.9em !important;
+	width: 100% !important;
+	position: absolute;
+	text-align: left;
+	margin-left: 2%;
+}
+
+.gamesPlayed{
+	top: 48%;
+	left: 5% !important;
+	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+}
+
+.ranking{
+	top: 35%;
+	left: 78% !important;
+	color: #2747E8 !important;
+	font-size: 1em !important;
+	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+}
+
+.summonerLowerHalf{
+	position: absolute;
+	width: 100%;
+	height: 45%;
+	background-color: #000;
+	top: 55%;
+}
+
+.statisticYellow{
+	color: #bb3 !important;
+}
+
+.statisticGreen{
+	color: #6b3 !important;
+}
+
+.statisticRed{
+	color: #b33 !important;
+}
+
+.rankingLeague{
+	position: absolute;
+	width: 25%;
+	height: 25%;
+	top: 50%;
+	left: 75%;
+}
+
+.tier{
+	top: 60%;
+	left: 92% !important;
+}
+
+.summonerUpperHalf h5{
+	position: absolute;
+	margin-left: 5%;
+}
+
+.summonerUpperHalf p{
+	text-align: left;
+	position: absolute;
+	width: 100%;
+	left: 35%;
+	font-size: 0.8em;
+}
+
+.performance{
+	top: 55%;
+}
+
+.performanceP{
+	position: absolute;
+	left: 55% !important;
+	font-size: 0.8em !important;
+}
+
+.winLoss{
+	top: 64%;
+}
+
+.kills{
+	top: 70%;
+}
+
+.deaths{
+	top: 76%;
+}
+
+.assists{
+	top: 82%;
+}
+
+.cs{
+	top: 88%;
+}
+
+.mains{
+	top: 94%;
+}
+
+/* ------------------- /OnLive --------------------------*/
+
+footer{
+	max-width: 100%;
+	background-color: #000;
+	overflow: hidden;
+
+	display:flex;
+}
+
+.footer{
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+
+.footerLinks{
+	flex-grow: 3;
+}
+
+.footer li{
+	flex-grow: 1;
+	list-style-type: none;
+}
+
+footer a{
+	text-decoration: none;
+	display: block;
+	color: #2782FB;
+	font-size: 1.25vw;
+	font-family: "Nav Bar Font", Verdana, Tahoma;
+	text-align: center;
+}
+
+footer a:hover{
+	color: #78C674;
+}
+
+.footer img{
+	max-width: 50px;
+	width: 3vw;
+}
+
+.social:hover{
+	opacity: 0.5;
+}
+
+.ezreal{
+	text-align: right;
+}
