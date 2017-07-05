@@ -9,32 +9,6 @@
 		<meta name="author" content="Jorch">
 	</head>
 	<body>
-		<header>
-			<div class="mageIcon">
-				<a href="index.html">
-					<img src="images/spacer.png" alt="A book with a small blue fire over it">
-				</a>
-			</div>
-			<a href="index.html" class="logo">
-				<img src="images/logo.png" alt="qwer logo" width="260px">
-			</a>
-			<input type="button" value="Join the Battle" class="btnMenu" onclick="document.getElementById('loginModal').style.display='block'">
-			<div class="loginModal" id="loginModal">
-				<form class="loginContent" action="#">
-					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
-					<h3>Log In</h3>
-					<input type="text" placeholder="Username or email">
-					<input type="password" placeholder="Password">
-					<input type="submit" value="Log In" class="btnLogIn">
-					<a href="#" class="lnkRegister">Register</a>
-					<a href="#" class="lnkForgot">Forgot your password?</a>
-					<Label>Or Log in with social media</label>
-					<input type="button" class="btnFacebooklogin" value="Facebook">
-					<input type="button" class="btnTwitterlogin" value="Twitter">
-					<input type="button" class="btnGooglelogin" value="Google">
-				</form>
-			</div>
-		</header>
 		<main>
 			<div id="loader"></div>
 			<div id="modal"></div>
@@ -59,6 +33,22 @@
 						<a>Forum</a>
 					</li>
 				</ul>
+			</div>
+			<input type="button" value="Join the Battle" class="joinBattle" onclick="document.getElementById('loginModal').style.display='block'">
+			<div class="loginModal" id="loginModal">
+				<form class="loginContent" action="#">
+					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<h3>Log In</h3>
+					<input type="text" placeholder="Username or email">
+					<input type="password" placeholder="Password">
+					<input type="submit" value="Log In" class="btnLogIn">
+					<a href="#" class="lnkRegister">Register</a>
+					<a href="#" class="lnkForgot">Forgot your password?</a>
+					<Label>Or Log in with social media</label>
+					<input type="button" class="btnFacebooklogin" value="Facebook">
+					<input type="button" class="btnTwitterlogin" value="Twitter">
+					<input type="button" class="btnGooglelogin" value="Google">
+				</form>
 			</div>
 			<div class="cube" id="cube">
 
@@ -456,7 +446,7 @@
 					<a href="#" class="faq">FAQ</a>
 				</li>
 			</ul>
-			<ul class="footer">
+			<ul class="footer footerSocial">
 				<li>
 					<a href="#" class="social"><img src="images/facebook.jpg" alt="logo facebook"></a>
 				</li>

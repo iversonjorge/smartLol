@@ -22,12 +22,6 @@
 }
 
 @font-face {
-    font-family: "Logo Font";
-    src: url(Pacifico-Regular.ttf) format("truetype");
-}
-
-
-@font-face {
     font-family: "Nav Bar Font";
     src: url(NotoSans-Regular.ttf) format("truetype");
 }
@@ -46,53 +40,25 @@
     font-family: "Cool Section Font Bold";
     src: url(RobotoSlab-Bold.ttf) format("truetype");
 }
+/* ---------------- login -------------------- */
 
-body{
-	overflow-x: hidden;
-}
-
-header{
-	overflow: hidden;
-	max-width: 100%;
-	background-color: #000;
-}
-
-.mageIcon{
+.joinBattle{
 	display: block;
-	width: 25%;
-	height: 6vh;
-	margin: 1% 0% 0% 5%;
-	float: left;
-	background-image: url(images/mageicon.jpg);
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.logo{
-	display: block;
-	float: left;
-	margin-left: 
-}
-
-.btnMenu{
-	display: block;
-	float: right;
+	position: absolute;
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	font-family: "Log in Font", Verdana, Tahoma;
-	font-size: 1.25vw;
+	font-size: 0.8vw;
     color: #c8daea;
     border: none;
     line-height: normal;
-    overflow: visible;
 	padding: 0.5% 1%;
-	margin-top: 1.5%;
-    margin-right: 4.5%;
-    top: 50%;
-
+    top: 1%;
+    right: 2%;
+    z-index: 1;
+    border-radius: 5px;
 }
 
-.btnMenu:hover{
+.joinBattle:hover{
 	transform: scale(1.1);
 	background: linear-gradient(to right, #56ccf2, #2f80ed);
 	cursor: pointer;
@@ -227,6 +193,8 @@ header{
 	margin-right: 5% !important;
 }
 
+/* ---------------- /login -------------------- */
+
 main{
 	clear: both;
 	background: #C2C2C2;
@@ -285,7 +253,7 @@ main{
 	max-width: 100%;
     margin: auto;
     text-align: center;
-    height: 90vh;
+    height: 95vh;
     position: relative;
 }
 /* ------------------- Home --------------------------*/
@@ -738,34 +706,43 @@ main{
 
 /* ------------------- /OnLive --------------------------*/
 
+/* ------------------- footer --------------------------*/
 footer{
 	max-width: 100%;
 	background-color: #000;
 	overflow: hidden;
-
 	display:flex;
+	height: 5vh;
 }
 
 .footer{
 	flex-grow: 1;
 	display: flex;
-	align-items: center;
+	align-content: stretch;
 }
 
 .footerLinks{
-	flex-grow: 3;
+	flex-grow: 1;
+	flex-basis: auto;
+	width: 5%;
+}
+
+.footerSocial{
+	flex-basis: auto;
+	width: 5%;
 }
 
 .footer li{
 	flex-grow: 1;
 	list-style-type: none;
+	flex-basis: 5%;
 }
 
 footer a{
 	text-decoration: none;
 	display: block;
 	color: #2782FB;
-	font-size: 1.25vw;
+	font-size: 0.8vw;
 	font-family: "Nav Bar Font", Verdana, Tahoma;
 	text-align: center;
 }
@@ -776,7 +753,7 @@ footer a:hover{
 
 .footer img{
 	max-width: 50px;
-	width: 3vw;
+	width: 2vw;
 }
 
 .social:hover{
@@ -786,3 +763,4 @@ footer a:hover{
 .ezreal{
 	text-align: right;
 }
+/* ------------------- /footer --------------------------*/
