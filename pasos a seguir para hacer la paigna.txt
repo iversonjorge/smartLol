@@ -1,5 +1,3 @@
-- Agregar evento on enter para iniciar animacion de busqueda.
-
 		<meta name="description" content="">
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
@@ -10,17 +8,7 @@
 2 - cambiar el loading y poner un zhonya's
 1 - poner los open graph de facebook
 2 - crear el sitemap.xml y el robots.txt
-3 - hacer el login modal
-5 - cuando haga las otras paginas, tengo que actualizar las imagenes preview del main.
-6 - poner los links a donde van las etiquetas <a> a medida que vaya teniendo las paginas. (inclusive las del footer y social)
 7 - cuadno termine la pagina chequear todos los archivos que tengo al pedo y volarlos a la mierda
 8 - ponerle google analytics
 9 - ponerle google adsense
 10 - comprimir css con minify and compress css
-11 - replantear los links de la pagina
-
-
-Cosas que voy descubriendo dsp de romperme la cabeza haciendo la página:
-
-1 - Cuando quiero flotar un elemento de linea, pasarlo a bloque (display: block) o voy a tener muchos problemas.
-2 - poner todo en %... SIEMPRE! Y las fuentes en em.

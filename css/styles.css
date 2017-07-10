@@ -23,22 +23,22 @@
 
 @font-face {
     font-family: "Nav Bar Font";
-    src: url(NotoSans-Regular.ttf) format("truetype");
+    src: url(../fonts/NotoSans-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Log in Font";
-    src: url(RobotoCondensed-Regular.ttf) format("truetype");
+    src: url(../fonts/RobotoCondensed-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Cool Section Font";
-    src: url(RobotoSlab-Regular.ttf) format("truetype");
+    src: url(../fonts/RobotoSlab-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Cool Section Font Bold";
-    src: url(RobotoSlab-Bold.ttf) format("truetype");
+    src: url(../fonts/RobotoSlab-Bold.ttf) format("truetype");
 }
 /* ---------------- login -------------------- */
 
@@ -260,7 +260,7 @@ main{
 .cubeHome{
 	width: 100%;
 	height: 100%;
-	background-image: url('images/bg/splash-v7.jpg');
+	background-image: url('../images/bg/splash-v7.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -268,7 +268,7 @@ main{
 }
 
 .btnGetStarted{
-	background: url('images/sprites.png') 0 -343px;
+	background: url('../images/sprites.png') 0 -343px;
 	height: 45px;
 	text-align: center;
 	width: 150px;
@@ -284,12 +284,12 @@ main{
 }
 
 .btnGetStarted:hover{
-	background: url('images/sprites.png') 0 -278px;
+	background: url('../images/sprites.png') 0 -278px;
 	background-size: cover;
 }
 
 .btnGetStarted:active{
-	background: url('images/sprites.png') 0 -213px;
+	background: url('../images/sprites.png') 0 -213px;
 	background-size: cover;
 	color: rgb(0, 90, 130);
 }
@@ -333,7 +333,7 @@ main{
 .cubeOnLive{
 	width: 100%;
 	height: 100%;
-	background-image: url('images/bg-howling-abyss.jpg');
+	background-image: url('../images/bg-howling-abyss.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
     transition: filter linear 1s;
@@ -381,7 +381,7 @@ main{
 	left: 30%;
 	opacity: 0.8;
 	padding: 0.5% 0.5% 0.5% 4%;
-	background-image: url(images/ic_search_black_24px.svg);
+	background-image: url(../images/ic_search_black_24px.svg);
 	background-position: left;
 	background-repeat: no-repeat;
     background-size: contain;
@@ -390,7 +390,6 @@ main{
 
 .a{
 	position: relative;
-	height: 100%;
 	max-width: 1200px;
 	margin: auto;
 }
@@ -419,14 +418,14 @@ main{
 }
 
 .summonerLiveName{
-	padding-top: 0.5vh !important;
+	padding-top: 7vh !important;
 }
 
 .modal{
 	position: absolute;
 	background-color: rgba(0,0,0,0.4);
 	width: 100%;
-	height: 90vh;
+	height: 95vh;
 	z-index: 2;
 }
 
@@ -448,6 +447,21 @@ main{
 	margin: auto;
 	border-bottom: 1px solid #C8DAEA;
 	position: relative;
+}
+
+.teamBlue{
+	position: relative;
+	top: 2vh;
+	width: 100%
+	height: 100%;
+}
+
+.teamRed{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 42vh;
 }
 
 .summonerLiveDataYellow, .summonerLiveDataBlue, .summonerLiveDataRed{
@@ -558,7 +572,6 @@ main{
 .summonerUpperHalf{
 	clear:both;
 	width: 100%;
-	height: 100%;
 }
 
 .spells{
@@ -580,7 +593,7 @@ main{
 	top: 26%;
 	width: 24px;
 	height: 24px;
-	background-image: url("images/masteries.png");
+	background-image: url("../images/masteries.png");
 	background-size: auto;
 	z-index: 1;
 }
