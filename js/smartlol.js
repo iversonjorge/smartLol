@@ -1,6 +1,6 @@
 // smartlol.js
 //-----------------------Global Variables--------------------------
-var apiKey = "RGAPI-c47ed90e-e98b-4a18-a190-1eae55a01acb";
+var apiKey = "RGAPI-581d3892-95ab-478a-808d-ce8b97044e1d";
 var summonerName = "";
 var summonerId = "";
 var summonerAccountId = "";
@@ -33,7 +33,6 @@ document.getElementById("searchSummonerLiveGame").addEventListener("click", func
 		document.getElementById("modal").classList.add("modal");
 		document.getElementById("loader").classList.add("loader");
 		setTimeout ('loadLiveData()', 5000); //calls the loadLiveData after waiting a hardcoded amount of seconds
-		console.log("lalalal");
 	} else {
 		alert("You must fill the Summoner Name text field");
 	}
@@ -56,12 +55,7 @@ function loadLiveData(){
 	document.getElementById("cubeLiveData").classList.add("cubeOnLive");
 	document.getElementById("cubeLiveData").classList.add("cubeActivate");
 	//load all the data before the modal and loader dissapears
-	console.log(txtSearchBar.value);
-	getSummonerByName(txtSearchBar.value, function(data){
-		summonerName = data.name;
-		summonerId = data.id;
-		summonerAccountId = data.accountId;
-	});
+	getSummonerByName();
 	//console.log(summonerName + " " + summonerId + " " + summonerAccountId);
 	setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 	setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
@@ -70,12 +64,21 @@ function loadLiveData(){
 //-----------------------/ON LIVE FUNCTIONS----------------------------
 //-----------------------Riot Api Requests---------------------------------
 
-function getSummonerByName(name, callback){
+function getSummonerByName(){
+	request = 'https://la2.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + txtSearchBar.value + '?api_key=' + apiKey;
+	console.log(request);
 	$.ajax({
-		dataType: "jsonp",
-		url: "https://la2.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + name + "?api_key=" + apiKey,
-		success: callback
+		dataType: 'jsonp',
+		url: request,
+		success: fillGameData
 	});
+}
+
+function fillGameData(data){
+	console.log("esta funcionando!!!");
+	/*summonerName = data.name;
+		summonerId = data.id;
+		summonerAccountId = data.accountId;*/
 }
 
 //-----------------------/Riot Api Requests---------------------------------
