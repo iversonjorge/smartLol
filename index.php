@@ -53,7 +53,7 @@
 			<div class="cube" id="cube">
 
 				<div id="cubeLiveData" class="cubeInactive">
-					<h2 id="summonerName" class="summonerLiveName">Jorch</h2>
+					<h2 id="summonerName" class="summonerLiveName"></h2>
 					<p>Ranked Solo/Duo · Summoner's Rift · Latin America South</p>
 					<div class="line"></div>
 					<div class="a">

@@ -1,9 +1,4 @@
 // smartlol.js
-//-----------------------Global Variables--------------------------
-var apiKey = "RGAPI-581d3892-95ab-478a-808d-ce8b97044e1d";
-var summonerName = "";
-var summonerId = "";
-var summonerAccountId = "";
 //-----------------------HOME FUNCTIONS----------------------------
 function changeTabs(tab){
 	if (tab != "forum") {
@@ -45,7 +40,9 @@ document.getElementById("txtSearchBar").addEventListener("keypress", function (e
 		document.getElementById("cubeonLive").style.filter = "blur(10px) opacity(0.5)";
 		document.getElementById("modal").classList.add("modal");
 		document.getElementById("loader").classList.add("loader");
-		setTimeout ('loadLiveData()', 5000); //calls the loadLiveData after waiting a hardcoded amount of seconds
+		//load all the data before the modal and loader dissapears
+		getSummonerByName();
+		setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 	}
 })
 
@@ -54,8 +51,6 @@ function loadLiveData(){
 	document.getElementById("cubeonLive").style.display="none";
 	document.getElementById("cubeLiveData").classList.add("cubeOnLive");
 	document.getElementById("cubeLiveData").classList.add("cubeActivate");
-	//load all the data before the modal and loader dissapears
-	getSummonerByName();
 	//console.log(summonerName + " " + summonerId + " " + summonerAccountId);
 	setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 	setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
@@ -65,20 +60,15 @@ function loadLiveData(){
 //-----------------------Riot Api Requests---------------------------------
 
 function getSummonerByName(){
-	request = 'https://la2.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + txtSearchBar.value + '?api_key=' + apiKey;
-	console.log(request);
-	$.ajax({
-		dataType: 'jsonp',
-		url: request,
-		success: fillGameData
-	});
-}
-
-function fillGameData(data){
-	console.log("esta funcionando!!!");
-	/*summonerName = data.name;
-		summonerId = data.id;
-		summonerAccountId = data.accountId;*/
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function (){
+		if(request.readyState == 4 && request.status == 200){
+			data = JSON.parse(request.responseText);
+			summonerName.innerHTML = data.name;
+		}
+	}
+	request.open("GET", "php/getSummonerByName.php?name=" + txtSearchBar.value, true);
+	request.send();
 }
 
 //-----------------------/Riot Api Requests---------------------------------
