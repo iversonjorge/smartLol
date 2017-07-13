@@ -51,7 +51,6 @@ function loadLiveData(){
 	document.getElementById("cubeonLive").style.display="none";
 	document.getElementById("cubeLiveData").classList.add("cubeOnLive");
 	document.getElementById("cubeLiveData").classList.add("cubeActivate");
-	//console.log(summonerName + " " + summonerId + " " + summonerAccountId);
 	setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 	setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
 
@@ -65,9 +64,21 @@ function getSummonerByName(){
 		if(request.readyState == 4 && request.status == 200){
 			data = JSON.parse(request.responseText);
 			summonerName.innerHTML = data.name;
+			getCurrentGameInfoBySummoner(data.id);
 		}
 	}
 	request.open("GET", "php/getSummonerByName.php?name=" + txtSearchBar.value, true);
+	request.send();
+}
+
+function getCurrentGameInfoBySummoner(summonerId){
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function (){
+		if(request.readyState == 4 && request.status == 200){
+			data = JSON.parse(request.responseText);
+		}
+	}
+	request.open("GET", "php/getCurrentGameInfoBySummoner.php?summonerId=" + summonerId);
 	request.send();
 }
 
