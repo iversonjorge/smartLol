@@ -62,15 +62,22 @@ function getSummonerByName(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
-			data = JSON.parse(request.responseText);
-			summonerName.innerHTML = data.name;
-			getCurrentGameInfoBySummoner(data.id);
+			alert(request.responseText);
+			if(isJson(request.responseText)){
+				data = JSON.parse(request.responseText);
+				summonerName.innerHTML = data.name;
+				//getCurrentGameInfoBySummoner(data.id);
+
+			} else {
+				alert("mandaste fruta papa!");
+			}
 		}
+	}
 	request.open("GET", "php/getSummonerByName.php?name=" + txtSearchBar.value, true);
 	request.send();
 }
 
-function getCurrentGameInfoBySummoner(summonerId){
+/*function getCurrentGameInfoBySummoner(summonerId){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
@@ -85,7 +92,7 @@ function getCurrentGameInfoBySummoner(summonerId){
 	}
 	request.open("GET", "php/getCurrentGameInfoBySummoner.php?summonerId=" + summonerId);
 	request.send();
-}
+}*/
 
 function isJson(str) {
     try {
