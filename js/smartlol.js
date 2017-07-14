@@ -66,7 +66,6 @@ function getSummonerByName(){
 			summonerName.innerHTML = data.name;
 			getCurrentGameInfoBySummoner(data.id);
 		}
-	}
 	request.open("GET", "php/getSummonerByName.php?name=" + txtSearchBar.value, true);
 	request.send();
 }
@@ -75,11 +74,26 @@ function getCurrentGameInfoBySummoner(summonerId){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
-			data = JSON.parse(request.responseText);
+			//Check if what I got is a JSON... if not I return a message saying that the player is not in game.
+			if(isJson(request.responseText)){
+				data = JSON.parse(request.responseText);
+				alert(data);
+			} else {
+				alert("mandaste fruta papa!");
+			}
 		}
 	}
 	request.open("GET", "php/getCurrentGameInfoBySummoner.php?summonerId=" + summonerId);
 	request.send();
+}
+
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }
 
 //-----------------------/Riot Api Requests---------------------------------
