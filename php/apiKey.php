@@ -1,4 +1,4 @@
 <?php
 	//apiKey.php
-	$apiKey = "RGAPI-11f9c7e1-5416-4ff2-aed9-8f22350f5ba7";
+	$apiKey = "RGAPI-b5ecf618-4c9f-4714-b11f-2f45889fabde";
 ?>

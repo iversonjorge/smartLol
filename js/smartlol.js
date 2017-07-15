@@ -21,30 +21,33 @@ btnGetStarted.addEventListener("click", function(){changeTabs("onLive")});
 
 //-----------------------/HOME FUNCTIONS----------------------------
 //-----------------------ON LIVE FUNCTIONS----------------------------
+
+
 // This is the functionality of the button that searches the data on live clicking the button
 document.getElementById("searchSummonerLiveGame").addEventListener("click", function(){
 	if(document.getElementById("txtSearchBar").value != ""){
-		document.getElementById("cubeonLive").style.filter = "blur(10px) opacity(0.9)";
-		document.getElementById("modal").classList.add("modal");
-		document.getElementById("loader").classList.add("loader");
-		setTimeout ('loadLiveData()', 5000); //calls the loadLiveData after waiting a hardcoded amount of seconds
+		searchLiveData();
 	} else {
 		alert("You must fill the Summoner Name text field");
 	}
 })
+
 // This is the functionality of the button that searches the data on live pressing enter
 document.getElementById("txtSearchBar").addEventListener("keypress", function (e) {
 	var key = e.which || e.keyCode;
 	if (key === 13 && document.getElementById("txtSearchBar").value != ""){
 		document.getElementById("txtSearchBar").blur();
-		document.getElementById("cubeonLive").style.filter = "blur(10px) opacity(0.5)";
-		document.getElementById("modal").classList.add("modal");
-		document.getElementById("loader").classList.add("loader");
-		//load all the data before the modal and loader dissapears
-		getSummonerByName();
-		setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
+		searchLiveData();
 	}
 })
+
+function searchLiveData(){
+	cubeonLive.style.filter = "blur(10px) opacity(0.9)";
+	modal.classList.add("modal");
+	loader.classList.add("loader");
+	getSummonerByName(); //load all the data before the modal and loader dissapears
+	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
+}
 
 //This is the function that is called after 5 seconds of delay on loading. It simulates that the data loading has been finished
 function loadLiveData(){
@@ -62,14 +65,13 @@ function getSummonerByName(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
-			alert(request.responseText);
+			//Check if what I got is a JSON... if not I return a message saying that the player is not in game.
 			if(isJson(request.responseText)){
 				data = JSON.parse(request.responseText);
 				summonerName.innerHTML = data.name;
-				//getCurrentGameInfoBySummoner(data.id);
-
+				getCurrentGameInfoBySummoner(data.id);
 			} else {
-				alert("mandaste fruta papa!");
+				alert("Ese Summoner Name no existe!"); //cambiar despues a algo coherente!
 			}
 		}
 	}
@@ -77,22 +79,27 @@ function getSummonerByName(){
 	request.send();
 }
 
-/*function getCurrentGameInfoBySummoner(summonerId){
+function getCurrentGameInfoBySummoner(summonerId){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
 			//Check if what I got is a JSON... if not I return a message saying that the player is not in game.
 			if(isJson(request.responseText)){
 				data = JSON.parse(request.responseText);
-				alert(data);
+				fillMatchMakingQueue(data.gameQueueConfigId);
+
 			} else {
-				alert("mandaste fruta papa!");
+				alert(summonerName.innerHTML + " no esta en una partida en este momento!");
 			}
 		}
 	}
 	request.open("GET", "php/getCurrentGameInfoBySummoner.php?summonerId=" + summonerId);
 	request.send();
-}*/
+}
+
+function fillMatchMakingQueue(gameQueueConfigId){
+	//to do
+}
 
 function isJson(str) {
     try {
