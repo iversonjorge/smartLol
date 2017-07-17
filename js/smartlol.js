@@ -45,7 +45,7 @@ function searchLiveData(){
 	cubeonLive.style.filter = "blur(10px) opacity(0.9)";
 	modal.classList.add("modal");
 	loader.classList.add("loader");
-	getSummonerByName(); //load all the data before the modal and loader dissapears
+	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null); //Start loading all the data
 	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 }
 
@@ -62,44 +62,58 @@ function loadLiveData(){
 //-----------------------Riot Api Requests---------------------------------
 
 function getSummonerByName(){
+	summonerName.innerHTML = data.name;
+	getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null); //busco los datos del summoner
+}
+
+function getCurrentGameInfoBySummoner(){
+	 getTheJson("json/matchMakingQueues.json", getQueueName, "", data.gameQueueConfigId); //paso el id del game a la tabla que busca los tipos de games
+	 getTheJson("json/maps.json", getMapName, "", data.mapId); //paso el id del mapa a la tabla que busca los tipos de games
+	 getTheJson("php/getCurrentServerStatus.php?regionTag=" + data.platformId, getServerName, "", null); //paso el id del mapa a la tabla que busca los tipos de games
+}
+
+function getQueueName(){
+	for(var i = 0; i < data.queues.length; i++){
+		if (data.queues[i].gameQueueConfigId == getQueueName.arguments[1]) {
+			queueMapServer.innerHTML = data.queues[i].name;
+		}
+	}
+}
+
+function getMapName(){
+	for(var i = 0; i < data.maps.length; i++){
+		if (data.maps[i].mapId == getMapName.arguments[1]) {
+			queueMapServer.innerHTML += " · " + data.maps[i].name;
+		}
+	}
+}
+
+function getServerName(){
+	queueMapServer.innerHTML += " · " + data.name;
+}
+
+function getTheJson(url, callback, errorMessage, parameter){ 
+	/*the parameters of this function are
+	url: the url of the json
+	callback: the function to call with the json as response
+	errorMessage: the Message in case of error
+	parameter: an optional parameter in case the callback function needs it*/
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
-			//Check if what I got is a JSON... if not I return a message saying that the player is not in game.
 			if(isJson(request.responseText)){
 				data = JSON.parse(request.responseText);
-				summonerName.innerHTML = data.name;
-				getCurrentGameInfoBySummoner(data.id);
-			} else {
-				alert("Ese Summoner Name no existe!"); //cambiar despues a algo coherente!
+				callback(data, parameter);
+			} else{
+				alert(errorMessage);
 			}
 		}
 	}
-	request.open("GET", "php/getSummonerByName.php?name=" + txtSearchBar.value, true);
+	request.open("GET", url, true);
 	request.send();
 }
 
-function getCurrentGameInfoBySummoner(summonerId){
-	var request = new XMLHttpRequest();
-	request.onreadystatechange = function (){
-		if(request.readyState == 4 && request.status == 200){
-			//Check if what I got is a JSON... if not I return a message saying that the player is not in game.
-			if(isJson(request.responseText)){
-				data = JSON.parse(request.responseText);
-				fillMatchMakingQueue(data.gameQueueConfigId);
 
-			} else {
-				alert(summonerName.innerHTML + " no esta en una partida en este momento!");
-			}
-		}
-	}
-	request.open("GET", "php/getCurrentGameInfoBySummoner.php?summonerId=" + summonerId);
-	request.send();
-}
-
-function fillMatchMakingQueue(gameQueueConfigId){
-	//to do
-}
 
 function isJson(str) {
     try {
