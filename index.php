@@ -58,15 +58,15 @@
 					<div class="line"></div>
 					<div class="a">
 						<div class="teamBlue">
-							<div id="summonerLiveData1" class="summonerLiveData1 , summonerLiveDataYellow">
-								<img src="images/champions/Zyra_0.jpg" alt="Zyra image">
+							<div id="summonerLiveData0" class="summonerLiveData0 , summonerLiveDataYellow">
+								<img id="championImg0" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Jorch</h4>
-									<img src="images/champions/Zyra_Square_0.png" alt="Zyra small image">
+									<h4 id="playerName0"></h4>
+									<img id="championImgSmall0" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/exhaust.png" class="spells , spell2" alt="exhaust spell">
+									<img id="summoner0Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner0Spell1" src="images/exhaust.png" class="spells , spell2" alt="exhaust spell">
 									<div class="spells , spell3 , thunderlord"></div>
 									<p class="gamesPlayed">R: 151 N: 1,299</p>
 									<p class="ranking">4533</p>
@@ -91,15 +91,15 @@
 									<p class="mains">Top, Mid</p>
 								</div>
 							</div>
-							<div id="summonerLiveData2" class="summonerLiveData2 , summonerLiveDataBlue">
-								<img src="images/champions/Darius_0.jpg" alt="Darius image">
+							<div id="summonerLiveData1" class="summonerLiveData1 , summonerLiveDataBlue">
+								<img id="championImg1" src="" alt="">
 								<div class="summonerHeader">
-									<h4>AOKIJIX</h4>
-									<img src="images/champions/Darius_Square_0.png" alt="Darius small image">
+									<h4 id="playerName1"></h4>
+									<img id="championImgSmall1" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/teleport.png" class="spells , spell1" alt="teleport spell">
-									<img src="images/flash.png" class="spells , spell2" alt="flash spell">
+									<img id="summoner1Spell0" src="images/teleport.png" class="spells , spell1" alt="teleport spell">
+									<img id="summoner1Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
 									<div class="spells , spell3 , fervor"></div>
 									<p class="gamesPlayed">R: 138   N: 2,078</p>
 									<p class="ranking">4587</p>
@@ -124,15 +124,15 @@
 									<p class="mains">Top, Marksman</p>
 								</div>
 							</div>
-							<div id="summonerLiveData3" class="summonerLiveData3 , summonerLiveDataBlue">
-								<img src="images/champions/Ezreal_0.jpg" alt="Ezreal image">
+							<div id="summonerLiveData2" class="summonerLiveData2 , summonerLiveDataBlue">
+								<img id="championImg2" src="" alt="">
 								<div class="summonerHeader">
-									<h4>ProfesorJ</h4>
-									<img src="images/champions/Ezreal_Square_0.png" alt="Ezreal small image">
+									<h4 id="playerName2"></h4>
+									<img id="championImgSmall2" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/heal.png" class="spells , spell2" alt="heal spell">
+									<img id="summoner2Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner2Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
 									<div class="spells , spell3 , fervor"></div>
 									<p class="gamesPlayed">R: 242   N: 1,291</p>
 									<p class="ranking">4489</p>
@@ -157,15 +157,15 @@
 									<p class="mains">Mid, Top</p>
 								</div>
 							</div>
-							<div id="summonerLiveData4" class="summonerLiveData4 , summonerLiveDataBlue">
-								<img src="images/champions/LeeSin_0.jpg" alt="Ezreal image">
+							<div id="summonerLiveData3" class="summonerLiveData3 , summonerLiveDataBlue">
+								<img id="championImg3" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Legïo</h4>
-									<img src="images/champions/LeeSin_Square_0.png" alt="Lee Sin small image">
+									<h4 id="playerName3"></h4>
+									<img id="championImgSmall3" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/smite.png" class="spells , spell2" alt="smite spell">
+									<img id="summoner3Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner3Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
 									<div class="spells , spell3 , thunderlord"></div>
 									<p class="gamesPlayed">R: 108   N: 3,375</p>
 									<p class="ranking">4420</p>
@@ -190,15 +190,15 @@
 									<p class="mains">Top, Jungle</p>
 								</div>
 							</div>
-							<div id="summonerLiveData5" class="summonerLiveData5 , summonerLiveDataBlue">
-								<img src="images/champions/Syndra_0.jpg" alt="Syndra image">
+							<div id="summonerLiveData4" class="summonerLiveData4 , summonerLiveDataBlue">
+								<img id="championImg4" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Wínd</h4>
-									<img src="images/champions/Syndra_Square_0.png" alt="Syndra small image">
+									<h4 id="playerName4"></h4>
+									<img id="championImgSmall4" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/cleanse.png" class="spells , spell1" alt="cleanse spell">
-									<img src="images/flash.png" class="spells , spell2" alt="flash spell">
+									<img id="summoner4Spell0" src="images/cleanse.png" class="spells , spell1" alt="cleanse spell">
+									<img id="summoner4Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
 									<div class="spells , spell3 , thunderlord"></div>
 									<p class="gamesPlayed">R: 103   N: 3,607</p>
 									<p class="ranking">4403</p>
@@ -225,15 +225,15 @@
 							</div>
 						</div>
 						<div class="teamRed">
-							<div id="summonerLiveData6" class="summonerLiveData6 , summonerLiveDataRed">
-								<img src="images/champions/Jhin_0.jpg" alt="Jhin image">
+							<div id="summonerLiveData5" class="summonerLiveData5 , summonerLiveDataRed">
+								<img id="championImg5" src="" alt="">
 								<div class="summonerHeader">
-									<h4>AS Link</h4>
-									<img src="images/champions/Jhin_Square_0.png" alt="Jhin small image">
+									<h4 id="playerName5"></h4>
+									<img id="championImgSmall5" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/heal.png" class="spells , spell2" alt="heal spell">
+									<img id="summoner5Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner5Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
 									<div class="spells , spell3 , deathfire"></div>
 									<p class="gamesPlayed">R: 184   N: 1,274</p>
 									<p class="ranking">4852</p>
@@ -258,15 +258,15 @@
 									<p class="mains">Marksman, Top</p>
 								</div>
 							</div>
-							<div id="summonerLiveData7" class="summonerLiveData7 , summonerLiveDataRed">
-								<img src="images/champions/Brand_0.jpg" alt="Brand image">
+							<div id="summonerLiveData6" class="summonerLiveData6 , summonerLiveDataRed">
+								<img id="championImg6" src="" alt="">
 								<div class="summonerHeader">
-									<h4>bonjoo</h4>
-									<img src="images/champions/Brand_Square_0.png" alt="Brand small image">
+									<h4 id="playerName6"></h4>
+									<img id="championImgSmall6" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/ignite.png" class="spells , spell2" alt="ignite spell">
+									<img id="summoner6Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner6Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
 									<div class="spells , spell3 , deathfire"></div>
 									<p class="gamesPlayed">R: 66   N: 1,344</p>
 									<p class="ranking">4260</p>
@@ -291,15 +291,15 @@
 									<p class="mains">Mid, Top</p>
 								</div>
 							</div>
-							<div id="summonerLiveData8" class="summonerLiveData8 , summonerLiveDataRed">
-								<img src="images/champions/Vi_0.jpg" alt="Vi image">
+							<div id="summonerLiveData7" class="summonerLiveData7 , summonerLiveDataRed">
+								<img id="championImg7" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Poro Zombie</h4>
-									<img src="images/champions/Vi_Square_0.png" alt="Vi small image">
+									<h4 id="playerName7"></h4>
+									<img id="championImgSmall7" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/smite.png" class="spells , spell2" alt="smite spell">
+									<img id="summoner7Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner7Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
 									<div class="spells , spell3 , colossus"></div>
 									<p class="gamesPlayed">R: 430   N: 1,448</p>
 									<p class="ranking">4311</p>
@@ -324,15 +324,15 @@
 									<p class="mains">Mid, Top</p>
 								</div>
 							</div>
-							<div id="summonerLiveData9" class="summonerLiveData9 , summonerLiveDataRed">
-								<img src="images/champions/Sejuani_0.jpg" alt="Sejuani image">
+							<div id="summonerLiveData8" class="summonerLiveData8 , summonerLiveDataRed">
+								<img id="championImg8" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Piggy Ride</h4>
-									<img src="images/champions/Sejuani_Square_0.png" alt="Sejuani small image">
+									<h4 id="playerName8"></h4>
+									<img id="championImgSmall8" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/teleport.png" class="spells , spell2" alt="teleport spell">
+									<img id="summoner8Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner8Spell1" src="images/teleport.png" class="spells , spell2" alt="teleport spell">
 									<div class="spells , spell3 , colossus"></div>
 									<p class="gamesPlayed">R: 86   N: 2,070</p>
 									<p class="ranking">4689</p>
@@ -357,15 +357,15 @@
 									<p class="mains">Jungle, Support</p>
 								</div>
 							</div>
-							<div id="summonerLiveData10" class="summonerLiveData10 , summonerLiveDataRed">
-							<img src="images/champions/Anivia_0.jpg" alt="Anivia image">
+							<div id="summonerLiveData9" class="summonerLiveData9 , summonerLiveDataRed">
+							<img id="championImg9" src="" alt="">
 								<div class="summonerHeader">
-									<h4>Pesky Dust</h4>
-									<img src="images/champions/Anivia_Square_0.png" alt="Anivia small image">
+									<h4 id="playerName9"></h4>
+									<img id="championImgSmall9" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img src="images/ignite.png" class="spells , spell2" alt="ignite spell">
+									<img id="summoner9Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
+									<img id="summoner9Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
 									<div class="spells , spell3 , thunderlord"></div>
 									<p class="gamesPlayed">R: 261   N: 202</p>
 									<p class="ranking">5188</p>
@@ -430,6 +430,9 @@
 				</div>
 				<div class="cubeStatistics" id="cubestatistics">
 				</div>
+			</div>
+			<div class="globalVariables">
+				<div id="serverActualVersion"></div>
 			</div>
 		</main>
 		<footer>

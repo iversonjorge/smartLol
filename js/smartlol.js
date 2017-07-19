@@ -45,7 +45,8 @@ function searchLiveData(){
 	cubeonLive.style.filter = "blur(10px) opacity(0.9)";
 	modal.classList.add("modal");
 	loader.classList.add("loader");
-	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null); //Start loading all the data
+	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null, null); //Start loading all the data
+	getTheJson("php/getCurrentVersion.php", getCurrentVersion, "", null, null); //paso el id del mapa a la tabla que busca los tipos de games
 	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 }
 
@@ -61,15 +62,39 @@ function loadLiveData(){
 //-----------------------/ON LIVE FUNCTIONS----------------------------
 //-----------------------Riot Api Requests---------------------------------
 
+
+
 function getSummonerByName(){
 	summonerName.innerHTML = data.name;
-	getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null); //busco los datos del summoner
+	getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null, null); //busco los datos del summoner
 }
 
 function getCurrentGameInfoBySummoner(){
-	 getTheJson("json/matchMakingQueues.json", getQueueName, "", data.gameQueueConfigId); //paso el id del game a la tabla que busca los tipos de games
-	 getTheJson("json/maps.json", getMapName, "", data.mapId); //paso el id del mapa a la tabla que busca los tipos de games
-	 getTheJson("php/getCurrentServerStatus.php?regionTag=" + data.platformId, getServerName, "", null); //paso el id del mapa a la tabla que busca los tipos de games
+	 getTheJson("json/matchMakingQueues.json", getQueueName, "", data.gameQueueConfigId, null); //paso el id del game a la tabla que busca los tipos de games
+	 getTheJson("json/maps.json", getMapName, "", data.mapId, null); //paso el id del mapa a la tabla que busca los tipos de games
+	 getTheJson("php/getCurrentServerStatus.php?regionTag=" + data.platformId, getServerName, "", null, null); //paso el id del mapa a la tabla que busca los tipos de games
+	 for(var i = 0; i < data.participants.length; i++){
+	 	document.getElementById("playerName"+i).innerHTML = data.participants[i].summonerName;
+	 	getTheJson("php/getChampionInfo.php?championId=" + data.participants[i].championId, getChampionsImgsUrl, "", i, null); //paso el id del campeon para conseguir la url de las imagenes
+	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell1Id, getSpellsImgsUrl, "", i, 0); //paso el id del spell 1 para conseguir la url de la imagen
+	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell2Id, getSpellsImgsUrl, "", i, 1); //paso el id del spell 2 para conseguir la url de la imagen
+	 }
+}
+
+function getCurrentVersion(){
+	serverActualVersion.innerHTML = data[0];
+}
+
+function getSpellsImgsUrl(){
+	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersion.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).alt= data.name + " image";
+}
+
+function getChampionsImgsUrl(){
+	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersion.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).alt= data.name + " small image";
+	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/img/" + data.image.group + "/loading/" + data.key + "_0.jpg";
+	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).alt= data.name + " image";
 }
 
 function getQueueName(){
@@ -92,18 +117,18 @@ function getServerName(){
 	queueMapServer.innerHTML += " · " + data.name;
 }
 
-function getTheJson(url, callback, errorMessage, parameter){ 
+function getTheJson(url, callback, errorMessage, parameter1, parameter2){ 
 	/*the parameters of this function are
 	url: the url of the json
-	callback: the function to call with the json as response
+	callback: the next function to call with the json as response, if callback is null the json will be returned to the function who has called this function.
 	errorMessage: the Message in case of error
-	parameter: an optional parameter in case the callback function needs it*/
+	parameters: optional parameters in case the callback function needs them*/
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
 			if(isJson(request.responseText)){
 				data = JSON.parse(request.responseText);
-				callback(data, parameter);
+				callback(data, parameter1, parameter2);
 			} else{
 				alert(errorMessage);
 			}

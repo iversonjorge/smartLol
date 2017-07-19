@@ -487,52 +487,52 @@ main{
 	box-shadow: 0 0 5px 3px rgba(203,33,36,0.75);
 }
 
-.summonerLiveData1{
+.summonerLiveData0{
 	left: 10%;
+	top: 2%;
+}
+
+.summonerLiveData1{
+	left: 27%;
 	top: 2%;
 }
 
 .summonerLiveData2{
-	left: 27%;
+	left: 44%;
 	top: 2%;
 }
 
 .summonerLiveData3{
-	left: 44%;
+	left: 61%;
 	top: 2%;
 }
 
 .summonerLiveData4{
-	left: 61%;
-	top: 2%;
-}
-
-.summonerLiveData5{
 	left: 78%;
 	top: 2%;
 }
 
-.summonerLiveData6{
+.summonerLiveData5{
 	left: 10%;
 	top: 46%;
 }
 
-.summonerLiveData7{
+.summonerLiveData6{
 	left: 27%;
 	top: 46%;
 }
 
-.summonerLiveData8{
+.summonerLiveData7{
 	left: 44%;
 	top: 46%;
 }
 
-.summonerLiveData9{
+.summonerLiveData8{
 	left: 61%;
 	top: 46%;
 }
 
-.summonerLiveData10{
+.summonerLiveData9{
 	left: 78%;
 	top: 46%;
 }
@@ -718,6 +718,10 @@ main{
 }
 
 /* ------------------- /OnLive --------------------------*/
+/*--------------------global Variables-------------------*/
+.globalVariables{
+	display: none;
+}
 
 /* ------------------- footer --------------------------*/
 footer{
