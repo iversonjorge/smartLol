@@ -68,7 +68,7 @@
 									<img id="summoner0Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner0Spell1" src="images/exhaust.png" class="spells , spell2" alt="exhaust spell">
 									<div class="spells , spell3 , thunderlord"></div>
-									<p class="gamesPlayed">R: 151 N: 1,299</p>
+									<p id="gamesPlayed0" class="gamesPlayed"></p>
 									<p class="ranking">4533</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -76,7 +76,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier0" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticYellow"> 16 / 16 (50.0%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -101,7 +101,7 @@
 									<img id="summoner1Spell0" src="images/teleport.png" class="spells , spell1" alt="teleport spell">
 									<img id="summoner1Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
 									<div class="spells , spell3 , fervor"></div>
-									<p class="gamesPlayed">R: 138   N: 2,078</p>
+									<p id="gamesPlayed1" class="gamesPlayed"></p>
 									<p class="ranking">4587</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -109,7 +109,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier1" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticGreen">17 / 12 (58.6%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -134,7 +134,7 @@
 									<img id="summoner2Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner2Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
 									<div class="spells , spell3 , fervor"></div>
-									<p class="gamesPlayed">R: 242   N: 1,291</p>
+									<p id="gamesPlayed2" class="gamesPlayed"></p>
 									<p class="ranking">4489</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -142,7 +142,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier2" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticYellow">10 / 12 (45.5%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -167,7 +167,7 @@
 									<img id="summoner3Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner3Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
 									<div class="spells , spell3 , thunderlord"></div>
-									<p class="gamesPlayed">R: 108   N: 3,375</p>
+									<p id="gamesPlayed3" class="gamesPlayed"></p>
 									<p class="ranking">4420</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -175,7 +175,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier3" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticRed">7 / 11 (38.9%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -200,7 +200,7 @@
 									<img id="summoner4Spell0" src="images/cleanse.png" class="spells , spell1" alt="cleanse spell">
 									<img id="summoner4Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
 									<div class="spells , spell3 , thunderlord"></div>
-									<p class="gamesPlayed">R: 103   N: 3,607</p>
+									<p id="gamesPlayed4" class="gamesPlayed"></p>
 									<p class="ranking">4403</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -208,7 +208,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier4" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticRed">7 / 9 (43.8%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -235,7 +235,7 @@
 									<img id="summoner5Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner5Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
 									<div class="spells , spell3 , deathfire"></div>
-									<p class="gamesPlayed">R: 184   N: 1,274</p>
+									<p id="gamesPlayed5" class="gamesPlayed"></p>
 									<p class="ranking">4852</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -243,7 +243,7 @@
 									<div class="rankingLeague">
 										<img src="images/platinum.png" alt="Platinum Ranking League">
 									</div>
-									<p class="tier">I</p>
+									<p id="tier5" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticGreen">42 / 32 (56.8%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -268,7 +268,7 @@
 									<img id="summoner6Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner6Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
 									<div class="spells , spell3 , deathfire"></div>
-									<p class="gamesPlayed">R: 66   N: 1,344</p>
+									<p id="gamesPlayed6" class="gamesPlayed"></p>
 									<p class="ranking">4260</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -276,7 +276,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">V</p>
+									<p id="tier6" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticGreen">5 / 3 (62.5%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -301,7 +301,7 @@
 									<img id="summoner7Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner7Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
 									<div class="spells , spell3 , colossus"></div>
-									<p class="gamesPlayed">R: 430   N: 1,448</p>
+									<p id="gamesPlayed7" class="gamesPlayed"></p>
 									<p class="ranking">4311</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -309,7 +309,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">IV</p>
+									<p id="tier7" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticRed">2 / 5 (28.6%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -334,7 +334,7 @@
 									<img id="summoner8Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner8Spell1" src="images/teleport.png" class="spells , spell2" alt="teleport spell">
 									<div class="spells , spell3 , colossus"></div>
-									<p class="gamesPlayed">R: 86   N: 2,070</p>
+									<p id="gamesPlayed8" class="gamesPlayed"></p>
 									<p class="ranking">4689</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -342,7 +342,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">IV</p>
+									<p id="tier8" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticRed">11 / 14 (44.0%)</p>
 									<h5 class="kills">Kills:</h5>
@@ -367,7 +367,7 @@
 									<img id="summoner9Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
 									<img id="summoner9Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
 									<div class="spells , spell3 , thunderlord"></div>
-									<p class="gamesPlayed">R: 261   N: 202</p>
+									<p id="gamesPlayed9" class="gamesPlayed"></p>
 									<p class="ranking">5188</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
@@ -375,7 +375,7 @@
 									<div class="rankingLeague">
 										<img src="images/diamond.png" alt="Diamond Ranking League">
 									</div>
-									<p class="tier">IV</p>
+									<p id="tier9" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
 									<p class="winLoss , statisticYellow">59 / 60 (49.6%)</p>
 									<h5 class="kills">Kills:</h5>

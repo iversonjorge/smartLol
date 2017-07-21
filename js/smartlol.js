@@ -46,7 +46,7 @@ function searchLiveData(){
 	modal.classList.add("modal");
 	loader.classList.add("loader");
 	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null, null); //Start loading all the data
-	getTheJson("php/getCurrentVersion.php", getCurrentVersion, "", null, null); //paso el id del mapa a la tabla que busca los tipos de games
+	getTheJson("php/getCurrentVersion.php", getCurrentVersion, "Falló al buscar la version actual del servidor", null, null); //paso el id del mapa a la tabla que busca los tipos de games
 	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 }
 
@@ -70,19 +70,29 @@ function getSummonerByName(){
 }
 
 function getCurrentGameInfoBySummoner(){
-	 getTheJson("json/matchMakingQueues.json", getQueueName, "", data.gameQueueConfigId, null); //paso el id del game a la tabla que busca los tipos de games
-	 getTheJson("json/maps.json", getMapName, "", data.mapId, null); //paso el id del mapa a la tabla que busca los tipos de games
-	 getTheJson("php/getCurrentServerStatus.php?regionTag=" + data.platformId, getServerName, "", null, null); //paso el id del mapa a la tabla que busca los tipos de games
+	 getTheJson("json/matchMakingQueues.json", getQueueName, "Falló al buscar la queue", data.gameQueueConfigId, null); //paso el id del game a la tabla que busca los tipos de games
+	 getTheJson("json/maps.json", getMapName, "Falló al buscar el mapa", data.mapId, null); //paso el id del mapa a la tabla que busca los tipos de games
+	 getTheJson("php/getCurrentServerStatus.php?regionTag=" + data.platformId, getServerName, "Falló al buscar el status del servidor", null, null); //paso el id del mapa a la tabla que busca los tipos de games
 	 for(var i = 0; i < data.participants.length; i++){
 	 	document.getElementById("playerName"+i).innerHTML = data.participants[i].summonerName;
-	 	getTheJson("php/getChampionInfo.php?championId=" + data.participants[i].championId, getChampionsImgsUrl, "", i, null); //paso el id del campeon para conseguir la url de las imagenes
-	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell1Id, getSpellsImgsUrl, "", i, 0); //paso el id del spell 1 para conseguir la url de la imagen
-	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell2Id, getSpellsImgsUrl, "", i, 1); //paso el id del spell 2 para conseguir la url de la imagen
+	 	getTheJson("php/getChampionInfo.php?championId=" + data.participants[i].championId, getChampionsImgsUrl, "Falló al buscar la imagen del Champion", i, null); //paso el id del campeon para conseguir la url de las imagenes
+	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell1Id, getSpellsImgsUrl, "Falló al buscar el Spell 0", i, 0); //paso el id del spell 1 para conseguir la url de la imagen
+	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell2Id, getSpellsImgsUrl, "Fallo al buscar el Spell 1", i, 1); //paso el id del spell 2 para conseguir la url de la imagen
+	 	getTheJson("php/getRankingLeagueInfo.php?summonerId=" + data.participants[i].summonerId, getRankedInfo, "Fallo al buscar la info de ranked", i, data.participants[i].summonerId); //paso el id del summoner para que busque la info de ranked
 	 }
 }
 
 function getCurrentVersion(){
 	serverActualVersion.innerHTML = data[0];
+}
+
+function getRankedInfo(){
+	for(var n = 0; n < data[0].entries.length; n++){
+		if(data[0].entries[n].playerOrTeamId == getRankedInfo.arguments[2]){
+			document.getElementById("gamesPlayed"+getRankedInfo.arguments[1]).innerHTML = "W: " + data[0].entries[n].wins + "   L: " + data[0].entries[n].losses;
+			document.getElementById("tier"+getRankedInfo.arguments[1]).innerHTML = data[0].entries[n].rank;
+		}
+	}
 }
 
 function getSpellsImgsUrl(){
