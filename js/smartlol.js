@@ -65,8 +65,14 @@ function loadLiveData(){
 
 
 function getSummonerByName(){
-	summonerName.innerHTML = data.name;
-	getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null, null); //busco los datos del summoner
+	if (summonerName.innerHTML == "") {
+		summonerName.innerHTML = data.name;
+		searchedSummonerId.innerHTML = data.id;
+		searchedAccountId.innerHTML = data.accountId;
+		getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null, null); //busco los datos del summoner
+	} else {
+	 	getTheJson("php/getGamesPlayedByChampion.php?championId=" + getSummonerByName.arguments[2] + "&accountId=" + data.accountId , getGamesPlayedByChampion, "noRankedGamesPlayedWithCurrentChampion", getSummonerByName.arguments[1],  data.accountId); //paso el accountId del campeon para conseguir los juegos jugados con ese campeón
+	}
 }
 
 function getCurrentGameInfoBySummoner(){
@@ -79,6 +85,13 @@ function getCurrentGameInfoBySummoner(){
 	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell1Id, getSpellsImgsUrl, "Falló al buscar el Spell 0", i, 0); //paso el id del spell 1 para conseguir la url de la imagen
 	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell2Id, getSpellsImgsUrl, "Fallo al buscar el Spell 1", i, 1); //paso el id del spell 2 para conseguir la url de la imagen
 	 	getTheJson("php/getRankingLeagueInfo.php?summonerId=" + data.participants[i].summonerId, getRankedInfo, "Fallo al buscar la info de ranked", i, data.participants[i].summonerId); //paso el id del summoner para que busque la info de ranked
+		getTheJson("php/getSummonerByName.php?name=" + data.participants[i].summonerName, getSummonerByName, "Falló al buscar la información del Summoner By Name", i, data.participants[i].championId); //Busco la info del summoner by Name
+	 	for(var n = 0; n < data.participants[i].masteries.length; n++){
+	 		if (data.participants[i].masteries[n].masteryId == 6161 || data.participants[i].masteries[n].masteryId == 6162 || data.participants[i].masteries[n].masteryId == 6164 || data.participants[i].masteries[n].masteryId == 6361 || data.participants[i].masteries[n].masteryId == 6362 || data.participants[i].masteries[n].masteryId == 6363 || data.participants[i].masteries[n].masteryId == 6261 || data.participants[i].masteries[n].masteryId == 6262 || data.participants[i].masteries[n].masteryId == 6263 ) {
+	 			document.getElementById("mastery"+i).src = "http://ddragon.leagueoflegends.com/cdn/"+serverActualVersion.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png";
+	 			getTheJson("php/getMasteryInfobyId.php?id=" + data.participants[i].masteries[n].masteryId, getMasteryInfobyId, "Fallo al buscar la info de la maestria por id", i, null); //paso el id de la maestria para sacar la info de ella
+	 		}
+	 	}
 	 }
 }
 
@@ -86,12 +99,55 @@ function getCurrentVersion(){
 	serverActualVersion.innerHTML = data[0];
 }
 
-function getRankedInfo(){
-	for(var n = 0; n < data[0].entries.length; n++){
-		if(data[0].entries[n].playerOrTeamId == getRankedInfo.arguments[2]){
-			document.getElementById("gamesPlayed"+getRankedInfo.arguments[1]).innerHTML = "W: " + data[0].entries[n].wins + "   L: " + data[0].entries[n].losses;
-			document.getElementById("tier"+getRankedInfo.arguments[1]).innerHTML = data[0].entries[n].rank;
+function getMatchDataByMatchIdAccountId(){
+	for (var n = 0; n < data.participantIdentities.length; n++){
+		if (data.participantIdentities[n].player.currentAccountId == getMatchDataByMatchIdAccountId.arguments[2]){
+		//Pregunto si es el jugador que estoy buscando
+			if (document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML == ""){ //Si estan vacias, inicializa la cuenta.
+				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
+				document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
+				document.getElementById("deaths"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
+				document.getElementById("assists"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
+				document.getElementById("cs"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
+			}
+
+			if (data.participants[n].stats.win){
+				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + 1;
+			}else{
+				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) - 1;
+			}
+			document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + parseInt(data.participants[n].stats.kills);
+			document.getElementById("deaths"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("deaths"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + parseInt(data.participants[n].stats.deaths);
+			document.getElementById("assists"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("assists"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + parseInt(data.participants[n].stats.assists);
+			document.getElementById("cs"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("cs"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + parseInt(data.participants[n].stats.totalMinionsKilled) + parseInt(data.participants[n].stats.neutralMinionsKilled);
 		}
+	}
+}
+
+function getGamesPlayedByChampion(){
+	document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = data.totalgames;
+	for (var n = 0; n < data.matches.length; n++){
+		getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2]); //Busco la info del match by match id y account id
+	}
+}
+
+function getMasteryInfobyId(){
+	document.getElementById("mastery"+getMasteryInfobyId.arguments[1]).alt = data.name + " mastery";
+}
+
+function getRankedInfo(){
+	if (data != ""){
+		if(data[0].playerOrTeamId == getRankedInfo.arguments[2]){
+			document.getElementById("gamesPlayed"+getRankedInfo.arguments[1]).innerHTML = "W: " + data[0].wins + "   L: " + data[0].losses;
+			document.getElementById("tier"+getRankedInfo.arguments[1]).innerHTML = data[0].rank;
+			document.getElementById("rankedLeague"+getRankedInfo.arguments[1]).src = "images/rankedIcons/" + data[0].tier + "_" + data[0].rank + ".png";
+			document.getElementById("rankedLeague"+getRankedInfo.arguments[1]).alt = data[0].tier+" Icon";
+		}
+	} else{
+		document.getElementById("gamesPlayed"+getRankedInfo.arguments[1]).innerHTML = "W: 0   L: 0";
+		document.getElementById("tier"+getRankedInfo.arguments[1]).innerHTML = "";
+		document.getElementById("rankedLeague"+getRankedInfo.arguments[1]).src = "images/rankedIcons/provisional.png";
+		document.getElementById("rankedLeague"+getRankedInfo.arguments[1]).alt = "Unranked Icon";
 	}
 }
 
@@ -140,7 +196,21 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2){
 				data = JSON.parse(request.responseText);
 				callback(data, parameter1, parameter2);
 			} else{
-				alert(errorMessage);
+				if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){
+					document.getElementById("winLoss"+parameter1).innerHTML = "0 / 0 (0.0%)";
+					document.getElementById("winLoss"+parameter1).classList.add("statisticYellow");
+					document.getElementById("kills"+parameter1).innerHTML = "0.0 (+0.0)";
+					document.getElementById("kills"+parameter1).classList.add("statisticYellow");
+					document.getElementById("deaths"+parameter1).innerHTML = "0.0 (+0.0)";
+					document.getElementById("deaths"+parameter1).classList.add("statisticYellow");
+					document.getElementById("assists"+parameter1).innerHTML = "0.0 (+0.0)";
+					document.getElementById("assists"+parameter1).classList.add("statisticYellow");
+					document.getElementById("cs"+parameter1).innerHTML = "0 (+0)";
+					document.getElementById("cs"+parameter1).classList.add("statisticYellow");
+					document.getElementById("mains"+parameter1).innerHTML = "-";
+				} else{
+					alert(errorMessage);
+				}
 			}
 		}
 	}

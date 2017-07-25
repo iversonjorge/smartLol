@@ -59,269 +59,253 @@
 					<div class="a">
 						<div class="teamBlue">
 							<div id="summonerLiveData0" class="summonerLiveData0 , summonerLiveDataYellow">
-								<img id="championImg0" src="" alt="">
+								<img id="championImg0">
 								<div class="summonerHeader">
 									<h4 id="playerName0"></h4>
-									<img id="championImgSmall0" src="" alt="">
+									<img id="championImgSmall0">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner0Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner0Spell1" src="images/exhaust.png" class="spells , spell2" alt="exhaust spell">
-									<div class="spells , spell3 , thunderlord"></div>
+									<img id="summoner0Spell0" class="spells , spell1">
+									<img id="summoner0Spell1" class="spells , spell2">
+									<img id="mastery0" class="spells , mastery">
 									<p id="gamesPlayed0" class="gamesPlayed"></p>
 									<p class="ranking">4533</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticYellow , performanceP"> 3.2%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague0" class="rankingLeague">
 									<p id="tier0" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticYellow"> 16 / 16 (50.0%)</p>
+									<p id="winLoss0" class="winLoss , statisticYellow"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticGreen">4.7 (+1.0)</p>
+									<p id="kills0" class="kills , statisticGreen"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticRed">7.3 (+1.4)</p>
+									<p id="deaths0" class="deaths , statisticRed"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">9.6 (-0.9)</p>
+									<p id="assists0" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen"> 56 (+8)</p>
+									<p id="cs0" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Top, Mid</p>
+									<p id="mains0" class="mains">Top, Mid</p>
 								</div>
 							</div>
 							<div id="summonerLiveData1" class="summonerLiveData1 , summonerLiveDataBlue">
-								<img id="championImg1" src="" alt="">
+								<img id="championImg1">
 								<div class="summonerHeader">
 									<h4 id="playerName1"></h4>
-									<img id="championImgSmall1" src="" alt="">
+									<img id="championImgSmall1">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner1Spell0" src="images/teleport.png" class="spells , spell1" alt="teleport spell">
-									<img id="summoner1Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
-									<div class="spells , spell3 , fervor"></div>
+									<img id="summoner1Spell0" class="spells , spell1">
+									<img id="summoner1Spell1" class="spells , spell2">
+									<img id="mastery1" class="spells , mastery">
 									<p id="gamesPlayed1" class="gamesPlayed"></p>
 									<p class="ranking">4587</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticGreen , performanceP">14.8%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague1" class="rankingLeague">
 									<p id="tier1" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticGreen">17 / 12 (58.6%)</p>
+									<p id="winLoss1" class="winLoss , statisticGreen"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticGreen">7.4 (+0.9)</p>
+									<p id="kills1" class="kills , statisticGreen"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticGreen">4.6 (-1.4)</p>
+									<p id="deaths1" class="deaths , statisticGreen"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow"> 5.3 (-0.1))</p>
+									<p id="assists1" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">210 (+35)</p>
+									<p id="cs1" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Top, Marksman</p>
+									<p id="mains1" class="mains">Top, Marksman</p>
 								</div>
 							</div>
 							<div id="summonerLiveData2" class="summonerLiveData2 , summonerLiveDataBlue">
-								<img id="championImg2" src="" alt="">
+								<img id="championImg2">
 								<div class="summonerHeader">
 									<h4 id="playerName2"></h4>
-									<img id="championImgSmall2" src="" alt="">
+									<img id="championImgSmall2">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner2Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner2Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
-									<div class="spells , spell3 , fervor"></div>
+									<img id="summoner2Spell0" class="spells , spell1">
+									<img id="summoner2Spell1" class="spells , spell2">
+									<img id="mastery2" class="spells , mastery">
 									<p id="gamesPlayed2" class="gamesPlayed"></p>
 									<p class="ranking">4489</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticYellow , performanceP">-4.0%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague2" class="rankingLeague">
 									<p id="tier2" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticYellow">10 / 12 (45.5%)</p>
+									<p id="winLoss2" class="winLoss , statisticYellow"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticRed">5.6 (-0.6)</p>
+									<p id="kills2" class="kills , statisticRed"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticRed">7.1 (+1.9)</p>
+									<p id="deaths2" class="deaths , statisticRed"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticGreen"> 8.9 (+1.0)</p>
+									<p id="assists2" class="assists , statisticGreen"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">192 (+18)</p>
+									<p id="cs2" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Mid, Top</p>
+									<p id="mains2" class="mains">Mid, Top</p>
 								</div>
 							</div>
 							<div id="summonerLiveData3" class="summonerLiveData3 , summonerLiveDataBlue">
-								<img id="championImg3" src="" alt="">
+								<img id="championImg3">
 								<div class="summonerHeader">
 									<h4 id="playerName3"></h4>
-									<img id="championImgSmall3" src="" alt="">
+									<img id="championImgSmall3">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner3Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner3Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
-									<div class="spells , spell3 , thunderlord"></div>
+									<img id="summoner3Spell0" class="spells , spell1">
+									<img id="summoner3Spell1" class="spells , spell2">
+									<img id="mastery3" class="spells , mastery">
 									<p id="gamesPlayed3" class="gamesPlayed"></p>
 									<p class="ranking">4420</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticGreen , performanceP">16.6%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague3" class="rankingLeague">
 									<p id="tier3" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticRed">7 / 11 (38.9%)</p>
+									<p id="winLoss3" class="winLoss , statisticRed"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticGreen">7.4 (+1.1)</p>
+									<p id="kills3" class="kills , statisticGreen"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticGreen">3.7 (-2.1)</p>
+									<p id="deaths3" class="deaths , statisticGreen"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticRed">7.3 (-0.8)</p>
+									<p id="assists3" class="assists , statisticRed"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticYellow">38 (+0)</p>
+									<p id="cs3" class="cs , statisticYellow"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Top, Jungle</p>
+									<p id="mains3" class="mains">Top, Jungle</p>
 								</div>
 							</div>
 							<div id="summonerLiveData4" class="summonerLiveData4 , summonerLiveDataBlue">
-								<img id="championImg4" src="" alt="">
+								<img id="championImg4">
 								<div class="summonerHeader">
 									<h4 id="playerName4"></h4>
-									<img id="championImgSmall4" src="" alt="">
+									<img id="championImgSmall4">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner4Spell0" src="images/cleanse.png" class="spells , spell1" alt="cleanse spell">
-									<img id="summoner4Spell1" src="images/flash.png" class="spells , spell2" alt="flash spell">
-									<div class="spells , spell3 , thunderlord"></div>
+									<img id="summoner4Spell0" class="spells , spell1">
+									<img id="summoner4Spell1" class="spells , spell2">
+									<img id="mastery4" class="spells , mastery">
 									<p id="gamesPlayed4" class="gamesPlayed"></p>
 									<p class="ranking">4403</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticGreen , performanceP">16.6%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague4" class="rankingLeague">
 									<p id="tier4" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticRed">7 / 9 (43.8%)</p>
+									<p id="winLoss4" class="winLoss , statisticRed"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticYellow">6.8 (-0.1)</p>
+									<p id="kills4" class="kills , statisticYellow"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticRed">6.5 (+0.7)</p>
+									<p id="deaths4" class="deaths , statisticRed"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">6.4 (+0.4)</p>
+									<p id="assists4" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticYellow">203 (+16)</p>
+									<p id="cs4" class="cs , statisticYellow"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Mid, Top</p>
+									<p id="mains4" class="mains">Mid, Top</p>
 								</div>
 							</div>
 						</div>
 						<div class="teamRed">
 							<div id="summonerLiveData5" class="summonerLiveData5 , summonerLiveDataRed">
-								<img id="championImg5" src="" alt="">
+								<img id="championImg5">
 								<div class="summonerHeader">
 									<h4 id="playerName5"></h4>
-									<img id="championImgSmall5" src="" alt="">
+									<img id="championImgSmall5">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner5Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner5Spell1" src="images/heal.png" class="spells , spell2" alt="heal spell">
-									<div class="spells , spell3 , deathfire"></div>
+									<img id="summoner5Spell0" class="spells , spell1">
+									<img id="summoner5Spell1" class="spells , spell2">
+									<img id="mastery5" class="spells , mastery">
 									<p id="gamesPlayed5" class="gamesPlayed"></p>
 									<p class="ranking">4852</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticGreen , performanceP">12.9%</p>
-									<div class="rankingLeague">
-										<img src="images/platinum.png" alt="Platinum Ranking League">
-									</div>
+									<img id="rankedLeague5" class="rankingLeague">
 									<p id="tier5" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticGreen">42 / 32 (56.8%)</p>
+									<p id="winLoss5" class="winLoss , statisticGreen"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticGreen">8.7 (+2.1)</p>
+									<p id="kills5" class="kills , statisticGreen"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticYellow">6.1 (+0.4)</p>
+									<p id="deaths5" class="deaths , statisticYellow"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticGreen">9.6 (+1.1)</p>
+									<p id="assists5" class="assists , statisticGreen"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">195 (+25)</p>
+									<p id="cs5" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Marksman, Top</p>
+									<p id="mains5" class="mains">Marksman, Top</p>
 								</div>
 							</div>
 							<div id="summonerLiveData6" class="summonerLiveData6 , summonerLiveDataRed">
-								<img id="championImg6" src="" alt="">
+								<img id="championImg6">
 								<div class="summonerHeader">
 									<h4 id="playerName6"></h4>
-									<img id="championImgSmall6" src="" alt="">
+									<img id="championImgSmall6">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner6Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner6Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
-									<div class="spells , spell3 , deathfire"></div>
+									<img id="summoner6Spell0" class="spells , spell1">
+									<img id="summoner6Spell1" class="spells , spell2">
+									<img id="mastery6" class="spells , mastery">
 									<p id="gamesPlayed6" class="gamesPlayed"></p>
 									<p class="ranking">4260</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticYellow , performanceP">-3.9%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague6" class="rankingLeague">
 									<p id="tier6" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticGreen">5 / 3 (62.5%)</p>
+									<p id="winLoss6" class="winLoss , statisticGreen"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticYellow">5.6 (+0.0)</p>
+									<p id="kills6" class="kills , statisticYellow"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticYellow">6.9 (+0.3)</p>
+									<p id="deaths6" class="deaths , statisticYellow"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">9.6 (+0.4)</p>
+									<p id="assists6" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticRed">50 (-22)</p>
+									<p id="cs6" class="cs , statisticRed"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Mid, Top</p>
+									<p id="mains6" class="mains">Mid, Top</p>
 								</div>
 							</div>
 							<div id="summonerLiveData7" class="summonerLiveData7 , summonerLiveDataRed">
-								<img id="championImg7" src="" alt="">
+								<img id="championImg7">
 								<div class="summonerHeader">
 									<h4 id="playerName7"></h4>
-									<img id="championImgSmall7" src="" alt="">
+									<img id="championImgSmall7">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner7Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner7Spell1" src="images/smite.png" class="spells , spell2" alt="smite spell">
-									<div class="spells , spell3 , colossus"></div>
+									<img id="summoner7Spell0" class="spells , spell1">
+									<img id="summoner7Spell1" class="spells , spell2">
+									<img id="mastery7" class="spells , mastery">
 									<p id="gamesPlayed7" class="gamesPlayed"></p>
 									<p class="ranking">4311</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticYellow , performanceP">2.0%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague7" class="rankingLeague">
 									<p id="tier7" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticRed">2 / 5 (28.6%)</p>
+									<p id="winLoss7" class="winLoss , statisticRed"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticRed">4.9 (-1.2)</p>
+									<p id="kills7" class="kills , statisticRed"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticGreen">4.7 (-1.2)</p>
+									<p id="deaths7" class="deaths , statisticGreen"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">7.4 (+0.1)</p>
+									<p id="assists7" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">49 (+4)</p>
+									<p id="cs7" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Mid, Top</p>
+									<p id="mains7" class="mains">Mid, Top</p>
 								</div>
 							</div>
 							<div id="summonerLiveData8" class="summonerLiveData8 , summonerLiveDataRed">
@@ -331,30 +315,28 @@
 									<img id="championImgSmall8" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner8Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner8Spell1" src="images/teleport.png" class="spells , spell2" alt="teleport spell">
-									<div class="spells , spell3 , colossus"></div>
+									<img id="summoner8Spell0" class="spells , spell1">
+									<img id="summoner8Spell1" class="spells , spell2">
+									<img id="mastery8" class="spells , mastery">
 									<p id="gamesPlayed8" class="gamesPlayed"></p>
 									<p class="ranking">4689</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticGreen , performanceP">21.4%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague8" class="rankingLeague">
 									<p id="tier8" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticRed">11 / 14 (44.0%)</p>
+									<p id="winLoss8" class="winLoss , statisticRed"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticYellow">4.1 (-0.3)</p>
+									<p id="kills8" class="kills , statisticYellow"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticGreen">3.5 (-1.7)</p>
+									<p id="deaths8" class="deaths , statisticGreen"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">10.3 (-0.5)</p>
+									<p id="assists8" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">116 (+57)</p>
+									<p id="cs8" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Jungle, Support</p>
+									<p id="mains8" class="mains">Jungle, Support</p>
 								</div>
 							</div>
 							<div id="summonerLiveData9" class="summonerLiveData9 , summonerLiveDataRed">
@@ -364,30 +346,28 @@
 									<img id="championImgSmall9" src="" alt="">
 								</div>
 								<div class="summonerUpperHalf">
-									<img id="summoner9Spell0" src="images/flash.png" class="spells , spell1" alt="flash spell">
-									<img id="summoner9Spell1" src="images/ignite.png" class="spells , spell2" alt="ignite spell">
-									<div class="spells , spell3 , thunderlord"></div>
+									<img id="summoner9Spell0" class="spells , spell1">
+									<img id="summoner9Spell1" class="spells , spell2">
+									<img id="mastery9" class="spells , mastery">
 									<p id="gamesPlayed9" class="gamesPlayed"></p>
 									<p class="ranking">5188</p>
 									<div class="summonerLowerHalf"></div>
 									<h5 class="performance">Performance:</h5>
 									<p class="performance , statisticYellow , performanceP">1.4%</p>
-									<div class="rankingLeague">
-										<img src="images/diamond.png" alt="Diamond Ranking League">
-									</div>
+									<img id="rankedLeague9" class="rankingLeague">
 									<p id="tier9" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p class="winLoss , statisticYellow">59 / 60 (49.6%)</p>
+									<p id="winLoss9" class="winLoss , statisticYellow"></p>
 									<h5 class="kills">Kills:</h5>
-									<p class="kills , statisticGreen">6.8 (+0.6)</p>
+									<p id="kills9" class="kills , statisticGreen"></p>
 									<h5 class="deaths">Deaths:</h5>
-									<p class="deaths , statisticGreen">5.0 (+0.5)</p>
+									<p id="deaths9" class="deaths , statisticGreen"></p>
 									<h5 class="assists">Assists:</h5>
-									<p class="assists , statisticYellow">6.8 (-0.7)</p>
+									<p id="assists9" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
-									<p class="cs , statisticGreen">208 (+34)</p>
+									<p id="cs9" class="cs , statisticGreen"></p>
 									<h5 class="mains">Mains:</h5>
-									<p class="mains">Support, Mid</p>
+									<p id="mains9" class="mains">Support, Mid</p>
 								</div>
 							</div>
 						</div>
@@ -433,6 +413,18 @@
 			</div>
 			<div class="globalVariables">
 				<div id="serverActualVersion"></div>
+				<div id="searchedSummonerId"></div>
+				<div id="searchedAccountId"></div>
+				<div id="championTotalGames0"></div>
+				<div id="championTotalGames1"></div>
+				<div id="championTotalGames2"></div>
+				<div id="championTotalGames3"></div>
+				<div id="championTotalGames4"></div>
+				<div id="championTotalGames5"></div>
+				<div id="championTotalGames6"></div>
+				<div id="championTotalGames7"></div>
+				<div id="championTotalGames8"></div>
+				<div id="championTotalGames9"></div>
 			</div>
 		</main>
 		<footer>

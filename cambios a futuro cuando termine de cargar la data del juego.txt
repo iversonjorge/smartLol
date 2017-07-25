@@ -17,3 +17,6 @@
 12 - comprimir css con minify and compress css
 13 - cambiar el loading y poner un zhonya's
 14 - Agregarle un tooltip a todas las imagenes.
+15 - Pasar todas las imagenes a sprites para mejorar la performance de la pagina.
+16 - Agregar el ranking de flex y de 3v3 ranked.
+17 - Poner todos los comentarios del codigo en un solo idioma
