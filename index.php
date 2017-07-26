@@ -425,6 +425,7 @@
 				<div id="championTotalGames7"></div>
 				<div id="championTotalGames8"></div>
 				<div id="championTotalGames9"></div>
+				<div id="matchCurrentRequests">50</div>
 			</div>
 		</main>
 		<footer>

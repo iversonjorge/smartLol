@@ -125,9 +125,18 @@ function getMatchDataByMatchIdAccountId(){
 }
 
 function getGamesPlayedByChampion(){
-	document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = data.totalgames;
+	document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = 0;
+	if (data.matches.length==0) {
+		zeroGamesPlayed(getGamesPlayedByChampion.arguments[1]);
+	}
 	for (var n = 0; n < data.matches.length; n++){
-		getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2]); //Busco la info del match by match id y account id
+		if(data.matches[n].platformId=="LA2"){
+			document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = parseInt(document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML)+1;
+			matchCurrentRequests.innerHTML = parseInt(matchCurrentRequests.innerHTML)+1;
+			//time = (Math.floor(parseInt(matchCurrentRequests.innerHTML)/100))*2000;
+			//setTimeout(, time)
+			getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2]); //Busco la info del match by match id y account id
+		}
 	}
 }
 
@@ -197,17 +206,7 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2){
 				callback(data, parameter1, parameter2);
 			} else{
 				if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){
-					document.getElementById("winLoss"+parameter1).innerHTML = "0 / 0 (0.0%)";
-					document.getElementById("winLoss"+parameter1).classList.add("statisticYellow");
-					document.getElementById("kills"+parameter1).innerHTML = "0.0 (+0.0)";
-					document.getElementById("kills"+parameter1).classList.add("statisticYellow");
-					document.getElementById("deaths"+parameter1).innerHTML = "0.0 (+0.0)";
-					document.getElementById("deaths"+parameter1).classList.add("statisticYellow");
-					document.getElementById("assists"+parameter1).innerHTML = "0.0 (+0.0)";
-					document.getElementById("assists"+parameter1).classList.add("statisticYellow");
-					document.getElementById("cs"+parameter1).innerHTML = "0 (+0)";
-					document.getElementById("cs"+parameter1).classList.add("statisticYellow");
-					document.getElementById("mains"+parameter1).innerHTML = "-";
+					zeroGamesPlayed(parameter1);
 				} else{
 					alert(errorMessage);
 				}
@@ -218,7 +217,19 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2){
 	request.send();
 }
 
-
+function zeroGamesPlayed(i){
+	document.getElementById("winLoss"+i).innerHTML = "0 / 0 (0.0%)";
+	document.getElementById("winLoss"+i).classList.add("statisticYellow");
+	document.getElementById("kills"+i).innerHTML = "0.0 (+0.0)";
+	document.getElementById("kills"+i).classList.add("statisticYellow");
+	document.getElementById("deaths"+i).innerHTML = "0.0 (+0.0)";
+	document.getElementById("deaths"+i).classList.add("statisticYellow");
+	document.getElementById("assists"+i).innerHTML = "0.0 (+0.0)";
+	document.getElementById("assists"+i).classList.add("statisticYellow");
+	document.getElementById("cs"+i).innerHTML = "0 (+0)";
+	document.getElementById("cs"+i).classList.add("statisticYellow");
+	document.getElementById("mains"+i).innerHTML = "-";
+}
 
 function isJson(str) {
     try {
