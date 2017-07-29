@@ -124,6 +124,19 @@ function getMatchDataByMatchIdAccountId(){
 	}
 }
 
+
+function formatMatchData(i){
+	totalGames = parseInt(document.getElementById("championTotalGames"+i).innerHTML);
+	losses = (totalGames + parseInt(document.getElementById("winLoss"+i).innerHTML))/2;
+	wins = totalGames - losses;
+	winLossPercent = parseInt(wins*100/totalGames);
+	document.getElementById("winLoss"+i).innerHTML = wins + " / " + losses + " (" + winLossPercent + "%)";
+	document.getElementById("kills"+i).innerHTML = parseInt(parseInt(document.getElementById("kills"+i).innerHTML)/totalGames);
+	document.getElementById("deaths"+i).innerHTML = parseInt(parseInt(document.getElementById("deaths"+i).innerHTML)/totalGames);
+	document.getElementById("assists"+i).innerHTML = parseInt(parseInt(document.getElementById("assists"+i).innerHTML)/totalGames);
+	document.getElementById("cs"+i).innerHTML = parseInt(parseInt(document.getElementById("cs"+i).innerHTML)/totalGames);
+}
+
 function getGamesPlayedByChampion(){
 	document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = 0;
 	if (data.matches.length==0) {
@@ -131,11 +144,10 @@ function getGamesPlayedByChampion(){
 	}
 	for (var n = 0; n < data.matches.length; n++){
 		if(data.matches[n].platformId=="LA2"){
-			document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = parseInt(document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML)+1;
-			matchCurrentRequests.innerHTML = parseInt(matchCurrentRequests.innerHTML)+1;
-			//time = (Math.floor(parseInt(matchCurrentRequests.innerHTML)/100))*2000;
-			//setTimeout(, time)
-			getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2]); //Busco la info del match by match id y account id
+			if (document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML<=49) { //esta trayendo SOLO la informacion de las ultimas 50 partidas
+				document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = parseInt(document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML)+1;
+				getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2]+ "&playerNumber=" + getGamesPlayedByChampion.arguments[1], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2]); //Busco la info del match by match id y account id
+			}
 		}
 	}
 }
