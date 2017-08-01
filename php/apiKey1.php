@@ -1,5 +1,4 @@
 <?php
 	//apiKey.php
-	//hur
-	$apiKey = "RGAPI-4f0bfabb-5acb-4662-81fc-243e05be4ac0";
+	$apiKey = "RGAPI-92160cde-14da-4068-a3bc-a1e4568a00e6";
 ?>

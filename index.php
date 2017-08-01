@@ -85,8 +85,8 @@
 									<p id="assists0" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs0" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains0" class="mains">Top, Mid</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains0" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData1" class="summonerLiveData1 , summonerLiveDataBlue">
@@ -116,8 +116,8 @@
 									<p id="assists1" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs1" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains1" class="mains">Top, Marksman</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains1" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData2" class="summonerLiveData2 , summonerLiveDataBlue">
@@ -147,8 +147,8 @@
 									<p id="assists2" class="assists , statisticGreen"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs2" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains2" class="mains">Mid, Top</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains2" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData3" class="summonerLiveData3 , summonerLiveDataBlue">
@@ -178,8 +178,8 @@
 									<p id="assists3" class="assists , statisticRed"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs3" class="cs , statisticYellow"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains3" class="mains">Top, Jungle</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains3" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData4" class="summonerLiveData4 , summonerLiveDataBlue">
@@ -209,8 +209,8 @@
 									<p id="assists4" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs4" class="cs , statisticYellow"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains4" class="mains">Mid, Top</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains4" class="mains"></p>
 								</div>
 							</div>
 						</div>
@@ -242,8 +242,8 @@
 									<p id="assists5" class="assists , statisticGreen"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs5" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains5" class="mains">Marksman, Top</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains5" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData6" class="summonerLiveData6 , summonerLiveDataRed">
@@ -273,8 +273,8 @@
 									<p id="assists6" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs6" class="cs , statisticRed"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains6" class="mains">Mid, Top</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains6" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData7" class="summonerLiveData7 , summonerLiveDataRed">
@@ -304,8 +304,8 @@
 									<p id="assists7" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs7" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains7" class="mains">Mid, Top</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains7" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData8" class="summonerLiveData8 , summonerLiveDataRed">
@@ -335,8 +335,8 @@
 									<p id="assists8" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs8" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains8" class="mains">Jungle, Support</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains8" class="mains"></p>
 								</div>
 							</div>
 							<div id="summonerLiveData9" class="summonerLiveData9 , summonerLiveDataRed">
@@ -366,8 +366,8 @@
 									<p id="assists9" class="assists , statisticYellow"></p>
 									<h5 class="cs">CS:</h5>
 									<p id="cs9" class="cs , statisticGreen"></p>
-									<h5 class="mains">Mains:</h5>
-									<p id="mains9" class="mains">Support, Mid</p>
+									<h5 class="mains">Main:</h5>
+									<p id="mains9" class="mains"></p>
 								</div>
 							</div>
 						</div>
@@ -425,7 +425,7 @@
 				<div id="championTotalGames7"></div>
 				<div id="championTotalGames8"></div>
 				<div id="championTotalGames9"></div>
-				<div id="matchCurrentRequests">0</div>
+				<div id="summonersLoaded">0</div>
 			</div>
 		</main>
 		<footer>
