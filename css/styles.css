@@ -598,7 +598,7 @@ main{
 	z-index: 1;
 }
 
-.gamesPlayed , .ranking{
+.gamesPlayed{
 	font-family: "Cool Section Font Bold", Verdana, Tahoma;
 	font-size: 0.9em !important;
 	width: 100% !important;
@@ -611,15 +611,6 @@ main{
 	top: 48%;
 	left: 5% !important;
 	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
-}
-
-.ranking{
-	top: 35%;
-	left: 78% !important;
-	color: #2747E8 !important;
-	font-size: 1em !important;
-	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
-	display: none !important;
 }
 
 .summonerLowerHalf{
@@ -665,16 +656,6 @@ main{
 	width: 100%;
 	left: 35%;
 	font-size: 0.8em;
-}
-
-.performance{
-	top: 55%;
-}
-
-.performanceP{
-	position: absolute;
-	left: 55% !important;
-	font-size: 0.8em !important;
 }
 
 .winLoss{

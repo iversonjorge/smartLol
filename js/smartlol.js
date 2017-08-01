@@ -69,7 +69,7 @@ function getSummonerByName(){
 		summonerName.innerHTML = data.name;
 		searchedSummonerId.innerHTML = data.id;
 		searchedAccountId.innerHTML = data.accountId;
-		getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, summonerName.innerHTML + " no esta en una partida en este momento!", null, null, null); //busco los datos del summoner
+		getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, "notPlaying", summonerName.innerHTML, null, null); //busco los datos del summoner
 	} else {
 	 	getTheJson("php/getGamesPlayedByChampion.php?championId=" + getSummonerByName.arguments[2] + "&accountId=" + data.accountId , getGamesPlayedByChampion, "noRankedGamesPlayedWithCurrentChampion", getSummonerByName.arguments[1],  data.accountId, null); //paso el accountId del campeon para conseguir los juegos jugados con ese campeón
 	 	getTheJson("php/getGamesPlayedByAccount.php?accountId=" + data.accountId , getGamesPlayedByAccount, "noGamesPlayed", getSummonerByName.arguments[1],  data.accountId, null); //paso el accountId del campeon para conseguir los juegos jugados con ese campeón
@@ -142,9 +142,17 @@ function formatMatchData(){
 		if (document.getElementById("championTotalGames"+i).innerHTML != 0){
 			totalGames = parseInt(document.getElementById("championTotalGames"+i).innerHTML);
 			losses = (totalGames + parseInt(document.getElementById("winLoss"+i).innerHTML))/2;
+			document.getElementById("winLoss"+i).classList.add("statisticYellow");
 			wins = totalGames - losses;
 			winLossPercent = parseInt(wins*100/totalGames);
 			document.getElementById("winLoss"+i).innerHTML = wins + " / " + losses + " (" + winLossPercent + "%)";
+			if (winLossPercent<=47){
+				document.getElementById("winLoss"+i).classList.add("statisticRed");
+			} else if(winLossPercent<=53){
+				document.getElementById("winLoss"+i).classList.add("statisticYellow");
+			} else{
+				document.getElementById("winLoss"+i).classList.add("statisticGreen");
+			}
 			document.getElementById("kills"+i).innerHTML = parseInt(parseInt(document.getElementById("kills"+i).innerHTML)/totalGames);
 			document.getElementById("deaths"+i).innerHTML = parseInt(parseInt(document.getElementById("deaths"+i).innerHTML)/totalGames);
 			document.getElementById("assists"+i).innerHTML = parseInt(parseInt(document.getElementById("assists"+i).innerHTML)/totalGames);
@@ -282,13 +290,18 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2, paramet
 				data = JSON.parse(request.responseText);
 				callback(data, parameter1, parameter2, parameter3);
 			} else{
-				if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){
-					zeroGamesPlayed(parameter1);
+				if(errorMessage=="notPlaying"){ 
+					alert(parameter1 + " is not in a game");
 				} else{
-					if (errorMessage=="noGamesPlayed") {
-						document.getElementById("mains"+parameter1).innerHTML = "-";
-					} else {
-						alert(errorMessage);
+					if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){
+						zeroGamesPlayed(parameter1);
+					} else{
+						if (errorMessage=="noGamesPlayed") {
+							document.getElementById("mains"+parameter1).innerHTML = "-";
+						} else {
+							console.log(errorMessage);
+							console.log(data);
+						}
 					}
 				}
 			}
@@ -299,16 +312,12 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2, paramet
 }
 
 function zeroGamesPlayed(i){
-	document.getElementById("winLoss"+i).innerHTML = "0 / 0 (0.0%)";
+	document.getElementById("winLoss"+i).innerHTML = "0 / 0 (0%)";
 	document.getElementById("winLoss"+i).classList.add("statisticYellow");
-	document.getElementById("kills"+i).innerHTML = "0.0 (+0.0)";
-	document.getElementById("kills"+i).classList.add("statisticYellow");
-	document.getElementById("deaths"+i).innerHTML = "0.0 (+0.0)";
-	document.getElementById("deaths"+i).classList.add("statisticYellow");
-	document.getElementById("assists"+i).innerHTML = "0.0 (+0.0)";
-	document.getElementById("assists"+i).classList.add("statisticYellow");
-	document.getElementById("cs"+i).innerHTML = "0 (+0)";
-	document.getElementById("cs"+i).classList.add("statisticYellow");
+	document.getElementById("kills"+i).innerHTML = "0";
+	document.getElementById("deaths"+i).innerHTML = "0";
+	document.getElementById("assists"+i).innerHTML = "0";
+	document.getElementById("cs"+i).innerHTML = "0";
 	summonerLoaded();
 }
 
