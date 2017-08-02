@@ -1,21 +1,19 @@
 <?php 
-	//loadStaticData.php
-	include("apiKey2.php");
- 	$json = file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key={$apiKey}");
+	//insertStaticMasteriesData.php
+	include("apiKey.php");
+ 	$json = file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/masteries?locale=en_US&api_key={$apiKey}");
  	$array = json_decode($json,true);
 	include ('conection.php');
 	$query = "";
 	$iterator = new RecursiveArrayIterator($array['data']);
 	while ($iterator->valid()) {
 		if ($iterator->hasChildren()) {
-		    $query = $query . "INSERT INTO champions (id, championKey, name, title) VALUES ( ";
+		    $query = $query . "INSERT INTO masteries (id, name) VALUES ( ";
 			foreach ($iterator->getChildren() as $key => $value) {
-				if ($key == "title") {
-					$query = $query . '"'. $value .'"' . ");" ;
+				if ($key == "name") {
+					$query = $query . '"'. $value .'"' . ");";
 				} elseif($key == "id"){
 					$query = $query . $value . ", " ;
-				} else{
-					$query = $query .'"'. $value .'"' . ", " ;
 				}
 			}
 		}
