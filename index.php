@@ -382,7 +382,21 @@
 				</div>
 			</div>
 			<div class="globalVariables">
-				<div id="serverActualVersion"></div>
+				<div id="cssCurrentVersion"></div>
+				<div id="ddCurrentVersion"></div>
+				<div id="lCurrentVersion"></div>
+				<div id="itemCurrentVersion"></div>
+				<div id="runeCurrentVersion"></div>
+				<div id="masteryCurrentVersion"></div>
+				<div id="summonerCurrentVersion"></div>
+				<div id="championCurrentVersion"></div>
+				<div id="profileIconCurrentVersion"></div>
+				<div id="mapCurrentVersion"></div>
+				<div id="languageCurrentVersion"></div>
+				<div id="stickerCurrentVersion"></div>
+				<div id="vCurrentVersion"></div>
+				<div id="lgCurrentVersion"></div>
+				<div id="cdnCurrentVersion"></div>
 				<div id="searchedSummonerId"></div>
 				<div id="searchedAccountId"></div>
 				<div id="championTotalGames0"></div>

@@ -48,7 +48,7 @@ function searchLiveData(){
 	modal.classList.add("modal");
 	loader.classList.add("loader");
 	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null, null, null); //Start loading all the data
-	getTheJson("php/getCurrentVersion.php", getCurrentVersion, "Falló al buscar la version actual del servidor", null, null, null); //gets the current version of the data
+	getTheJson("php/getCurrentVersions.php", getCurrentVersions, "Falló al buscar la version actual del servidor", null, null, null); //gets the current version of the data
 	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 }
 
@@ -56,12 +56,12 @@ function searchLiveData(){
 	//--------STEP GET THE JSON!: This function needs an special note: for itself doesn't do anything, but when it's called triggers calls to APIs or db depends on the parameters it receives
 //How it works? I pass the url, a callback function, an error in case of error or if I need to know which is the function calling it and 3 optional parameters.
 //First: I create the ajax with the normal verification of status and stuff.
-//Second: On the request open I set url that is the url sent by parameter.
-//Third: I ask if what I got as response is a json calling the other function isJson.
-//Forth: If it's Json means that I got a correct response and I parse that response as Json and I sent to the next function (callback) all the data got by parameter from the function has called the getTheJson function
+//Second: On the request open, I set url that is the url sent by parameter.
+//Third: I ask if what I got as response is a json, so I call the other function isJson to verify it.
+//Forth: If it's Json means that I got a correct response and I parse that response as Json and I sent to the next function (callback) passing all the parameters and the data got from the ajax.
 //Fifth: If it's not Json, means that something went wrong, so it triggers the error message
 //Sixth: If the errorMessage is "notPlaying" it means that the function who has called getTheJson is the one which verifies if the user is playing, so it returns the appropiate message.
-//Seventh: If the errorMessage is "noRankedGamesPlayedWithCurrentChampion" means that the function who has called getTheJson is the one which verifies the ranked games of a player, so it returns the appropiate message.
+//Seventh: If the errorMessage is "noRankedGamesPlayedWithCurrentChampion" means that the function which has called getTheJson is the one that verifies the ranked games of a player, so it returns the appropiate message.
 //Eight: If the errorMessage is "noGamesPlayed" means that the player never has played before so it fills the preferred rol as "-"
 //Nine: All the other messages are shown in the log
 
@@ -74,14 +74,14 @@ function getTheJson(url, callback, errorMessage, parameter1, parameter2, paramet
 	var request = new XMLHttpRequest();//I create the ajax with the normal verification of status and stuff
 	request.onreadystatechange = function (){
 		if(request.readyState == 4 && request.status == 200){
-			if(isJson(request.responseText)){//I ask if what I got as response is a json calling the other function isJson.
-				data = JSON.parse(request.responseText);//If it's Json means that I got a correct response and I parse that response as Json and I sent to the next function (callback) all the data got by parameter from the function has called the getTheJson function
+			if(isJson(request.responseText)){//I ask if what I got as response is a json, so I call the other function isJson to verify it.
+				data = JSON.parse(request.responseText);//If it's Json means that I got a correct response and I parse that response as Json and I sent to the next function (callback) passing all the parameters and the data got from the ajax.
 				callback(data, parameter1, parameter2, parameter3);
 			} else{//If it's not Json, means that something went wrong, so it triggers the error message
 				if(errorMessage=="notPlaying"){ //If the errorMessage is "notPlaying" it means that the function which has called getTheJson is function which verifies if the user is playing, so it returns the appropiate message.
 					alert(parameter1 + " is not in a game");
 				} else{
-					if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){//If the errorMessage is "noRankedGamesPlayedWithCurrentChampion" means that the function who has called getTheJson is the one which verifies the ranked games of a player, so it returns the appropiate message.
+					if(errorMessage=="noRankedGamesPlayedWithCurrentChampion"){//If the errorMessage is "noRankedGamesPlayedWithCurrentChampion" means that the function which has called getTheJson is the one that verifies the ranked games of a player, so it returns the appropiate message.
 						zeroGamesPlayed(parameter1);
 					} else{
 						if (errorMessage=="noGamesPlayed") {//If the errorMessage is "noGamesPlayed" means that the player never has played before so it fills the preferred rol as "-"
@@ -109,9 +109,23 @@ function isJson(str) {
 }
 
 
-//Receives the current version and sets it in a "global variable".
-function getCurrentVersion(){
-	serverActualVersion.innerHTML = data[0];
+//Receives the current versions and sets them in "global variables".
+function getCurrentVersions(){
+	cssCurrentVersion.innerHTML = data.css;
+	ddCurrentVersion.innerHTML = data.dd;
+	lCurrentVersion.innerHTML = data.l;
+	itemCurrentVersion.innerHTML = data.item;
+	runeCurrentVersion.innerHTML = data.rune;
+	masteryCurrentVersion.innerHTML = data.mastery;
+	summonerCurrentVersion.innerHTML = data.summoner;
+	championCurrentVersion.innerHTML = data.champion;
+	profileIconCurrentVersion.innerHTML = data.profileicon;
+	mapCurrentVersion.innerHTML = data.map;
+	languageCurrentVersion.innerHTML = data.language;
+	stickerCurrentVersion.innerHTML = data.sticker;
+	vCurrentVersion.innerHTML = data.v;
+	lgCurrentVersion.innerHTML = data.lg;
+	cdnCurrentVersion.innerHTML = data.cdn;
 }
 
 	//---------STEP 3: I receive the summoner data and the fun starts. With that data I set global variables with the name, id and accountId of the player(needed for later) and I start searching the info of the current game if the user is playing (next line)
@@ -159,7 +173,7 @@ function getCurrentGameInfoBySummoner(){
 		getTheJson("php/getSummonerByName.php?name=" + data.participants[i].summonerName, getSummonerByName, "Falló al buscar la información del Summoner By Name", i, data.participants[i].championId, null); //I go back to the step 1 (getSummonerByName) to get the user info of all the players of the game
 	 	for(var n = 0; n < data.participants[i].masteries.length; n++){
 	 		if (data.participants[i].masteries[n].masteryId == 6161 || data.participants[i].masteries[n].masteryId == 6162 || data.participants[i].masteries[n].masteryId == 6164 || data.participants[i].masteries[n].masteryId == 6361 || data.participants[i].masteries[n].masteryId == 6362 || data.participants[i].masteries[n].masteryId == 6363 || data.participants[i].masteries[n].masteryId == 6261 || data.participants[i].masteries[n].masteryId == 6262 || data.participants[i].masteries[n].masteryId == 6263 ) {
-	 			document.getElementById("mastery"+i).src = "http://ddragon.leagueoflegends.com/cdn/"+serverActualVersion.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png"; //I have the id of the mastery so I can search directly to the url.
+	 			document.getElementById("mastery"+i).src = "http://ddragon.leagueoflegends.com/cdn/"+serverActualVersions.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png"; //I have the id of the mastery so I can search directly to the url.
 	 			getTheJson("php/getMasteryInfobyId.php?id=" + data.participants[i].masteries[n].masteryId, getMasteryInfobyId, "Fallo al buscar la info de la maestria por id", i, null, null); //But I don't have the name of the mastery, so I go to search to the api the name for the accessibility users.
 	 		}
 	 	}
@@ -194,7 +208,7 @@ function getServerName(){
 
 //I got the champions data so I complete the url with it
 function getChampionsImgsUrl(){
-	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersion.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersions.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
 	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).alt= data.name + " small image";
 	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/img/" + data.image.group + "/loading/" + data.key + "_0.jpg";
 	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).alt= data.name + " image";
@@ -202,7 +216,7 @@ function getChampionsImgsUrl(){
 
 //I got the spells data so I complete the url with it
 function getSpellsImgsUrl(){
-	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersion.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersions.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
 	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).alt= data.name + " image";
 }
 

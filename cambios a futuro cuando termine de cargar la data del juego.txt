@@ -20,3 +20,4 @@
 15 - Pasar todas las imagenes a sprites para mejorar la performance de la pagina.
 16 - Agregar el ranking de flex y de 3v3 ranked.
 17 - Poner todos los comentarios del codigo en un solo idioma
+18 - Eventualmente maps.json la voy a tener que pasar a mi base de datos.
