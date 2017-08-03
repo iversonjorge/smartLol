@@ -109,7 +109,7 @@ CREATE TABLE `versions` (
 -- Volcado de datos para la tabla `versions`
 --
 
-INSERT INTO `versions` (`apiName`, `version`) VALUES
+INSERT INTO `currentVersions` (`apiName`, `version`) VALUES
 ('mastery', '7.15.1');
 
 --

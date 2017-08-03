@@ -1,31 +1,27 @@
 <?php 
-	//insertStaticMasteriesData.php
+	//insertStaticSpellsData.php
 	include("apiKey.php");
- 	$json = file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/masteries?locale=en_US&api_key={$apiKey}");
+ 	$json = file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/summoner-spells?locale=en_US&dataById=false&api_key={$apiKey}");
  	$array = json_decode($json,true);
 	include ('conection.php');
 	$query = "";
-	$descriptionQuery = "";
 	$iterator = new RecursiveArrayIterator($array['data']);
 	while ($iterator->valid()) {
 		if ($iterator->hasChildren()) {
-		    $query = $query . "INSERT INTO masteries (id, name) VALUES ( ";
+		    $query .= "INSERT INTO spells (name, description, summonerLevel, id, spellKey) VALUES ( ";
 			foreach ($iterator->getChildren() as $key => $value) {
-				if ($key == "name") {
-					$query = $query . '"'. $value .'"' . ");";
-				} elseif($key == "id"){
-					$query = $query . $value . ", " ;
-					$masteryId = $value;
+				if ($key == "id" || $key == "summonerLevel") {
+					$query .= $value . ", ";
+				} elseif($key == "key"){
+					$query .= '"' . $value . '"' . "); ";
 				} else{
-					foreach ($value as $childKey => $childValue){
-						$descriptionQuery = $descriptionQuery . "INSERT INTO masteriesDescriptions (masteryId, masteryDescriptionId, description) VALUES ( " . $GLOBALS['masteryId'] . ", " . $childKey . ", ". '"' . $childValue . '"' . ");";
-					}
+					$query .= '"' . $value . '"' . ", ";
 				}
 			}
 		}
 		$iterator->next();
     }
-	$execute = mysqli_multi_query($conection, $query . $descriptionQuery);
+	$execute = mysqli_multi_query($conection, $query);
 	// Preguntamos si hay error
 	if ($execute) {
 	    do {
