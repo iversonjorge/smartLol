@@ -1,5 +1,17 @@
 <?php
 	//getSpellsInfo.php
-	include("../php/apiKey.php");
-	echo file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/summoner-spells/{$_GET['spellId']}?locale=en_US&tags=image&api_key={$apiKey}");
+	include("conection.php");
+	$search = "SELECT name, spellKey FROM spells WHERE id = {$_GET['spellId']};";
+	$execute = mysqli_query($conection, $search);
+	$json = "{";
+	// 4º Preguntamos si NO funcionó
+	if($execute == false){
+		echo "Error en SQL.";
+	} else {
+		while($array = mysqli_fetch_array($execute)){
+			$json .= '"name":"' . $array['name'] . '","key":"' . $array['spellKey'] . '"' ;
+		}
+	}
+	$json .= "}";
+	echo $json;
 ?>

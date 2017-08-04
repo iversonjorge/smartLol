@@ -2,7 +2,7 @@
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
 		<meta name="og:image" content="">
-
+0 - centrar el titulo
 1 - Permitir al usuario volver a buscar un game
 2 - Crear pagina en construccion para las otras paginas.
 3 - Terminar el log in/register
@@ -21,3 +21,8 @@
 16 - Agregar el ranking de flex y de 3v3 ranked.
 17 - Poner todos los comentarios del codigo en un solo idioma
 18 - Eventualmente maps.json la voy a tener que pasar a mi base de datos.
+19 - Armar la pagina para distintas medidas.
+
+1600+ bien
+1600-1200 ajustes
+1200- tablet

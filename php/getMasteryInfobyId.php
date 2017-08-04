@@ -1,6 +1,19 @@
 
 <?php
 	//getMasteryInfobyId.php
-	include("../php/apiKey.php");
-	echo file_get_contents("https://la2.api.riotgames.com/lol/static-data/v3/masteries/{$_GET['id']}?locale=en_US&api_key={$apiKey}");
+	include("conection.php");
+	$search = "SELECT name FROM masteries WHERE id = {$_GET['id']};";
+	$execute = mysqli_query($conection, $search);
+	$json = "{";
+	// 4º Preguntamos si NO funcionó
+	if($execute == false){
+		echo "Error en SQL.";
+	} else {
+		while($array = mysqli_fetch_array($execute)){
+			$json .= '"name":"' . $array['name'] . '"';
+		}
+	}
+	$json .= "}";
+	echo $json;
+	
 ?>

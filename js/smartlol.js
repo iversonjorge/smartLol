@@ -49,7 +49,6 @@ function searchLiveData(){
 	loader.classList.add("loader");
 	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null, null, null); //Start loading all the data
 	getTheJson("php/getCurrentVersions.php", getCurrentVersions, "Falló al buscar la version actual del servidor", null, null, null); //gets the current version of the data
-	setTimeout ('loadLiveData()', 1000); //calls the loadLiveData after waiting a hardcoded amount of seconds
 }
 
 	
@@ -173,7 +172,7 @@ function getCurrentGameInfoBySummoner(){
 		getTheJson("php/getSummonerByName.php?name=" + data.participants[i].summonerName, getSummonerByName, "Falló al buscar la información del Summoner By Name", i, data.participants[i].championId, null); //I go back to the step 1 (getSummonerByName) to get the user info of all the players of the game
 	 	for(var n = 0; n < data.participants[i].masteries.length; n++){
 	 		if (data.participants[i].masteries[n].masteryId == 6161 || data.participants[i].masteries[n].masteryId == 6162 || data.participants[i].masteries[n].masteryId == 6164 || data.participants[i].masteries[n].masteryId == 6361 || data.participants[i].masteries[n].masteryId == 6362 || data.participants[i].masteries[n].masteryId == 6363 || data.participants[i].masteries[n].masteryId == 6261 || data.participants[i].masteries[n].masteryId == 6262 || data.participants[i].masteries[n].masteryId == 6263 ) {
-	 			document.getElementById("mastery"+i).src = "http://ddragon.leagueoflegends.com/cdn/"+serverActualVersions.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png"; //I have the id of the mastery so I can search directly to the url.
+	 			document.getElementById("mastery"+i).src = cdnCurrentVersion.innerHTML+"/"+championCurrentVersion.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png"; //I have the id of the mastery so I can search directly to the url.
 	 			getTheJson("php/getMasteryInfobyId.php?id=" + data.participants[i].masteries[n].masteryId, getMasteryInfobyId, "Fallo al buscar la info de la maestria por id", i, null, null); //But I don't have the name of the mastery, so I go to search to the api the name for the accessibility users.
 	 		}
 	 	}
@@ -208,15 +207,15 @@ function getServerName(){
 
 //I got the champions data so I complete the url with it
 function getChampionsImgsUrl(){
-	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersions.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).src = cdnCurrentVersion.innerHTML+"/"+championCurrentVersion.innerHTML+"/img/champion/" + data.key + ".png";
 	document.getElementById("championImgSmall"+getChampionsImgsUrl.arguments[1]).alt= data.name + " small image";
-	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).src = "http://ddragon.leagueoflegends.com/cdn/img/" + data.image.group + "/loading/" + data.key + "_0.jpg";
+	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).src = cdnCurrentVersion.innerHTML+"/img/champion/loading/"+ data.key + "_0.jpg";
 	document.getElementById("championImg"+getChampionsImgsUrl.arguments[1]).alt= data.name + " image";
 }
 
 //I got the spells data so I complete the url with it
 function getSpellsImgsUrl(){
-	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).src = "http://ddragon.leagueoflegends.com/cdn/"+ serverActualVersions.innerHTML + "/img/" + data.image.group + "/" + data.image.full;
+	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).src = cdnCurrentVersion.innerHTML+"/"+championCurrentVersion.innerHTML+"/img/spell/"+ data.key +".png";
 	document.getElementById("summoner"+getSpellsImgsUrl.arguments[1]+"Spell"+getSpellsImgsUrl.arguments[2]).alt= data.name + " image";
 }
 
@@ -411,7 +410,7 @@ function formatMatchData(){
 			document.getElementById("cs"+i).innerHTML = parseInt(parseInt(document.getElementById("cs"+i).innerHTML)/totalGames);
 		}
 	}
-
+	loadLiveData()
 }
 
 //---------STEP 13: Hide the modal and the loader and show the div with all the data loaded.
