@@ -2,8 +2,6 @@
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
 		<meta name="og:image" content="">
-1 - Permitir al usuario volver a buscar un game
-2 - Crear pagina en construccion para las otras paginas.
 3 - Terminar el log in/register
 4 - actualizar los meta tags
 5 - Permitir al usuario seleccionar region
@@ -26,6 +24,8 @@
 22 - poner la actualizacion automatica al cambio de parche
 23 - ponerle el amarillo al jugador que corresponde
 24 - cambiar images por img
+25 - armar los sharing a las redes sociales
+26 - en algun momento actualizar el logo horrible.
 1600+ bien
 1600-1200 ajustes
 1200- tablet
