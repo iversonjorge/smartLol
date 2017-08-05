@@ -1,13 +1,11 @@
 // smartlol.js
 //-----------------------HOME FUNCTIONS----------------------------
 function changeTabs(tab){
-
 	if (tab == "forum" || tab == "offline" || tab == "championSelect" || tab == "statistics") {
 		alert("This feature is under construction. We'll let you know when it's finished! =)");
 	} else {
-		if (tab=="onLive" && cubeLiveData.classList.contains("active")) {//search again
-			cleanOnLiveData();
-			cubeLiveData.classList.remove("active");
+		if (tab=="cubeLiveData") {
+			/*
 			cubeLiveData.classList.remove("cubeActivate");
 			cubeLiveData.style.display="none";
 			cubeOnLive.style.display="block";
@@ -15,35 +13,36 @@ function changeTabs(tab){
 			onLive.classList.add("active");
 			cubeOnLive.style.filter = "none";
 			txtSearchBar.value = "";
-			txtSearchBar.focus();
+			txtSearchBar.focus();*/
 		} else {
-			if (document.getElementsByClassName("active")[0].id=="cubeLiveData") {
-				document.getElementById(document.getElementsByClassName("active")[0].id).style.display="none";
-				document.getElementById(document.getElementsByClassName("active")[0].id).classList.remove("cubeActivate");
+			if (lastOpenedCubeDataLive.innerHTML == 'true'){
+				cubeLiveData.style.display="none";
+				onLive.classList.remove("active");
 			} else {
 				string = (document.getElementsByClassName("active")[0].id);
-				document.getElementById("cube"+string[0].toUpperCase() + string.substring(1)).style.display="none";
-				document.getElementById("cube"+string[0].toUpperCase() + string.substring(1)).classList.remove("cubeActivate");
+				document.getElementById("cube"+ string[0].toUpperCase() + string.substring(1)).classList.add("cubeInactive");
+				document.getElementsByClassName("active")[0].classList.remove("active");
 			}
-			document.getElementsByClassName("active")[0].classList.remove("active");
-			if (tab=="onLive" && summonerName.innerHTML != "") {
-				cubeLiveData.classList.add("active");
-				cubeLiveData.style.display="block";
-			} else{
-				document.getElementById(tab).classList.add("active");
-				document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).style.display="block";
-			}
+			document.getElementById(tab).classList.add("active");
+			document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).classList.remove("cubeInactive");
+			document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).classList.add("cubeActive");
 		}
 	}
 }
 
 //Here I define the click functions of all the tabs
-document.getElementById("home").addEventListener("click", function(){changeTabs("home")});
-document.getElementById("onLive").addEventListener("click", function(){changeTabs("onLive")});
-document.getElementById("offline").addEventListener("click", function(){changeTabs("offline")});
-document.getElementById("championSelect").addEventListener("click", function(){changeTabs("championSelect")});
-document.getElementById("statistics").addEventListener("click", function(){changeTabs("statistics")});
-document.getElementById("forum").addEventListener("click", function(){changeTabs("forum")});
+home.addEventListener("click", function(){changeTabs("home")});
+onLive.addEventListener("click", function(){
+	if(cubeLiveData.classList.contains("active")){
+		changeTabs("cubeLiveData");
+	} else {
+		changeTabs("onLive");
+	}
+});
+offline.addEventListener("click", function(){changeTabs("offline")});
+championSelect.addEventListener("click", function(){changeTabs("championSelect")});
+statistics.addEventListener("click", function(){changeTabs("statistics")});
+forum.addEventListener("click", function(){changeTabs("forum")});
 btnGetStarted.addEventListener("click", function(){changeTabs("onLive")});
 
 //-----------------------/HOME FUNCTIONS----------------------------
@@ -437,15 +436,33 @@ function formatMatchData(){
 //---------STEP 13: Hide the modal and the loader and show the div with all the data loaded.
 
 function loadLiveData(){
-	cubeOnLive.style.display="none";
-	cubeOnLive.classList.remove("active");
-	onLive.classList.remove("active");
-	cubeLiveData.classList.add("active");
-	cubeLiveData.classList.add("cubeOnLive");
-	cubeLiveData.classList.add("cubeActivate");
+	toggleCubeData(true);
 	setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 	setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
 
+}
+
+function toggleCubeData(activate){
+	if(activate){
+	cubeOnLive.classList.remove("cubeActive");
+	cubeOnLive.classList.add("cubeInactive");
+	cubeLiveData.classList.remove("cubeInactive");
+	cubeLiveData.classList.add("cubeActive");
+	cubeLiveData.classList.add("cubeActivate");
+	lastOpenedCubeDataLive.innerHTML = "true";
+	} else{
+	cubeLiveData.classList.remove("cubeActive");
+	cubeLiveData.classList.add("cubeInactive");
+	cubeOnLive.classList.remove("cubeInactive");
+	cubeOnLive.classList.add("cubeActive");
+	cubeOnLive.classList.add("cubeActivate");
+	lastOpenedCubeDataLive.innerHTML = "false";
+	}
+}
+
+function searchAgain(){
+	cleanOnLiveData();
+	toggleCubeData(false);
 }
 
 function cleanOnLiveData(){
@@ -478,4 +495,5 @@ function cleanOnLiveData(){
 		document.getElementById("mains"+i).innerHTML="";
 	}
 }
+
 //-----------------------/ON LIVE FUNCTIONS----------------------------

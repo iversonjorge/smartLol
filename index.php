@@ -52,9 +52,9 @@
 				</form>
 			</div>
 			<div class="cube" id="cube">
-				<div id="cubeLiveData" class="cubeInactive">
+				<div id="cubeLiveData" class="cubeOnLive cubeInactive">
 					<h2 id="summonerName" class="summonerLiveName"></h2>
-					<input type="button" name="searchAgainButton" id="searchAgainButton" class="searchAgainButton" onclick="changeTabs('onLive')">
+					<input type="button" name="searchAgainButton" id="searchAgainButton" class="searchAgainButton" onclick="searchAgain()">
 					<p id="queueMapServer"></p>
 					<div class="line"></div>
 					<div class="teamsContainer">
@@ -369,7 +369,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cubeOnLive" id="cubeOnLive">
+				<div class="cubeOnLive cubeInactive" id="cubeOnLive">
 					<h2>On Live Tool</h2>
 					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
 					<input type="text" id="txtSearchBar" class="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
@@ -383,6 +383,7 @@
 				</div>
 			</div>
 			<div class="globalVariables">
+				<div id="lastOpenedCubeDataLive">false</div>
 				<div id="cssCurrentVersion"></div>
 				<div id="ddCurrentVersion"></div>
 				<div id="lCurrentVersion"></div>
