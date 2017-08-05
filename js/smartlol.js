@@ -1,12 +1,39 @@
 // smartlol.js
 //-----------------------HOME FUNCTIONS----------------------------
 function changeTabs(tab){
-	if (tab != "forum") {
-		document.getElementById("cube"+(document.getElementsByClassName("active")[0].id)).style.display="none"; //quita
-		document.getElementsByClassName("active")[0].classList.remove("active");
-		document.getElementById(tab).classList.add("active");
-		document.getElementById("cube"+tab).style.display="block";
-	} else { alert("The forum is not finished yet!!! We'll let you know when it's done! =)");
+
+	if (tab == "forum" || tab == "offline" || tab == "championSelect" || tab == "statistics") {
+		alert("This feature is under construction. We'll let you know when it's finished! =)");
+	} else {
+		if (tab=="onLive" && cubeLiveData.classList.contains("active")) {//search again
+			cleanOnLiveData();
+			cubeLiveData.classList.remove("active");
+			cubeLiveData.classList.remove("cubeActivate");
+			cubeLiveData.style.display="none";
+			cubeOnLive.style.display="block";
+			cubeOnLive.classList.add("cubeActivate");
+			onLive.classList.add("active");
+			cubeOnLive.style.filter = "none";
+			txtSearchBar.value = "";
+			txtSearchBar.focus();
+		} else {
+			if (document.getElementsByClassName("active")[0].id=="cubeLiveData") {
+				document.getElementById(document.getElementsByClassName("active")[0].id).style.display="none";
+				document.getElementById(document.getElementsByClassName("active")[0].id).classList.remove("cubeActivate");
+			} else {
+				string = (document.getElementsByClassName("active")[0].id);
+				document.getElementById("cube"+string[0].toUpperCase() + string.substring(1)).style.display="none";
+				document.getElementById("cube"+string[0].toUpperCase() + string.substring(1)).classList.remove("cubeActivate");
+			}
+			document.getElementsByClassName("active")[0].classList.remove("active");
+			if (tab=="onLive" && summonerName.innerHTML != "") {
+				cubeLiveData.classList.add("active");
+				cubeLiveData.style.display="block";
+			} else{
+				document.getElementById(tab).classList.add("active");
+				document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).style.display="block";
+			}
+		}
 	}
 }
 
@@ -36,15 +63,19 @@ document.getElementById("searchSummonerLiveGame").addEventListener("click", func
 // This is the functionality of the button that searches the data on live pressing enter
 document.getElementById("txtSearchBar").addEventListener("keypress", function (e) {
 	var key = e.which || e.keyCode;
-	if (key === 13 && document.getElementById("txtSearchBar").value != ""){
-		document.getElementById("txtSearchBar").blur();
-		searchLiveData();
+	if (key === 13){
+		if (document.getElementById("txtSearchBar").value != ""){
+			document.getElementById("txtSearchBar").blur();
+			searchLiveData();
+		} else{
+			alert("You must fill the Summoner Name text field");
+		}
 	}
 })
 
 	//---------STEP 2 Raise the modal and start searching the data of the user wanted and the actual server version (needed for future calls) asynchronously-------------
 function searchLiveData(){
-	cubeonLive.style.filter = "blur(10px) opacity(0.9)";
+	cubeOnLive.style.filter = "blur(10px) opacity(0.9)";
 	modal.classList.add("modal");
 	loader.classList.add("loader");
 	getTheJson("php/getSummonerByName.php?name=" + txtSearchBar.value, getSummonerByName, "Ese Summoner Name no existe!", null, null, null); //Start loading all the data
@@ -342,27 +373,18 @@ function zeroGamesPlayed(i){
 
 //---------STEP 10: aaaaaaaand finally!!! After all that stupid code, here I have the performance of the player on each game.
 //This function is being called for each match of each player has played with the champion has selected, so it will be run a lot of times.
-// First: I got the Match data by account, so first I have to ask if it's the participant(player) that I'm looking for.
-//Second: It starts to fill the containers with data initializing if the containers are empty
-//Third: if the game was won by the player: +1, if lost: -1 (will make sense later on)
-//Fourth: fill the containers adding all the data (will make sense later on)
-//Fifth: Remember the flag asking if it's the last match of the user? Well here it ask if it's true, if it is, calls the function summonerLoads
+//First: I got the Match data by account, so first I have to ask if it's the participant(player) that I'm looking for.
+//Second: if the game was won by the player: +1, if lost: -1 (will make sense later on)
+//Third: fill the containers adding all the data (will make sense later on)
+//Fourth: Remember the flag asking if it's the last match of the user? Well here it ask if it's true, if it is, calls the function summonerLoads
 function getMatchDataByMatchIdAccountId(){
 	for (var n = 0; n < data.participantIdentities.length; n++){
 		if (data.participantIdentities[n].player.currentAccountId == getMatchDataByMatchIdAccountId.arguments[2]){
 		//I got the Match data by account, so first I have to ask if it's the participant(player) that I'm looking for.
-			if (document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML == ""){ //It starts to fill the containers with data initializing if the containers are empty
-				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
-				document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
-				document.getElementById("deaths"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
-				document.getElementById("assists"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
-				document.getElementById("cs"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = 0;
-			}
-
 			if (data.participants[n].stats.win){//if the game was won by the player: +1, if lost: -1 (will make sense later on)
-				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + 1;
+				document.getElementById("win"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("win"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + 1;
 			}else{
-				document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("winLoss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) - 1;
+				document.getElementById("loss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("loss"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + 1;
 			}
 			//fill the containers adding all the data (will make sense later on)
 			document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML = parseInt(document.getElementById("kills"+getMatchDataByMatchIdAccountId.arguments[1]).innerHTML) + parseInt(data.participants[n].stats.kills);
@@ -392,11 +414,10 @@ function formatMatchData(){
 	for (var i = 0; i <= 9; i++){
 		if (document.getElementById("championTotalGames"+i).innerHTML != 0){
 			totalGames = parseInt(document.getElementById("championTotalGames"+i).innerHTML);
-			losses = (totalGames + parseInt(document.getElementById("winLoss"+i).innerHTML))/2;
-			document.getElementById("winLoss"+i).classList.add("statisticYellow");
-			wins = totalGames - losses;
-			winLossPercent = parseInt(wins*100/totalGames);
-			document.getElementById("winLoss"+i).innerHTML = wins + " / " + losses + " (" + winLossPercent + "%)";
+			losses = document.getElementById("loss"+i).innerHTML;
+			wins = document.getElementById("win"+i).innerHTML;
+			winLossPercent = (wins*100/totalGames).toFixed(0);
+			document.getElementById("wlAverage"+i).innerHTML = winLossPercent;
 			if (winLossPercent<=47){
 				document.getElementById("winLoss"+i).classList.add("statisticRed");
 			} else if(winLossPercent<=53){
@@ -404,23 +425,57 @@ function formatMatchData(){
 			} else{
 				document.getElementById("winLoss"+i).classList.add("statisticGreen");
 			}
-			document.getElementById("kills"+i).innerHTML = parseInt(parseInt(document.getElementById("kills"+i).innerHTML)/totalGames);
-			document.getElementById("deaths"+i).innerHTML = parseInt(parseInt(document.getElementById("deaths"+i).innerHTML)/totalGames);
-			document.getElementById("assists"+i).innerHTML = parseInt(parseInt(document.getElementById("assists"+i).innerHTML)/totalGames);
-			document.getElementById("cs"+i).innerHTML = parseInt(parseInt(document.getElementById("cs"+i).innerHTML)/totalGames);
+			document.getElementById("kills"+i).innerHTML = (parseInt(document.getElementById("kills"+i).innerHTML)/totalGames).toFixed(1);
+			document.getElementById("deaths"+i).innerHTML = (parseInt(document.getElementById("deaths"+i).innerHTML)/totalGames).toFixed(1);
+			document.getElementById("assists"+i).innerHTML = (parseInt(document.getElementById("assists"+i).innerHTML)/totalGames).toFixed(1);
+			document.getElementById("cs"+i).innerHTML = (parseInt(document.getElementById("cs"+i).innerHTML)/totalGames).toFixed();
 		}
 	}
-	loadLiveData()
+	loadLiveData();
 }
 
 //---------STEP 13: Hide the modal and the loader and show the div with all the data loaded.
 
 function loadLiveData(){
-	document.getElementById("cubeonLive").style.display="none";
-	document.getElementById("cubeLiveData").classList.add("cubeOnLive");
-	document.getElementById("cubeLiveData").classList.add("cubeActivate");
+	cubeOnLive.style.display="none";
+	cubeOnLive.classList.remove("active");
+	onLive.classList.remove("active");
+	cubeLiveData.classList.add("active");
+	cubeLiveData.classList.add("cubeOnLive");
+	cubeLiveData.classList.add("cubeActivate");
 	setTimeout ('document.getElementById("modal").classList.remove("modal")', 1000);
 	setTimeout ('document.getElementById("loader").classList.remove("loader")', 1000);
 
+}
+
+function cleanOnLiveData(){
+	summonerName.innerHTML ="";
+	queueMapServer.innerHTML="";
+	for (var i = 0; i <= 9; i++){
+		document.getElementById("championImg"+i).url="";
+		document.getElementById("championImg"+i).alt="";
+		document.getElementById("playerName"+i).innerHTML="";
+		document.getElementById("championImgSmall"+i).url="";
+		document.getElementById("championImgSmall"+i).alt="";
+		document.getElementById("summoner"+i+"Spell0").url="";
+		document.getElementById("summoner"+i+"Spell0").alt="";
+		document.getElementById("summoner"+i+"Spell1").url="";
+		document.getElementById("summoner"+i+"Spell1").alt="";
+		document.getElementById("mastery"+i).url="";
+		document.getElementById("mastery"+i).alt="";
+		document.getElementById("gamesPlayed"+i).innerHTML="";
+		document.getElementById("rankedLeague"+i).url="";
+		document.getElementById("rankedLeague"+i).alt="";
+		document.getElementById("tier"+i).innerHTML="";
+		document.getElementById("tier"+i).innerHTML="";
+		document.getElementById("win"+i).innerHTML=0;
+		document.getElementById("loss"+i).innerHTML=0;
+		document.getElementById("wlAverage"+i).innerHTML=0;
+		document.getElementById("kills"+i).innerHTML=0;
+		document.getElementById("deaths"+i).innerHTML=0;
+		document.getElementById("assists"+i).innerHTML=0;
+		document.getElementById("cs"+i).innerHTML=0;
+		document.getElementById("mains"+i).innerHTML="";
+	}
 }
 //-----------------------/ON LIVE FUNCTIONS----------------------------

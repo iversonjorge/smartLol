@@ -2,7 +2,6 @@
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
 		<meta name="og:image" content="">
-0 - centrar el titulo
 1 - Permitir al usuario volver a buscar un game
 2 - Crear pagina en construccion para las otras paginas.
 3 - Terminar el log in/register
@@ -22,7 +21,16 @@
 17 - Poner todos los comentarios del codigo en un solo idioma
 18 - Eventualmente maps.json la voy a tener que pasar a mi base de datos.
 19 - Armar la pagina para distintas medidas.
-
+20 - subirlo al servidor
+21 - manejo de mensajes de error que salga de la busqueda.
+22 - poner la actualizacion automatica al cambio de parche
+23 - ponerle el amarillo al jugador que corresponde
+24 - cambiar images por img
 1600+ bien
 1600-1200 ajustes
 1200- tablet
+
+a + b = winloss
+
+
+x/3 = 0.3

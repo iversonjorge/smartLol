@@ -5,8 +5,9 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
 		<link href="images/favico.png" rel="shortcut icon">
-		<meta name="keywords" content="league of legends, lol, league, tools, analysis, videogames, smartlol, esports, ranking">
+		<meta name="keywords" content="league of legends, lol, league, tool, analysis, smartlol, esports, ranked, smarlol">
 		<meta name="author" content="Jorch">
+
 	</head>
 	<body>
 		<main>
@@ -51,12 +52,12 @@
 				</form>
 			</div>
 			<div class="cube" id="cube">
-
 				<div id="cubeLiveData" class="cubeInactive">
 					<h2 id="summonerName" class="summonerLiveName"></h2>
+					<input type="button" name="searchAgainButton" id="searchAgainButton" class="searchAgainButton" onclick="changeTabs('onLive')">
 					<p id="queueMapServer"></p>
 					<div class="line"></div>
-					<div class="a">
+					<div class="teamsContainer">
 						<div class="teamBlue">
 							<div id="summonerLiveData0" class="summonerLiveData0 , summonerLiveDataYellow">
 								<img id="championImg0">
@@ -73,15 +74,15 @@
 									<img id="rankedLeague0" class="rankingLeague">
 									<p id="tier0" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss0" class="winLoss"></p>
+									<p id="winLoss0" class="winLoss"><span id="win0">0</span> / <span id="loss0">0</span> (<span id="wlAverage0">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills0" class="kills"></p>
+									<p id="kills0" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths0" class="deaths"></p>
+									<p id="deaths0" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists0" class="assists"></p>
+									<p id="assists0" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs0" class="cs"></p>
+									<p id="cs0" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains0" class="mains"></p>
 								</div>
@@ -101,15 +102,15 @@
 									<img id="rankedLeague1" class="rankingLeague">
 									<p id="tier1" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss1" class="winLoss"></p>
+									<p id="winLoss1" class="winLoss"><span id="win1">0</span> / <span id="loss1">0</span> (<span id="wlAverage1">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills1" class="kills"></p>
+									<p id="kills1" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths1" class="deaths"></p>
+									<p id="deaths1" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists1" class="assists"></p>
+									<p id="assists1" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs1" class="cs"></p>
+									<p id="cs1" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains1" class="mains"></p>
 								</div>
@@ -129,15 +130,15 @@
 									<img id="rankedLeague2" class="rankingLeague">
 									<p id="tier2" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss2" class="winLoss"></p>
+									<p id="winLoss2" class="winLoss"><span id="win2">0</span> / <span id="loss2">0</span> (<span id="wlAverage2">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills2" class="kills"></p>
+									<p id="kills2" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths2" class="deaths"></p>
+									<p id="deaths2" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists2" class="assists"></p>
+									<p id="assists2" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs2" class="cs"></p>
+									<p id="cs2" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains2" class="mains"></p>
 								</div>
@@ -157,15 +158,15 @@
 									<img id="rankedLeague3" class="rankingLeague">
 									<p id="tier3" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss3" class="winLoss"></p>
+									<p id="winLoss3" class="winLoss"><span id="win3">0</span> / <span id="loss3">0</span> (<span id="wlAverage3">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills3" class="kills"></p>
+									<p id="kills3" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths3" class="deaths"></p>
+									<p id="deaths3" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists3" class="assists"></p>
+									<p id="assists3" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs3" class="cs"></p>
+									<p id="cs3" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains3" class="mains"></p>
 								</div>
@@ -185,15 +186,15 @@
 									<img id="rankedLeague4" class="rankingLeague">
 									<p id="tier4" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss4" class="winLoss"></p>
+									<p id="winLoss4" class="winLoss"><span id="win4">0</span> / <span id="loss4">0</span> (<span id="wlAverage4">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills4" class="kills"></p>
+									<p id="kills4" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths4" class="deaths"></p>
+									<p id="deaths4" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists4" class="assists"></p>
+									<p id="assists4" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs4" class="cs"></p>
+									<p id="cs4" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains4" class="mains"></p>
 								</div>
@@ -215,15 +216,15 @@
 									<img id="rankedLeague5" class="rankingLeague">
 									<p id="tier5" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss5" class="winLoss"></p>
+									<p id="winLoss5" class="winLoss"><span id="win5">0</span> / <span id="loss5">0</span> (<span id="wlAverage5">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills5" class="kills"></p>
+									<p id="kills5" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths5" class="deaths"></p>
+									<p id="deaths5" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists5" class="assists"></p>
+									<p id="assists5" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs5" class="cs"></p>
+									<p id="cs5" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains5" class="mains"></p>
 								</div>
@@ -243,15 +244,15 @@
 									<img id="rankedLeague6" class="rankingLeague">
 									<p id="tier6" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss6" class="winLoss"></p>
+									<p id="winLoss6" class="winLoss"><span id="win6">0</span> / <span id="loss6">0</span> (<span id="wlAverage6">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills6" class="kills"></p>
+									<p id="kills6" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths6" class="deaths"></p>
+									<p id="deaths6" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists6" class="assists"></p>
+									<p id="assists6" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs6" class="cs"></p>
+									<p id="cs6" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains6" class="mains"></p>
 								</div>
@@ -271,15 +272,15 @@
 									<img id="rankedLeague7" class="rankingLeague">
 									<p id="tier7" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss7" class="winLoss"></p>
+									<p id="winLoss7" class="winLoss"><span id="win7">0</span> / <span id="loss7">0</span> (<span id="wlAverage7">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills7" class="kills"></p>
+									<p id="kills7" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths7" class="deaths"></p>
+									<p id="deaths7" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists7" class="assists"></p>
+									<p id="assists7" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs7" class="cs"></p>
+									<p id="cs7" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains7" class="mains"></p>
 								</div>
@@ -299,15 +300,15 @@
 									<img id="rankedLeague8" class="rankingLeague">
 									<p id="tier8" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss8" class="winLoss"></p>
+									<p id="winLoss8" class="winLoss"><span id="win8">0</span> / <span id="loss8">0</span> (<span id="wlAverage8">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills8" class="kills"></p>
+									<p id="kills8" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths8" class="deaths"></p>
+									<p id="deaths8" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists8" class="assists"></p>
+									<p id="assists8" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs8" class="cs"></p>
+									<p id="cs8" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains8" class="mains"></p>
 								</div>
@@ -327,15 +328,15 @@
 									<img id="rankedLeague9" class="rankingLeague">
 									<p id="tier9" class="tier"></p>
 									<h5 class="winLoss">W/L:</h5>
-									<p id="winLoss9" class="winLoss"></p>
+									<p id="winLoss9" class="winLoss"><span id="win9">0</span> / <span id="loss9">0</span> (<span id="wlAverage9">0</span>%)</p>
 									<h5 class="kills">Kills:</h5>
-									<p id="kills9" class="kills"></p>
+									<p id="kills9" class="kills">0</p>
 									<h5 class="deaths">Deaths:</h5>
-									<p id="deaths9" class="deaths"></p>
+									<p id="deaths9" class="deaths">0</p>
 									<h5 class="assists">Assists:</h5>
-									<p id="assists9" class="assists"></p>
+									<p id="assists9" class="assists">0</p>
 									<h5 class="cs">CS:</h5>
-									<p id="cs9" class="cs"></p>
+									<p id="cs9" class="cs">0</p>
 									<h5 class="mains">Main:</h5>
 									<p id="mains9" class="mains"></p>
 								</div>
@@ -343,7 +344,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cubeHome" id="cubehome" class="cubeActive">
+				<div class="cubeHome" id="cubeHome" class="cubeActive">
 					<input type="button" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
 					<div class="mainBottom">
 						<div class="mainBottomOnLive">
@@ -368,17 +369,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="cubeOnLive" id="cubeonLive">
+				<div class="cubeOnLive" id="cubeOnLive">
 					<h2>On Live Tool</h2>
 					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
-					<input type="text" id="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-					<input type="button" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
+					<input type="text" id="txtSearchBar" class="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
+					<input type="button" class="txtSearchButton" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
 				</div>
-				<div class="cubeOffline" id="cubeoffline">
+				<div class="cubeOffline" id="cubeOffline">
 				</div>
-				<div class="cubeChampionSelect" id="cubechampionSelect">
+				<div class="cubeChampionSelect" id="cubeChampionSelect">
 				</div>
-				<div class="cubeStatistics" id="cubestatistics">
+				<div class="cubeStatistics" id="cubeStatistics">
 				</div>
 			</div>
 			<div class="globalVariables">
@@ -448,7 +449,6 @@
 				</li>
 			</ul>
 		</footer>
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
 		<script src="js/smartlol.js"></script>
 	</body>
 </html>

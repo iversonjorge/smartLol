@@ -263,7 +263,7 @@ main{
 .cubeHome{
 	width: 100%;
 	height: 100%;
-	background-image: url('../images/bg/splash-v7.jpg');
+	background-image: url('../images/splash-v7.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -336,7 +336,7 @@ main{
 .cubeOnLive{
 	width: 100%;
 	height: 100%;
-	background-image: url('../images/bg/bg-howling-abyss.jpg');
+	background-image: url('../images/bg-howling-abyss.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
     transition: filter linear 1s;
@@ -375,7 +375,7 @@ main{
 	font-weight: bold;
 }
 
-.cubeOnLive input[type=text]{
+.txtSearchBar{
 	border-radius: 10px;
 	top: 40vh;
 	font-size: 20pt;
@@ -391,13 +391,13 @@ main{
     color: #222C96;
 }
 
-.a{
+.teamsContainer{
 	position: relative;
 	max-width: 1200px;
 	margin: auto;
 }
 
-.cubeOnLive input[type=button]{
+.txtSearchButton{
 	top: 48vh;
 	border-radius: 5px;
 	padding: 0.8vw;
@@ -409,7 +409,7 @@ main{
 	left: 42%;
 }
 
-.cubeOnLive input[type=button]:hover{
+.txtSearchButton:hover{
 	background: linear-gradient(to bottom, #3a6073, #3a7bd5);
 	border: 1px solid #0d3d68;
 	color: #c8daea;
@@ -443,6 +443,26 @@ main{
     height: 80px;
     animation: spin 2s linear infinite;
     z-index: 3;
+}
+/* *****************Live Data****************** */ 
+
+.searchAgainButton{
+	background: url("../images/searchAgain.svg");
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: 10%;
+	right: 18%;
+	border: none;
+	text-shadow: -1px 1px #417cb8;
+}
+
+.searchAgainButton:hover{
+	background: url("../images/searchAgainHover.svg");
+}
+
+.searchAgainButton:active{
+	background: url("../images/searchAgainActive.svg");
 }
 
 .line{
@@ -551,7 +571,6 @@ main{
 	top: 0;
 	width: 100%;
 	height: 8%;
-
 	background-color: black;
 }
 
@@ -684,7 +703,7 @@ main{
 .mains{
 	top: 94%;
 }
-
+/* ***************** /Live Data****************** */ 
 /* ------------------- /OnLive --------------------------*/
 /*--------------------global Variables-------------------*/
 .globalVariables{
