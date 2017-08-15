@@ -344,7 +344,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cubeHome" id="cubeHome" class="cubeActive">
+				<div class="cubeHome cubeActive" id="cubeHome">
 					<input type="button" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
 					<div class="mainBottom">
 						<div class="mainBottomOnLive">

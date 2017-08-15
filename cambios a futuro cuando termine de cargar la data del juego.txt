@@ -26,11 +26,7 @@
 24 - cambiar images por img
 25 - armar los sharing a las redes sociales
 26 - en algun momento actualizar el logo horrible.
+27 - implementar los cambios de Eva.
 1600+ bien
 1600-1200 ajustes
 1200- tablet
-
-a + b = winloss
-
-
-x/3 = 0.3

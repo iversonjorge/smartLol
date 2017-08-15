@@ -3,26 +3,19 @@
 function changeTabs(tab){
 	if (tab == "forum" || tab == "offline" || tab == "championSelect" || tab == "statistics") {
 		alert("This feature is under construction. We'll let you know when it's finished! =)");
-	} else {
-		if (tab=="cubeLiveData") {
-			/*
-			cubeLiveData.classList.remove("cubeActivate");
-			cubeLiveData.style.display="none";
-			cubeOnLive.style.display="block";
-			cubeOnLive.classList.add("cubeActivate");
+	} else{
+		if (tab == "onLive" && lastOpenedCubeDataLive.innerHTML == 'true') {
+			document.getElementsByClassName("cubeActive")[0].classList.add("cubeInactive");
+			document.getElementsByClassName("cubeActive")[0].classList.remove("cubeActive");
+			document.getElementsByClassName("active")[0].classList.remove("active");
 			onLive.classList.add("active");
-			cubeOnLive.style.filter = "none";
-			txtSearchBar.value = "";
-			txtSearchBar.focus();*/
+			cubeLiveData.classList.remove("cubeInactive");
+			cubeLiveData.classList.add("cubeActive");
 		} else {
-			if (lastOpenedCubeDataLive.innerHTML == 'true'){
-				cubeLiveData.style.display="none";
-				onLive.classList.remove("active");
-			} else {
-				string = (document.getElementsByClassName("active")[0].id);
-				document.getElementById("cube"+ string[0].toUpperCase() + string.substring(1)).classList.add("cubeInactive");
-				document.getElementsByClassName("active")[0].classList.remove("active");
-			}
+
+			document.getElementsByClassName("cubeActive")[0].classList.add("cubeInactive");
+			document.getElementsByClassName("cubeActive")[0].classList.remove("cubeActive");
+			document.getElementsByClassName("active")[0].classList.remove("active");
 			document.getElementById(tab).classList.add("active");
 			document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).classList.remove("cubeInactive");
 			document.getElementById("cube"+tab[0].toUpperCase() + tab.substring(1)).classList.add("cubeActive");
@@ -32,13 +25,7 @@ function changeTabs(tab){
 
 //Here I define the click functions of all the tabs
 home.addEventListener("click", function(){changeTabs("home")});
-onLive.addEventListener("click", function(){
-	if(cubeLiveData.classList.contains("active")){
-		changeTabs("cubeLiveData");
-	} else {
-		changeTabs("onLive");
-	}
-});
+onLive.addEventListener("click", function(){changeTabs("onLive")});
 offline.addEventListener("click", function(){changeTabs("offline")});
 championSelect.addEventListener("click", function(){changeTabs("championSelect")});
 statistics.addEventListener("click", function(){changeTabs("statistics")});
@@ -66,6 +53,7 @@ document.getElementById("txtSearchBar").addEventListener("keypress", function (e
 		if (document.getElementById("txtSearchBar").value != ""){
 			document.getElementById("txtSearchBar").blur();
 			searchLiveData();
+			loadLiveData();
 		} else{
 			alert("You must fill the Summoner Name text field");
 		}
@@ -361,7 +349,9 @@ function getGamesPlayedByChampion(){
 //First: I fill the containers with harcoded data with information as 0 (0 games and all that stuff).
 //Second: I call the function summonerLoaded which counts +1 when each summoner has finished loading. This is very important to know when all the players are already loaded.
 function zeroGamesPlayed(i){
-	document.getElementById("winLoss"+i).innerHTML = "0 / 0 (0%)";
+	document.getElementById("win"+i).innerHTML = "0";
+	document.getElementById("loss"+i).innerHTML = "0";
+	document.getElementById("wlAverage"+i).innerHTML = "0";
 	document.getElementById("winLoss"+i).classList.add("statisticYellow");
 	document.getElementById("kills"+i).innerHTML = "0";
 	document.getElementById("deaths"+i).innerHTML = "0";
@@ -430,7 +420,7 @@ function formatMatchData(){
 			document.getElementById("cs"+i).innerHTML = (parseInt(document.getElementById("cs"+i).innerHTML)/totalGames).toFixed();
 		}
 	}
-	loadLiveData();
+	//loadLiveData();
 }
 
 //---------STEP 13: Hide the modal and the loader and show the div with all the data loaded.
@@ -447,16 +437,16 @@ function toggleCubeData(activate){
 	cubeOnLive.classList.remove("cubeActive");
 	cubeOnLive.classList.add("cubeInactive");
 	cubeLiveData.classList.remove("cubeInactive");
-	cubeLiveData.classList.add("cubeActive");
 	cubeLiveData.classList.add("cubeActivate");
+	cubeLiveData.classList.add("cubeActive");
 	lastOpenedCubeDataLive.innerHTML = "true";
 	} else{
 	cubeLiveData.classList.remove("cubeActive");
 	cubeLiveData.classList.add("cubeInactive");
 	cubeOnLive.classList.remove("cubeInactive");
 	cubeOnLive.classList.add("cubeActive");
-	cubeOnLive.classList.add("cubeActivate");
 	lastOpenedCubeDataLive.innerHTML = "false";
+	cubeOnLive.style.filter = "none";
 	}
 }
 
