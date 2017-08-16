@@ -27,6 +27,8 @@
 25 - armar los sharing a las redes sociales
 26 - en algun momento actualizar el logo horrible.
 27 - implementar los cambios de Eva.
+28 - Cheuqear slim framework para implemtentarlo. rest apis
+28 - investigar composer
 1600+ bien
 1600-1200 ajustes
 1200- tablet

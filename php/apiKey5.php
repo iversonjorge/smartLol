@@ -1,5 +1,5 @@
 <?php
 	//apiKey.php
 	//cerv
-	$apiKey = "RGAPI-a0ea7472-6f29-49bb-a1c9-416680ee0b76";
+	$apiKey = "RGAPI-7a1fda86-211e-468a-858f-40ee9d3799ae";
 ?>
