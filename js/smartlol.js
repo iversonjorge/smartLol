@@ -357,6 +357,7 @@ function zeroGamesPlayed(i){
 	document.getElementById("deaths"+i).innerHTML = "0";
 	document.getElementById("assists"+i).innerHTML = "0";
 	document.getElementById("cs"+i).innerHTML = "0";
+	document.getElementById("championTotalGames"+i).innerHTML = "0";
 	summonerLoaded();//I call the function summonerLoaded which counts +1 when each summoner has finished loading.
 }
 
@@ -453,6 +454,7 @@ function toggleCubeData(activate){
 function searchAgain(){
 	cleanOnLiveData();
 	toggleCubeData(false);
+	txtSearchBar.focus;
 }
 
 function cleanOnLiveData(){
@@ -483,7 +485,18 @@ function cleanOnLiveData(){
 		document.getElementById("assists"+i).innerHTML=0;
 		document.getElementById("cs"+i).innerHTML=0;
 		document.getElementById("mains"+i).innerHTML="";
+		document.getElementById("winLoss"+i).classList.remove("statisticRed");
+		document.getElementById("winLoss"+i).classList.remove("statisticGreen");
+		document.getElementById("winLoss"+i).classList.remove("statisticYellow");
+		summonersLoaded.innerHTML = 0;
+		/*removeClass("winLoss"+i, "statisticRed");
+		removeClass("winLoss"+i, "statisticYellow");
+		removeClass("winLoss"+i, "statisticGreen");*/
 	}
+}
+
+function removeClass(objectId, className){
+	document.getElementById(objectId).classList.remove(className);
 }
 
 //-----------------------/ON LIVE FUNCTIONS----------------------------
