@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-08-2017 a las 18:11:33
+-- Tiempo de generación: 07-09-2017 a las 00:27:41
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -53,6 +53,7 @@ INSERT INTO `champions` (`id`, `championKey`, `name`, `title`) VALUES
 (77, 'Udyr', 'Udyr', 'the Spirit Walker'),
 (64, 'LeeSin', 'Lee Sin', 'the Blind Monk'),
 (83, 'Yorick', 'Yorick', 'Shepherd of Souls'),
+(516, 'Ornn', 'Ornn', 'The Fire below the Mountain'),
 (141, 'Kayn', 'Kayn', 'the Shadow Reaper'),
 (38, 'Kassadin', 'Kassadin', 'the Void Walker'),
 (15, 'Sivir', 'Sivir', 'the Battle Mistress'),
@@ -426,21 +427,21 @@ CREATE TABLE `versions` (
 --
 
 INSERT INTO `versions` (`name`, `value`) VALUES
-('css', '7.15.1'),
-('dd', '7.15.1'),
+('css', '7.17.2'),
+('dd', '7.17.2'),
 ('l', 'es_AR'),
-('item', '7.15.1'),
-('rune', '7.15.1'),
-('mastery', '7.15.1'),
-('summoner', '7.15.1'),
-('champion', '7.15.1'),
-('profileicon', '7.15.1'),
-('map', '7.15.1'),
-('language', '7.15.1'),
-('sticker', '7.15.1'),
+('item', '7.17.2'),
+('rune', '7.17.2'),
+('mastery', '7.17.2'),
+('summoner', '7.17.2'),
+('champion', '7.17.2'),
+('profileicon', '7.17.2'),
+('map', '7.17.2'),
+('language', '7.17.2'),
+('sticker', '7.17.2'),
 ('profileiconmax', '28'),
-('v', '7.15.1'),
-('lg', '7.15.1'),
+('v', '7.17.2'),
+('lg', '7.17.2'),
 ('cdn', 'http://ddragon.leagueoflegends.com/cdn');
 
 --

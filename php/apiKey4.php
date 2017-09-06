@@ -1,5 +1,4 @@
 <?php
 	//apiKey.php
-	//agres
-	$apiKey = "RGAPI-b498100b-5d72-43ce-9942-6e3de6e97f73";
+	$apiKey = "RGAPI-e9b2d312-fadd-41b9-b59d-09ceb35ec1d4";
 ?>
