@@ -2,7 +2,6 @@
 		<meta name="og:title" content="">
 		<meta name="og:description" content="">
 		<meta name="og:image" content="">
-3 - Terminar el log in/register
 4 - actualizar los meta tags
 5 - Permitir al usuario seleccionar region
 6 - Permitir al usuario seleccionar idioma
@@ -32,3 +31,4 @@
 1600+ bien
 1600-1200 ajustes
 1200- tablet
+3 - Terminar el log in/register
