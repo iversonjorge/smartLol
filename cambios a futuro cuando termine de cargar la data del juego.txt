@@ -32,3 +32,4 @@
 1600-1200 ajustes
 1200- tablet
 3 - Terminar el log in/register
+29 - Cuando suba a un servidor, tengo que cambiar el og:url

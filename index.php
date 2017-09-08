@@ -5,9 +5,14 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
 		<link href="images/favico.png" rel="shortcut icon">
-		<meta name="keywords" content="league of legends, lol, league, tool, analysis, smartlol, esports, ranked, smarlol">
+		<meta name="keywords" content="league of legends, stats, search, statistics, lol, league, tool, analysis, smartlol, esports, ranked">
 		<meta name="author" content="Jorch">
-
+		<meta name="description" content="Real-time League of Legends Stats, Summoner Info/Stats, Pro Itemization, statistics and a feature that picks the best champion on ranked for each situation!">
+		<meta name="og:title" content="SmartLol - The best lol tool of the web">
+		<meta property="og:type" content="website">
+		<meta name="og:description" content="Real-time League of Legends Stats, Summoner Info/Stats, Pro Itemization, statistics and a feature that picks the best champion on ranked for each situation!">
+		<meta name="og:image" content="images/ogImage.jpg">
+		<meta name="og:url" content="http://www.smartlol.com">
 	</head>
 	<body>
 		<main>
