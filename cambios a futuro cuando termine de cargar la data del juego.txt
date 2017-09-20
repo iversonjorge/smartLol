@@ -1,8 +1,3 @@
-		<meta name="description" content="">
-		<meta name="og:title" content="">
-		<meta name="og:description" content="">
-		<meta name="og:image" content="">
-4 - actualizar los meta tags
 5 - Permitir al usuario seleccionar region
 6 - Permitir al usuario seleccionar idioma
 7 - poner los open graph de facebook

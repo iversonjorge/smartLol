@@ -32,6 +32,10 @@ statistics.addEventListener("click", function(){changeTabs("statistics")});
 forum.addEventListener("click", function(){changeTabs("forum")});
 btnGetStarted.addEventListener("click", function(){changeTabs("onLive")});
 
+//Here I define the click function of the languaje button
+languajeDD.addEventListener("click", function(){languajeDDContent.style="display: block;"})
+languajeDD.addEventListener("mouseleave", function(){languajeDDContent.style="display: none;"})
+
 //-----------------------/HOME FUNCTIONS----------------------------
 //-----------------------ON LIVE FUNCTIONS----------------------------
 

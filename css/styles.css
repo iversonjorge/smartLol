@@ -250,7 +250,48 @@ main{
 	display: none !important;
 }
 /*--------------------- /Nav Bar Tabs -------------------------- */
+/* ------------------- Languaje --------------------------*/
 
+.arrowDown{
+  border: solid #E8FFFF;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  margin-left: 10px;
+}
+
+.languajeBtn{
+	position: relative;
+    display: inline-block;
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	font-size: 0.9vw;
+    color: #E8FFFF;
+    border: none;
+    border-radius: 5px;
+}
+
+.languajeDDContent{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.languajeDD {
+	display: block;
+	position: absolute;
+    top: 1%;
+    right: 10%;
+    padding: 0.5% 1%;
+    line-height: normal;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* ------------------- /Languaje --------------------------*/
 
 .cube{
 	max-width: 100%;

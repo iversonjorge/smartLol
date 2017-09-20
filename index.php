@@ -40,6 +40,14 @@
 					</li>
 				</ul>
 			</div>
+			<div id="languajeDD" class="languajeDD">
+				<div class="languajeBtn">English
+					<div class="arrowDown"></div>
+				</div>
+				<div id="languajeDDContent" class="languajeDDContent">
+					Lalalala
+				</div>
+			</div>
 			<input type="button" value="Join the Battle" class="joinBattle" onclick="document.getElementById('loginModal').style.display='block'">
 			<div class="loginModal" id="loginModal">
 				<form class="loginContent" action="#">
