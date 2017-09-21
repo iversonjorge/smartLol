@@ -45,7 +45,16 @@
 					<div class="arrowDown"></div>
 				</div>
 				<div id="languajeDDContent" class="languajeDDContent">
-					Lalalala
+					<ul>
+						<li class="langList">
+							<img src="images/langen.png" alt="english" class="langIcon">
+							<span>English</span>
+						</li>
+						<li class="langList">
+							<img src="images/langes.png" alt="español" class="langIcon">
+							<span>Español</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<input type="button" value="Join the Battle" class="joinBattle" onclick="document.getElementById('loginModal').style.display='block'">

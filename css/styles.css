@@ -275,9 +275,8 @@ main{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    width: 110px;
+    right: 0px;
     z-index: 1;
 }
 .languajeDD {
@@ -289,6 +288,38 @@ main{
     line-height: normal;
     background: rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.languajeDD:hover{
+	cursor: pointer;
+}
+
+.langList{
+	list-style: none;
+	padding: 5px 0px;
+}
+
+.langList:hover{
+	background: rgba(91,153,194,1);
+}
+
+.langIcon{
+	width: 20px;
+	margin-left: -10px;
+	margin-bottom: -5px;
+}
+
+.langList span{
+	padding-left: 5px;
+	font-family: "Cool Section Font Bold", Verdana, Tahoma;
+	font-size: 0.9vw;
+}
+
+.languajeDDContent ul{
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	list-style-type: 0;
 }
 
 /* ------------------- /Languaje --------------------------*/
