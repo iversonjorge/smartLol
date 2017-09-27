@@ -21,22 +21,22 @@
 			<div class="tabs">
 				<ul class="tabs_nav" id="tabs_nav">
 					<li id="home" class="active">
-						<a>Home</a>
+						<a id="homeKey">Home</a>
 					</li>
     				<li id="onLive">
-						<a>On Live</a>
+						<a id="onLiveKey">On Live</a>
 					</li>
 					<li id="offline">
-						<a>Offline</a>
+						<a id="offlineKey">Offline</a>
 					</li>
 					<li id="championSelect">
-						<a>Champion Select</a>
+						<a id="championSelectKey">Champion Select</a>
 					</li>
 					<li id="statistics">
-						<a>Statistics</a>
+						<a id="statisticsKey">Statistics</a>
 					</li>
 					<li id="forum">
-						<a>Forum</a>
+						<a id="notebookKey">Notebook</a>
 					</li>
 				</ul>
 			</div>
