@@ -57,7 +57,7 @@
 					</ul>
 				</div>
 			</div>
-			<input type="button" value="Join the Battle" class="joinBattle" onclick="document.getElementById('loginModal').style.display='block'">
+			<input type="button" id="joinBattleKey" value="Join the Battle" class="joinBattle" onclick="document.getElementById('loginModal').style.display='block'">
 			<div class="loginModal" id="loginModal">
 				<form class="loginContent" action="#">
 					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -65,9 +65,9 @@
 					<input type="text" placeholder="Username or email">
 					<input type="password" placeholder="Password">
 					<input type="submit" value="Log In" class="btnLogIn">
-					<a href="#" class="lnkRegister">Register</a>
-					<a href="#" class="lnkForgot">Forgot your password?</a>
-					<Label>Or Log in with social media</label>
+					<a href="#" id="lnkRegisterKey" class="lnkRegister">Register</a>
+					<a href="#" id="lnkForgotKey" class="lnkForgot">Forgot your password?</a>
+					<Label id="socialMediaKey">Or Log in with social media</label>
 					<input type="button" class="btnFacebooklogin" value="Facebook">
 					<input type="button" class="btnTwitterlogin" value="Twitter">
 					<input type="button" class="btnGooglelogin" value="Google">
@@ -367,35 +367,35 @@
 					</div>
 				</div>
 				<div class="cubeHome cubeActive" id="cubeHome">
-					<input type="button" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
+					<input type="button" id="getStartedKey" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
 					<div class="mainBottom">
 						<div class="mainBottomOnLive">
 							<img src="images/live.png" alt="A picture of a Camera indicting that is recording" width="15%">
-							<h3>On live tool</h3>
-							<p>Search your summoner to get all the information you need of your current game</p>
+							<h3 id="onLiveToolKey">On live tool</h3>
+							<p id="onLiveToolTextKey">Search your summoner to get all the information you need of your current game</p>
 						</div>
 						<div class="mainBottomOffline">
 							<img src="images/offline.png" alt="A picture of an offline signal" width="20%">
-							<h3>Offline tool</h3>
-							<p>Search your summoner to find all the information about your account and ranking history</p>
+							<h3 id="offlineToolKey">Offline tool</h3>
+							<p id="offlineToolTextKey">Search your summoner to find all the information about your account and ranking history</p>
 						</div>
 						<div class="mainBottomChampionSelect">
 							<img src="images/championselect.png" alt="A picture of the champpion select feature" width="20%">
-							<h3>Champion Select tool</h3>
-							<p>Use the Champion Select tool to pick the perfect champion for each situation</p>
+							<h3 id="championSelectToolKey">Champion Select tool</h3>
+							<p id="championSelectToolTextKey">Use the Champion Select tool to pick the perfect champion for each situation</p>
 						</div>
 						<div class="mainBottomStatistics">
 							<img src="images/statistics.png" alt="A chart with statistics" width="20%">
-							<h3>Statistics</h3>
-							<p>Do your own analisys using this giant tool based on the server statistics.</p>
+							<h3 id="statisticsToolKey">Statistics</h3>
+							<p id="statisticsToolTextKey">Do your own analisys using this giant tool based on the server statistics.</p>
 						</div>
 					</div>
 				</div>
 				<div class="cubeOnLive cubeInactive" id="cubeOnLive">
-					<h2>On Live Tool</h2>
-					<p>You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
+					<h2 id="onLiveTitleKey">On Live Tool</h2>
+					<p id="onLiveDescKey">You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
 					<input type="text" id="txtSearchBar" class="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-					<input type="button" class="txtSearchButton" value="Search Summoner Live Game" class="btnSearchLiveGame" id="searchSummonerLiveGame">
+					<input type="button" id="searchSummonerLiveGame" class="txtSearchButton" value="Search Summoner Live Game" class="btnSearchLiveGame">
 				</div>
 				<div class="cubeOffline" id="cubeOffline">
 				</div>
@@ -442,16 +442,16 @@
 					<div class="imgFooterAhri"><img src="images/ahri.jpg" alt="una foto de arcade ezreal"></div>
 				</li>
 				<li>
-					<a href="#" class="about">About Smart Lol</a>
+					<a href="#" id="aboutKey" class="about">About Smart Lol</a>
 				</li>
 				<li>
-					<a href="#" class="contact">Contact Us</a>
+					<a href="#" id="contactKey" class="contact">Contact Us</a>
 				</li>
 				<li>
-					<a href="#" class="privacy">Privacy Policy</a>
+					<a href="#" id="privacyKey" class="privacy">Privacy Policy</a>
 				</li>
 				<li>
-					<a href="#" class="faq">FAQ</a>
+					<a href="#" id="faqKey" class="faq">FAQ</a>
 				</li>
 			</ul>
 			<ul class="footer footerSocial">
