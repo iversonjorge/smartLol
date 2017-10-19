@@ -14,7 +14,7 @@
 		<meta name="og:image" content="images/ogImage.jpg">
 		<meta name="og:url" content="http://www.smartlol.com">
 	</head>
-	<body>
+	<body onload="pageLoad()">
 		<main>
 			<div id="loader"></div>
 			<div id="modal"></div>

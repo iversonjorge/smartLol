@@ -1,5 +1,19 @@
 // smartlol.js
-//-----------------------HOME FUNCTIONS----------------------------
+//-----------------------General Functions-------------------------
+function pageLoad(){
+	var userLang = navigator.language || navigator.userLanguage;
+	setLanguage(userLang.substring(0,2));
+}
+
+function setLanguage(lang){
+	switch(lang){
+		case "en":
+			break;
+		case "es":
+			break;
+	}
+}
+
 function changeTabs(tab){
 	if (tab == "forum" || tab == "offline" || tab == "championSelect" || tab == "statistics") {
 		alert("This feature is under construction. We'll let you know when it's finished! =)");
