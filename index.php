@@ -367,7 +367,7 @@
 					</div>
 				</div>
 				<div class="cubeHome cubeActive" id="cubeHome">
-					<input type="button" id="getStartedKey" value="GET STARTED" class="btnGetStarted" id="btnGetStarted">
+					<input type="button" id="getStartedKey" value="GET STARTED" class="btnGetStarted">
 					<div class="mainBottom">
 						<div class="mainBottomOnLive">
 							<img src="images/live.png" alt="A picture of a Camera indicting that is recording" width="15%">
@@ -439,7 +439,7 @@
 		<footer>
 			<ul class="footer footerLinks">
 				<li>
-					<div class="imgFooterAhri"><img src="images/ahri.jpg" alt="una foto de arcade ezreal"></div>
+					<div class="imgFooterAhri"><img src="images/ahri.jpg" alt="Arcade Ahri"></div>
 				</li>
 				<li>
 					<a href="#" id="aboutKey" class="about">About Smart Lol</a>
@@ -468,7 +468,7 @@
 					<a href="#" class="social"><img src="images/g+.png" alt="logo g+"></a>
 				</li>
 				<li class="ezreal">
-					<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="una foto de arcade ezreal"></div>
+					<div class="imgFooterEzreal"><img src="images/ezreal.jpg" alt="Arcade Ezreal"></div>
 				</li>
 			</ul>
 		</footer>

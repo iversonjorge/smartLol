@@ -30,7 +30,7 @@ offline.addEventListener("click", function(){changeTabs("offline")});
 championSelect.addEventListener("click", function(){changeTabs("championSelect")});
 statistics.addEventListener("click", function(){changeTabs("statistics")});
 forum.addEventListener("click", function(){changeTabs("forum")});
-btnGetStarted.addEventListener("click", function(){changeTabs("onLive")});
+getStartedKey.addEventListener("click", function(){changeTabs("onLive")});
 
 //Here I define the click function of the languaje button
 languajeDD.addEventListener("click", function(){languajeDDContent.style="display: block;"})
