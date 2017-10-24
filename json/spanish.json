@@ -23,5 +23,9 @@
   "aboutKey": "Acerca de Smart Lol",
   "contactKey": "Contáctenos",
   "privacyKey": "Política de Privacidad",
-  "faqKey": "FAQ"
+  "faqKey": "FAQ",
+  "txtUsernameKey": "Usuario o email",
+  "txtPasswordKey": "Contraseña",
+  "btnLoginKey": "Ingresar",
+  "languajeBtn": "Español"
 }

@@ -41,7 +41,7 @@
 				</ul>
 			</div>
 			<div id="languajeDD" class="languajeDD">
-				<div class="languajeBtn">English
+				<div id="languajeBtn" class="languajeBtn">English
 					<div class="arrowDown"></div>
 				</div>
 				<div id="languajeDDContent" class="languajeDDContent">
@@ -62,9 +62,9 @@
 				<form class="loginContent" action="#">
 					<span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
 					<h3>Log In</h3>
-					<input type="text" placeholder="Username or email">
-					<input type="password" placeholder="Password">
-					<input type="submit" value="Log In" class="btnLogIn">
+					<input type="text" id="txtUsernameKey" placeholder="Username or email">
+					<input type="password" id="txtPasswordKey" placeholder="Password">
+					<input type="submit" id="btnLoginKey" value="Log In" class="btnLogIn">
 					<a href="#" id="lnkRegisterKey" class="lnkRegister">Register</a>
 					<a href="#" id="lnkForgotKey" class="lnkForgot">Forgot your password?</a>
 					<Label id="socialMediaKey">Or Log in with social media</label>

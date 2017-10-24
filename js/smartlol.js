@@ -2,16 +2,51 @@
 //-----------------------General Functions-------------------------
 function pageLoad(){
 	var userLang = navigator.language || navigator.userLanguage;
-	setLanguage(userLang.substring(0,2));
+	getLanguage(userLang.substring(0,2));
 }
 
-function setLanguage(lang){
+function getLanguage(lang){
 	switch(lang){
 		case "en":
+			getTheJson("json/english.json", setLanguage, "Failed while searching the language...", null, null, null);
 			break;
 		case "es":
+			getTheJson("json/spanish.json", setLanguage, "Failed while searching the language...", null, null, null);
 			break;
 	}
+}
+
+function setLanguage(){
+	console.log(data)
+	aboutKey.innerHTML = data.aboutKey;
+	btnLoginKey.value = data.btnLoginKey;
+	championSelectKey.innerHTML = data.championSelectKey;
+	championSelectToolKey.innerHTML = data.championSelectToolKey;
+	championSelectToolTextKey.innerHTML = data.championSelectToolTextKey;
+	contactKey.innerHTML = data.contactKey;
+	faqKey.innerHTML = data.faqKey;
+	getStartedKey.value = data.getStartedKey;
+	homeKey.innerHTML = data.homeKey;
+	joinBattleKey.value = data.joinBattleKey;
+	languajeBtn.innerHTML = data.languajeBtn;
+	lnkForgotKey.innerHTML = data.lnkForgotKey;
+	lnkRegisterKey.innerHTML = data.lnkRegisterKey;
+	notebookKey.innerHTML = data.notebookKey;
+	offlineKey.innerHTML = data.offlineKey;
+	offlineToolKey.innerHTML = data.offlineToolKey;
+	offlineToolTextKey.innerHTML = data.offlineToolTextKey;
+	onLiveDescKey.innerHTML = data.onLiveDescKey;
+	onLiveKey.innerHTML = data.onLiveKey;
+	onLiveTitleKey.innerHTML = data.onLiveTitleKey;
+	onLiveToolKey.innerHTML = data.onLiveToolKey;
+	onLiveToolTextKey.innerHTML = data.onLiveToolTextKey;
+	privacyKey.innerHTML = data.privacyKey;
+	socialMediaKey.innerHTML = data.socialMediaKey;
+	statisticsKey.innerHTML = data.statisticsKey;
+	statisticsToolKey.innerHTML = data.statisticsToolKey;
+	statisticsToolTextKey.innerHTML = data.statisticsToolTextKey;
+	txtUsernameKey.placeholder = data.txtUsernameKey;
+	txtPasswordKey.placeholder = data.txtPasswordKey;
 }
 
 function changeTabs(tab){
@@ -89,7 +124,7 @@ function searchLiveData(){
 
 	
 	//--------STEP GET THE JSON!: This function needs an special note: for itself doesn't do anything, but when it's called triggers calls to APIs or db depends on the parameters it receives
-//How it works? I pass the url, a callback function, an error in case of error or if I need to know which is the function calling it and 3 optional parameters.
+//How it works? I pass the url, a callback function, an error message in case of error or if I need to know which is the function calling it. And for last but not least 3 optional parameters.
 //First: I create the ajax with the normal verification of status and stuff.
 //Second: On the request open, I set url that is the url sent by parameter.
 //Third: I ask if what I got as response is a json, so I call the other function isJson to verify it.
