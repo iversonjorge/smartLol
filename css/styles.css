@@ -461,6 +461,11 @@ main{
     color: #222C96;
 }
 
+.btnServer{
+	position: relative;
+	top: 50vh;
+}
+
 .teamsContainer{
 	position: relative;
 	max-width: 1200px;
