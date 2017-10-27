@@ -17,7 +17,6 @@ function getLanguage(lang){
 }
 
 function setLanguage(){
-	console.log(data)
 	aboutKey.innerHTML = data.aboutKey;
 	btnLoginKey.value = data.btnLoginKey;
 	championSelectKey.innerHTML = data.championSelectKey;
@@ -211,10 +210,10 @@ function getSummonerByName(){
 		summonerName.innerHTML = data.name;
 		searchedSummonerId.innerHTML = data.id;
 		searchedAccountId.innerHTML = data.accountId;
-		getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id, getCurrentGameInfoBySummoner, "notPlaying", summonerName.innerHTML, null, null); //search the summoner data
+		getTheJson("php/getCurrentGameInfoBySummoner.php?summonerId=" + data.id + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value, getCurrentGameInfoBySummoner, "notPlaying", summonerName.innerHTML, null, null); //search the summoner data
 	} else {
-	 	getTheJson("php/getGamesPlayedByChampion.php?championId=" + getSummonerByName.arguments[2] + "&accountId=" + data.accountId , getGamesPlayedByChampion, "noRankedGamesPlayedWithCurrentChampion", getSummonerByName.arguments[1],  data.accountId, null); //I fetch the games played by that champion to see how the player performed with it.
-	 	getTheJson("php/getGamesPlayedByAccount.php?accountId=" + data.accountId , getGamesPlayedByAccount, "noGamesPlayed", getSummonerByName.arguments[1],  data.accountId, null); //I fetch all the games played (ranked and normal aswell) with the account to know what is the preferred rol of the player.
+	 	getTheJson("php/getGamesPlayedByChampion.php?championId=" + getSummonerByName.arguments[2] + "&accountId=" + data.accountId + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value, getGamesPlayedByChampion, "noRankedGamesPlayedWithCurrentChampion", getSummonerByName.arguments[1],  data.accountId, null); //I fetch the games played by that champion to see how the player performed with it.
+	 	getTheJson("php/getGamesPlayedByAccount.php?accountId=" + data.accountId + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value, getGamesPlayedByAccount, "noGamesPlayed", getSummonerByName.arguments[1],  data.accountId, null); //I fetch all the games played (ranked and normal aswell) with the account to know what is the preferred rol of the player.
 	}
 }
 
@@ -239,8 +238,8 @@ function getCurrentGameInfoBySummoner(){
 	 	getTheJson("php/getChampionInfo.php?championId=" + data.participants[i].championId, getChampionsImgsUrl, "Falló al buscar la imagen del Champion", i, null, null); //I get the champion info to know what url image I need
 	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell1Id, getSpellsImgsUrl, "Falló al buscar el Spell 0", i, 0, null); //The players have 2 spells so I need 2 calls to get the url images of the spells(spell 1)
 	 	getTheJson("php/getSpellsInfo.php?spellId=" + data.participants[i].spell2Id, getSpellsImgsUrl, "Fallo al buscar el Spell 1", i, 1, null); //The players have 2 spells so I need 2 calls to get the url images of the spells(spell 2)
-	 	getTheJson("php/getRankingLeagueInfo.php?summonerId=" + data.participants[i].summonerId, getRankedInfo, "Fallo al buscar la info de ranked", i, data.participants[i].summonerId, null); //I get the ranking league of the player
-		getTheJson("php/getSummonerByName.php?name=" + data.participants[i].summonerName, getSummonerByName, "Falló al buscar la información del Summoner By Name", i, data.participants[i].championId, null); //I go back to the step 1 (getSummonerByName) to get the user info of all the players of the game
+	 	getTheJson("php/getRankingLeagueInfo.php?summonerId=" + data.participants[i].summonerId + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value, getRankedInfo, "Fallo al buscar la info de ranked", i, data.participants[i].summonerId, null); //I get the ranking league of the player
+		getTheJson("php/getSummonerByName.php?name=" + data.participants[i].summonerName + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value, getSummonerByName, "Falló al buscar la información del Summoner By Name", i, data.participants[i].championId, null); //I go back to the step 1 (getSummonerByName) to get the user info of all the players of the game
 	 	for(var n = 0; n < data.participants[i].masteries.length; n++){
 	 		if (data.participants[i].masteries[n].masteryId == 6161 || data.participants[i].masteries[n].masteryId == 6162 || data.participants[i].masteries[n].masteryId == 6164 || data.participants[i].masteries[n].masteryId == 6361 || data.participants[i].masteries[n].masteryId == 6362 || data.participants[i].masteries[n].masteryId == 6363 || data.participants[i].masteries[n].masteryId == 6261 || data.participants[i].masteries[n].masteryId == 6262 || data.participants[i].masteries[n].masteryId == 6263 ) {
 	 			document.getElementById("mastery"+i).src = cdnCurrentVersion.innerHTML+"/"+championCurrentVersion.innerHTML+"/img/mastery/"+data.participants[i].masteries[n].masteryId+".png"; //I have the id of the mastery so I can search directly to the url.
@@ -380,7 +379,7 @@ function getGamesPlayedByChampion(){
 		zeroGamesPlayed(getGamesPlayedByChampion.arguments[1]);//Maybe is the first time of the user with the current champion so if it's the case I call a function which fills the containers with harcoded data with information as 0 (0 games and all that stuff)
 	} else{
 		for (var n = 0; n < data.matches.length; n++){ //I've found some cases where you are fetching games for some server, and it returns you games of other servers. That implodes your code. So... you have to make sure to erase that data of the json.
-			if(data.matches[n].platformId!="LA2"){
+			if(data.matches[n].platformId!="serverSelect.options[serverSelect.selectedIndex].value"){
 				data.matches.splice(n,1);
 			}
 		}
@@ -392,7 +391,7 @@ function getGamesPlayedByChampion(){
 			if (document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML<=49) {
 				if (n == (data.matches.length-1)) {lastMatch = true;}//If it's the last match to search changes the flat to true and to send it to the getMatchDataByMatchIdAccountId.
 				document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML = parseInt(document.getElementById("championTotalGames"+getGamesPlayedByChampion.arguments[1]).innerHTML)+1;//I count every match I call in a "global variable"
-				getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2]+ "&playerNumber=" + getGamesPlayedByChampion.arguments[1], getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2], lastMatch); //Fetch the info of each match
+				getTheJson("php/getMatchDataByMatchIdAccountId.php?matchId=" + data.matches[n].gameId + "&accountId=" + getGamesPlayedByChampion.arguments[2]+ "&playerNumber=" + getGamesPlayedByChampion.arguments[1] + "&regionTag=" + serverSelect.options[serverSelect.selectedIndex].value , getMatchDataByMatchIdAccountId, "Falló al buscar la información del Match by Id de match", getGamesPlayedByChampion.arguments[1], getGamesPlayedByChampion.arguments[2], lastMatch); //Fetch the info of each match
 			}
 		}
 	}

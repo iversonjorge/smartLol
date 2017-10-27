@@ -395,7 +395,21 @@
 					<h2 id="onLiveTitleKey">On Live Tool</h2>
 					<p id="onLiveDescKey">You can search the actual game of any Summoner you want obtaining a lof of information just putting the name of the summoner on the text box.</p>
 					<input type="text" id="txtSearchBar" class="txtSearchBar" name="txtSearchBar" placeholder="Summoner Name" autocomplete="username" maxlength="50" size="50" required autofocus>
-					<input type="button" id="btnServer" class="btnServer" value="LAS">
+					<div class="server">
+						<select id="serverSelect">
+							<option value="BR1">Brasil</option>
+	  						<option value="EUN1">EU East</option>
+							<option value="EUW1">EU West</option>
+	  						<option value="JP1">Japan</option>
+	  						<option value="KR">Korea</option>
+	  						<option value="LA1">LAN</option>
+							<option value="LA2" selected="selected">LAS</option>
+	  						<option value="NA1">NA</option>
+	  						<option value="OC1">Ocenia</option>
+	  						<option value="RU">Russia</option>
+	  						<option value="TR1">Turkey</option>
+						</select>
+					</div>
 					<input type="button" id="searchSummonerLiveGame" class="txtSearchButton" value="Search Summoner Live Game" class="btnSearchLiveGame">
 				</div>
 				<div class="cubeOffline" id="cubeOffline">

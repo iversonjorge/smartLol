@@ -461,9 +461,30 @@ main{
     color: #222C96;
 }
 
-.btnServer{
+.server{
+	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0, #3b8ec2;
+	height: 29px;
+	overflow: hidden;
+	width: 100px;
+	border-radius: 5px;
 	position: relative;
-	top: 50vh;
+	top: 13.5vh;
+	left: 63%;
+}
+
+.server select{
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	height: 29px;
+	padding: 5px;
+	width: 100px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.server option{
+	background: #3b8ec2;
 }
 
 .teamsContainer{
